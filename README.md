@@ -4,6 +4,9 @@
 Base library of [Cédric Belin](https://belin.io), full stack developer,
 implemented in [Haxe](https://haxe.org).
 
+> ![IMPORTANT]
+> Supports only the `js` and `php` compilation targets.
+
 ## Development
 - [Git repository](https://github.com/cedx/core)
 - [Submit an issue](https://github.com/cedx/core/issues)
