@@ -1,0 +1,9 @@
+--class-path test
+--dce full
+--js var/tests.js
+# TODO --library deep_equal
+# TODO --library tink_stringly
+# TODO --library tink_unittest
+--main RunTests
+share/js.hxml
+--cmd node test/RunTests.js

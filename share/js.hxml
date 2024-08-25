@@ -1,0 +1,14 @@
+--class-path src
+--define analyzer-optimize
+--define js-es=6
+--define js-global=window
+--define no-deprecation-warnings
+# TODO --library bootstrap_bundle
+# TODO --library coconut.data
+# TODO --library coconut.vdom
+# TODO --library intl
+# TODO --library tink_domspec
+# TODO --library tink_json
+# TODO --library tink_multipart
+# TODO --library tink_querystring
+# TODO --library tink_url

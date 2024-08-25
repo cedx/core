@@ -1,0 +1,9 @@
+--class-path src
+--define analyzer-optimize
+--define no-deprecation-warnings
+--define real-position
+# TODO --library asys
+# TODO --library coconut.data
+# TODO --library smtpmailer
+# TODO --library tink_json
+# TODO --library tink_querystring

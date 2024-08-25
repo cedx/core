@@ -1,0 +1,11 @@
+--class-path src
+--define analyzer-optimize
+--define js-es=6
+--define js-global=global
+--define no-deprecation-warnings
+# TODO --library asys
+# TODO --library coconut.data
+--library hxnodejs
+# TODO --library smtpmailer
+# TODO --library tink_json
+# TODO --library tink_querystring

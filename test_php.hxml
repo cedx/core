@@ -1,0 +1,10 @@
+--class-path test
+--dce full
+--define php-front=tests.php
+# TODO --library deep_equal
+# TODO --library tink_stringly
+# TODO --library tink_unittest
+--main RunTests
+--php var
+share/php.hxml
+--cmd php var/tests.php
