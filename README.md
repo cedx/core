@@ -4,7 +4,6 @@
 Base library of [Cédric Belin](https://belin.io), full stack developer,
 implemented in [Haxe](https://haxe.org).
 
-> ![IMPORTANT]
 > Supports only the `js` and `php` compilation targets.
 
 ## Development
