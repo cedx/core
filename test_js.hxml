@@ -6,4 +6,4 @@
 # TODO --library tink_unittest
 --main RunTests
 share/js.hxml
---cmd node test/RunTests.js
+--cmd node test/RunTests.mjs
