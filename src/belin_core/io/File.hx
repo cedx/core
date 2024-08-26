@@ -33,7 +33,7 @@ class File extends FileSystemEntity {
 		return SysFile.getBytes(path);
 
 	/** Reads the file contents as lines of text. **/
-	public function readAsLines(): String
+	public function readAsLines(): Array<String>
 		return ~/\r?\n/g.split(readAsString());
 
 	/** Reads the file contents as a string. **/

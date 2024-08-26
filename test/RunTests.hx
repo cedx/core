@@ -6,25 +6,25 @@ import tink.unit.TestBatch;
 /** Runs the test suite. **/
 function main() {
 	final tests = TestBatch.make([
-		// new core.AbstractEnumTest(),
-		// new core.AnonStructTest(),
-		// new core.DateRangeTest(),
-		// new core.DateToolsTest(),
-		// new core.NumberToolsTest(),
-		// new core.StringToolsTest(),
-		// #if asys new core.caching.FileCacheTest(), #end
-		// new core.caching.MemoryCacheTest(),
-		// new core.data.ErrorsTest(),
-		// new core.data.PaginationTest(),
-		// new core.data.SortTest(),
-		// new core.di.ContainerTest(),
-		// #if (js && !nodejs) new core.html.FormToolsTest(), #end
-		// #if (nodejs || sys) new core.io.NetworkDriveTest(), #end
-		// new core.net.InternetAddressTest(),
-		// new core.net.MailAddressTest(),
-		// new core.net.PhoneNumberTest(),
-		// new core.net.UrlTest(),
-		// new core.security.AccessLevelTest()
+		// new belin_core.AbstractEnumTest(),
+		// new belin_core.AnonStructTest(),
+		// new belin_core.DateRangeTest(),
+		// new belin_core.DateToolsTest(),
+		// new belin_core.NumberToolsTest(),
+		// new belin_core.StringToolsTest(),
+		// #if asys new belin_core.caching.FileCacheTest(), #end
+		// new belin_core.caching.MemoryCacheTest(),
+		// new belin_core.data.ErrorsTest(),
+		// new belin_core.data.PaginationTest(),
+		// new belin_core.data.SortTest(),
+		// new belin_core.di.ContainerTest(),
+		// #if (js && !nodejs) new belin_core.html.FormToolsTest(), #end
+		// #if (nodejs || sys) new belin_core.io.NetworkDriveTest(), #end
+		// new belin_core.net.InternetAddressTest(),
+		// new belin_core.net.MailAddressTest(),
+		// new belin_core.net.PhoneNumberTest(),
+		// new belin_core.net.UrlTest(),
+		// new belin_core.security.AccessLevelTest()
 	]);
 
 	ANSI.stripIfUnavailable = false;
