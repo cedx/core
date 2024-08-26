@@ -8,5 +8,5 @@
 	"releasenote": "Initial release.",
 	"tags": ["belin", "core", "cross", "framework", "library"],
 	"url": "https://github.com/cedx/core",
-	"version": "1.0.0"
+	"version": "0.1.0"
 }
