@@ -18,7 +18,7 @@ abstract class AnonStruct {
 		return target;
 	}
 
-	/** Gets an array of the names of the fields in the specified structure. **/
+	/** Gets an array of the field names in the specified structure. **/
 	macro public static function getNames(anonStruct: Expr, optionalPrefix: Bool = false)
 		return macro $a{getFields(anonStruct).map(field -> switch field.type {
 			case TAbstract(_.toString() => type, _) if (optionalPrefix && type == "Null"): macro $v{'?${field.name}'};
