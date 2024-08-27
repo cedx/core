@@ -1,0 +1,4 @@
+# @install: lix --silent download "haxelib:/bootstrap_bundle#3.0.2" into bootstrap_bundle/3.0.2/haxelib
+# @run: haxelib run-dir bootstrap_bundle "${HAXE_LIBCACHE}/bootstrap_bundle/3.0.2/haxelib"
+-cp ${HAXE_LIBCACHE}/bootstrap_bundle/3.0.2/haxelib/src/
+-D bootstrap_bundle=3.0.2
