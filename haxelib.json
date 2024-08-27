@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"name": "belin_core",
 	"releasenote": "Initial release.",
-	"tags": ["belin", "core", "cross", "framework", "library"],
+	"tags": ["core", "cross", "framework", "library"],
 	"url": "https://github.com/cedx/core",
 	"version": "0.1.0"
 }
