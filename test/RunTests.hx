@@ -7,7 +7,7 @@ import tink.unit.TestBatch;
 function main() {
 	final tests = TestBatch.make([
 		// new belin_core.AbstractEnumTest(),
-		// new belin_core.AnonStructTest(),
+		new belin_core.AnonStructTest(),
 		// new belin_core.DateRangeTest(),
 		// new belin_core.DateToolsTest(),
 		// new belin_core.NumberToolsTest(),

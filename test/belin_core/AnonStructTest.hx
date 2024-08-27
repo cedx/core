@@ -1,4 +1,4 @@
-package core;
+package belin_core;
 
 import haxe.DynamicAccess;
 

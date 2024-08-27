@@ -1,0 +1,40 @@
+name: continuous-integration
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [js, nodejs, php]
+    steps:
+      - name: Fetch sources
+        uses: actions/checkout@v4
+      - name: Set up Lix
+        uses: lix-pm/setup-lix@master
+      - name: Set up Node.js
+        if: matrix.target == 'js' || matrix.target == 'nodejs'
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: 22
+      - name: Set up PHP
+        if: matrix.target == 'php'
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: curl, intl, mbstring, simplexml
+          php-version: 8.3
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/haxe
+          key: haxe-${{runner.os}}-lix-${{hashFiles('.haxerc', 'haxe_libraries/*.hxml')}}
+          restore-keys: haxe-${{runner.os}}-lix-
+      - name: Install Haxe dependencies
+        run: lix download
+      - name: Install JavaScript dependencies
+        if: matrix.target == 'js'
+        run: npm ci
+      - name: Run tests
+        run: haxe test_${{matrix.target}}.hxml
