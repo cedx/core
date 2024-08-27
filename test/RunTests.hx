@@ -9,8 +9,8 @@ function main() {
 		new belin_core.AbstractEnumTest(),
 		new belin_core.AnonStructTest(),
 		// new belin_core.DateRangeTest(),
-		new belin_core.DateToolsTest(),
-		// new belin_core.NumberToolsTest(),
+		// new belin_core.DateToolsTest(),
+		new belin_core.NumberToolsTest(),
 		// new belin_core.StringToolsTest(),
 		// #if asys new belin_core.caching.FileCacheTest(), #end
 		// new belin_core.caching.MemoryCacheTest(),
