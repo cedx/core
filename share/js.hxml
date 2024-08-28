@@ -5,7 +5,7 @@
 --define no-deprecation-warnings
 # TODO --library bootstrap_bundle
 # TODO --library coconut.data
-# TODO --library coconut.vdom
+--library coconut.vdom
 # TODO --library intl
 # TODO --library tink_domspec
 # TODO --library tink_json
