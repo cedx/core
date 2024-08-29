@@ -35,7 +35,9 @@ class PageTitle extends View {
 
 	/** Renders this view. **/
 	function render() '
-		<hgroup ref=$root>${...nodes}</hgroup>
+		<hgroup ref=$root>
+			${...nodes}
+		</hgroup>
 	';
 
 	/** Method invoked after this view is mounted. **/

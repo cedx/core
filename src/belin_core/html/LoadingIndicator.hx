@@ -35,6 +35,8 @@ class LoadingIndicator extends View {
 
 	/** Renders this view. **/
 	function render() '
-		<div hidden=$hidden>${...nodes}</div>
+		<div class="loading-indicator" hidden=$hidden>
+			${...nodes}
+		</div>
 	';
 }

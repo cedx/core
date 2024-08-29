@@ -16,8 +16,10 @@ class ActionBar extends View {
 
 	/** Renders this view. **/
 	function render() '
-		<aside class="container-fluid" ref=$root>
-			<div class="d-flex justify-content-between align-items-center">${...nodes}</div>
+		<aside class="action-bar container-fluid" ref=$root>
+			<div class="d-flex justify-content-between align-items-center">
+				${...nodes}
+			</div>
 		</aside>
 	';
 
