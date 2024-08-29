@@ -40,13 +40,15 @@ class Directory extends FileSystemEntity {
 	}
 
 	/** Copies this directory. **/
-	public inline function copy(newPath: String) copyDirectory(path, newPath);
+	public inline function copy(newPath: String): Void
+		copyDirectory(path, newPath);
 
 	/** Creates this directory if it doesn't exist. **/
-	public inline function create() FileSystem.createDirectory(path);
+	public inline function create(): Void
+		FileSystem.createDirectory(path);
 
 	/** Deletes this directory. **/
-	public function delete() {
+	public function delete(): Void {
 		clean();
 		FileSystem.deleteDirectory(path);
 	}

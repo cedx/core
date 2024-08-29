@@ -1,5 +1,6 @@
 package belin_core.io;
 
+import sys.FileStat;
 import sys.FileSystem;
 using haxe.io.Path;
 
@@ -31,16 +32,20 @@ abstract class FileSystemEntity {
 	public abstract function delete(): Void;
 
 	/** Checks whether this file system entity exists. **/
-	public inline function exists() return FileSystem.exists(path);
+	public inline function exists(): Bool
+		return FileSystem.exists(path);
 
 	/** Renames this file system entity. **/
-	public inline function rename(newPath: String) FileSystem.rename(path, newPath);
+	public inline function rename(newPath: String): Void
+		FileSystem.rename(path, newPath);
 
 	/** Calls the operating system's `stat()` function (or equivalent) on `path`. **/
-	public inline function stat() return FileSystem.stat(path);
+	public inline function stat(): FileStat
+		return FileSystem.stat(path);
 
 	/** Finds the type of the file system entity that a `path` points to. **/
-	public static function type(path: String) return FileSystem.isDirectory(path) ? Directory : File;
+	public static function type(path: String): FileSystemEntityType
+		return FileSystem.isDirectory(path) ? Directory : File;
 }
 
 /** Defines the type of a file system entity. **/

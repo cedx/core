@@ -16,10 +16,12 @@ class Archive extends FileSystemEntity {
 		return isAbsolute ? this : new Archive(FileSystem.absolutePath(path));
 
 	/** Copies this archive. **/
-	public inline function copy(newPath: String) File.copy(path, newPath);
+	public inline function copy(newPath: String): Void
+		File.copy(path, newPath);
 
 	/** Deletes this archive. **/
-	public inline function delete() FileSystem.deleteFile(path);
+	public inline function delete(): Void
+		FileSystem.deleteFile(path);
 
 	/** Extracts this archive into the specified destination `directory`. **/
 	public function extract(directory: String, stripComponents = 0): Outcome<Noise, Error>

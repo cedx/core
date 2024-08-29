@@ -18,14 +18,17 @@ class File extends FileSystemEntity {
 		return isAbsolute ? this : new File(FileSystem.absolutePath(path));
 
 	/** Copies this file. **/
-	public inline function copy(newPath: String) SysFile.copy(path, newPath);
+	public inline function copy(newPath: String): Void
+		SysFile.copy(path, newPath);
 
 	/** Deletes this file. **/
-	public inline function delete() FileSystem.deleteFile(path);
+	public inline function delete(): Void
+		FileSystem.deleteFile(path);
 
 	#if tink_chunk
 	/** Reads the file contents. **/
-	public inline function read(): Chunk return readAsBytes();
+	public inline function read(): Chunk
+		return readAsBytes();
 	#end
 
 	/** Reads the file contents as a list of bytes. **/
@@ -41,12 +44,13 @@ class File extends FileSystemEntity {
 		return SysFile.getContent(path);
 
 	/** Replaces in this file the substring which the `pattern` matches with the given `replacement`. **/
-	public function replace(pattern: EReg, replacement: String)
+	public function replace(pattern: EReg, replacement: String): Void
 		SysFile.saveContent(path, pattern.replace(SysFile.getContent(path), replacement));
 
 	#if tink_chunk
 	/** Writes the specified `chunk` to this file. **/
-	public inline function write(chunk: Chunk, mode: FileMode = Write) writeAsBytes(chunk, mode);
+	public inline function write(chunk: Chunk, mode: FileMode = Write): Void
+		writeAsBytes(chunk, mode);
 	#end
 
 	/** Writes the specified list of `bytes` to this file. **/

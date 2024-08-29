@@ -18,18 +18,18 @@ class LoadingIndicator extends View {
 
 	/** Starts the loading indicator. **/
 	public function start(): Void {
+		requestCount++;
 		Browser.document.body.classList.add("loading");
 		Callback.defer(() -> hidden = false);
-		requestCount++;
 	}
 
 	/** Stops the loading indicator. **/
 	public function stop(force = false): Void {
 		requestCount--;
 		if (force || requestCount <= 0) {
+			requestCount = 0;
 			Browser.document.body.classList.remove("loading");
 			Callback.defer(() -> hidden = true);
-			requestCount = 0;
 		}
 	}
 
