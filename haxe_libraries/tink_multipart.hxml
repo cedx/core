@@ -1,0 +1,5 @@
+# @install: lix --silent download "haxelib:/tink_multipart#0.4.0" into tink_multipart/0.4.0/haxelib
+-lib tink_http
+-lib tink_state
+-cp ${HAXE_LIBCACHE}/tink_multipart/0.4.0/haxelib/src
+-D tink_multipart=0.4.0
