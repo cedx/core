@@ -7,8 +7,8 @@
 # TODO --library coconut.data
 --library coconut.vdom
 # TODO --library intl
-# TODO --library tink_domspec
+--library tink_domspec
 # TODO --library tink_json
-# TODO --library tink_multipart
+--library tink_multipart
 # TODO --library tink_querystring
 # TODO --library tink_url
