@@ -3,9 +3,13 @@ package belin_core.html;
 import coconut.ui.Children;
 import coconut.ui.View;
 import js.Browser;
+import tink.domspec.ClassName;
 
 /** A component that shows up when the network is unavailable, and hides when connectivity is restored. **/
 class OfflineIndicator extends View {
+
+	/** The CSS classes applied to the root element. **/
+	@:attribute var className: ClassName = null;
 
 	/** The view children. **/
 	@:children var nodes: Children;
@@ -15,7 +19,9 @@ class OfflineIndicator extends View {
 
 	/** Renders this view. **/
 	function render() '
-		<if ${isOnline}>${...nodes}</if>
+		<if ${!isOnline}>
+			<div class=${className}>${...nodes}</div>
+		</if>
 	';
 
 	/** Method invoked after this view is mounted. **/
