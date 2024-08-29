@@ -18,6 +18,7 @@ function main() {
 		// new belin_core.data.PaginationTest(),
 		// new belin_core.data.SortTest(),
 		new belin_core.di.ContainerTest(),
+		#if (js && !nodejs) new belin_core.html.ElementToolsTest(), #end
 		// #if (js && !nodejs) new belin_core.html.FormToolsTest(), #end
 		// #if (nodejs || sys) new belin_core.io.NetworkDriveTest(), #end
 		// new belin_core.net.InternetAddressTest(),
