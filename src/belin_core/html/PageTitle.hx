@@ -21,7 +21,7 @@ class PageTitle extends View {
 	@:tracked @:attribute var text = "";
 
 	/** Value indicating whether the application is standalone. **/
-	@:tracked @:state var isStandalone = ["fullscreen", "minimal-ui", "standalone", "tabbed"]
+	@:tracked @:state var isStandalone: Bool = ["fullscreen", "minimal-ui", "standalone", "tabbed"]
 		.exists(mode -> Browser.window.matchMedia('(display-mode: $mode)').matches);
 
 	/** The application name. **/
