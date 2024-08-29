@@ -20,7 +20,7 @@ class OfflineIndicator extends View {
 	/** Renders this view. **/
 	function render() '
 		<if ${!isOnline}>
-			<div class=${className}>${...nodes}</div>
+			<div class=$className>${...nodes}</div>
 		</if>
 	';
 
