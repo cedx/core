@@ -11,12 +11,12 @@ using belin_core.html.ElementTools;
 
 	/** Tests the `removeChildren()` method. **/
 	public function removeChildren() {
-		final div = Browser.document.createDivElement();
-		div.appendChild(Browser.document.createParagraphElement());
-		asserts.assert(div.hasChildNodes());
+		final element = Browser.document.createDivElement();
+		element.appendChild(Browser.document.createParagraphElement());
+		asserts.assert(element.hasChildNodes());
 
-		div.removeChildren();
-		asserts.assert(!div.hasChildNodes());
+		element.removeChildren();
+		asserts.assert(!element.hasChildNodes());
 		return asserts.done();
 	}
 }
