@@ -35,6 +35,9 @@ enum abstract Theme(String) from String to String {
 /** A dropdown menu for switching the color mode. **/
 class ThemeDropdown extends View {
 
+	/** The alignement of the dropdown menu. **/
+	@:attribute var align: ThemeDropdownAlignment = Start;
+
 	/** The label of the dropdown menu. **/
 	@:attribute var label = "";
 
@@ -69,7 +72,7 @@ class ThemeDropdown extends View {
 				<i class="icon icon-fill">${theme.icon}</i>
 				<if ${label.length > 0}><span class="ms-2">$label</span></if>
 			</a>
-			<ul class="dropdown-menu dropdown-menu-end">
+			<ul class=${{"dropdown-menu": true, "dropdown-menu-end": align == End}}>
 				<for ${colorMode in AbstractEnum.getValues(Theme)}>
 					<li>
 						<button class="dropdown-item d-flex align-items-center justify-content-between" onclick=${changeTheme(colorMode)}>
@@ -88,4 +91,14 @@ class ThemeDropdown extends View {
 		mediaQuery.addEventListener("change", applyTheme, {passive: true});
 		beforeUnmounting(() -> mediaQuery.removeEventListener("change", applyTheme));
 	}
+}
+
+/** Defines the alignment of the dropdown menu. **/
+enum abstract ThemeDropdownAlignment(String) from String to String {
+
+	/** The dropdown menu is right aligned. **/
+	var End = "end";
+
+	/** The dropdown menu is left aligned. **/
+	var Start = "start";
 }
