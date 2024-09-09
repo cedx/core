@@ -6,7 +6,7 @@ using StringTools;
 
 /** Represents information relevant to the sorting of data items. **/
 @:forward(iterator, keyValueIterator, length, toArray)
-@:jsonParse(json -> belin_core.data.Sort.parse(json))
+@:jsonParse(belin_core.data.Sort.parse)
 @:jsonStringify(sort -> sort.toString())
 abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<SortOrder>> {
 
