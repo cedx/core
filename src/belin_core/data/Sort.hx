@@ -1,12 +1,13 @@
 package belin_core.data;
 
 import coconut.data.List;
-#if tink_sql import tink.sql.OrderBy.Order; #end
 using Lambda;
 using StringTools;
 
 /** Represents information relevant to the sorting of data items. **/
 @:forward(iterator, keyValueIterator, length, toArray)
+@:jsonParse(json -> belin_core.data.Sort.parse(json))
+@:jsonStringify(sort -> sort.toString())
 abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<SortOrder>> {
 
 	/** Creates a new sort. **/
@@ -71,8 +72,8 @@ abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<
 		return exists(attribute) ? this.replace(item -> item.name == attribute, item -> new Named(item.name, order)) : append(attribute, order);
 
 	/** Converts this sort to an SQL clause. **/
-	public function toSql(?ident: String -> String): String
-		return [for (item in this) '${ident != null ? ident(item.name) : item.name} ${item.value == Desc ? "DESC": "ASC"}'].join(", ");
+	public function toSql(?escape: String -> String): String
+		return [for (item in this) '${escape != null ? escape(item.name) : item.name} ${item.value}'].join(", ");
 
 	/** Returns a string representation of this object. **/
 	@:to public function toString(): String
@@ -80,15 +81,11 @@ abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<
 }
 
 /** Specifies the order of a sort parameter. **/
-#if tink_sql
-typedef SortOrder = Order;
-#else
-enum SortOrder {
+enum abstract SortOrder(String) from String to String {
 
 	/** The sort is ascending. **/
-	Asc;
+	var Asc = "ASC";
 
 	/** The sort is descending. **/
-	Desc;
+	var Desc = "DESC";
 }
-#end
