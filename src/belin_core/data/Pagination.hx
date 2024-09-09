@@ -3,7 +3,7 @@ package belin_core.data;
 import coconut.data.Model;
 
 /** Represents information relevant to the pagination of data items. **/
-@:jsonParse(json -> new core.data.Pagination(json))
+@:jsonParse(json -> new belin_core.data.Pagination(json))
 @:jsonStringify(pagination -> {
 	page: pagination.page,
 	pageSize: pagination.pageSize,

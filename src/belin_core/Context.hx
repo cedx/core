@@ -5,7 +5,7 @@ import js.bootstrap.Variant;
 #end
 
 /** Defines contextual modifiers. **/
-enum abstract Context(String) to String {
+enum abstract Context(String) from String to String {
 
 	/** A danger. **/
 	var Danger = #if bootstrap_bundle Variant.Danger #else "danger" #end;
