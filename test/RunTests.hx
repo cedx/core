@@ -21,7 +21,7 @@ function main() {
 		#if (js && !nodejs) new belin_core.html.ElementToolsTest(), #end
 		#if (js && !nodejs) new belin_core.html.FormToolsTest(), #end
 		// #if (nodejs || sys) new belin_core.io.NetworkDriveTest(), #end
-		// new belin_core.net.InternetAddressTest(),
+		new belin_core.net.InternetAddressTest(),
 		// new belin_core.net.MailAddressTest(),
 		// new belin_core.net.PhoneNumberTest(),
 		// new belin_core.net.UrlTest(),
