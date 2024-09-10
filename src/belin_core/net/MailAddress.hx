@@ -12,7 +12,8 @@ using StringTools;
 abstract MailAddress(String) {
 
 	/** The regular expression used to validate a mail address. **/
-	public static final pattern = ~/^[a-z\d!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z\d!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z\d](?:[a-z\d-]*[a-z\d])?\.)+[a-z\d](?:[a-z\d-]*[a-z\d])?$/i;
+	public static final pattern =
+		~/^[a-z\d!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z\d!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z\d](?:[a-z\d-]*[a-z\d])?\.)+[a-z\d](?:[a-z\d-]*[a-z\d])?$/i;
 
 	/** The host portion of the address. **/
 	public var host(get, never): String;

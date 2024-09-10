@@ -24,7 +24,7 @@ function main() {
 		new belin_core.net.InternetAddressTest(),
 		new belin_core.net.MailAddressTest(),
 		new belin_core.net.PhoneNumberTest(),
-		// new belin_core.net.UrlTest(),
+		new belin_core.net.UrlTest(),
 		// new belin_core.security.AccessLevelTest()
 	]);
 

@@ -3,7 +3,8 @@
 --define no-deprecation-warnings
 --define real-position
 # TODO --library asys
-# TODO --library coconut.data
+--library coconut.data
 # TODO --library smtpmailer
-# TODO --library tink_json
+--library tink_json
 # TODO --library tink_querystring
+--library tink_url

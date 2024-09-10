@@ -3,12 +3,12 @@
 --define js-es=6
 --define js-global=globalThis
 --define no-deprecation-warnings
-# TODO --library bootstrap_bundle
-# TODO --library coconut.data
+--library bootstrap_bundle
+--library coconut.data
 --library coconut.vdom
 # TODO --library intl
 --library tink_domspec
-# TODO --library tink_json
+--library tink_json
 --library tink_multipart
 # TODO --library tink_querystring
-# TODO --library tink_url
+--library tink_url

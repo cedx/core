@@ -4,8 +4,9 @@
 --define js-global=globalThis
 --define no-deprecation-warnings
 # TODO --library asys
-# TODO --library coconut.data
+--library coconut.data
 --library hxnodejs
 # TODO --library smtpmailer
-# TODO --library tink_json
+--library tink_json
 # TODO --library tink_querystring
+--library tink_url
