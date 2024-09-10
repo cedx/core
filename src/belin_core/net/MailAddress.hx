@@ -48,7 +48,7 @@ abstract MailAddress(String) {
 		return isValid && (hasDnsRecord(true) || hasDnsRecord(false));
 
 	/** Returns a value indicating whether DNS records exist for the host part of this address. **/
-	function hasDnsRecord(isMX = false): bool {
+	function hasDnsRecord(isMX = false): Bool {
 		final normalizedHost = '${Global.idn_to_ascii(host, Const.IDNA_NONTRANSITIONAL_TO_ASCII)}.';
 		final getDnsRecords = () -> Global.dns_get_record(normalizedHost, isMX ? Const.DNS_MX : Const.DNS_A);
 		return Global.checkdnsrr(normalizedHost, isMX ? "MX" : "A") || switch Error.catchExceptions(getDnsRecords) {
