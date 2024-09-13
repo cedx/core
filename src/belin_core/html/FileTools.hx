@@ -6,6 +6,14 @@ import js.html.File;
 import js.html.FilePropertyBag;
 import js.html.URL;
 import tink.domspec.Attributes.Target;
+
+#if tink_url
+import haxe.crypto.Base64;
+import haxe.io.Bytes;
+import js.Syntax;
+import tink.Url;
+#end
+
 using DateTools;
 
 /** Provides static extensions for files. **/
@@ -58,4 +66,11 @@ abstract class FileTools {
 
 		Browser.document.body.appendChild(frame);
 	}
+
+	#if tink_url
+	/** Converts the specified `file` to a data URL. **/
+	public static function toDataUrl(file: File): Promise<Url>
+		return Promise.ofJsPromise(Syntax.code("{0}.arrayBuffer()", file))
+			.next(arrayBuffer -> 'data:${file.type};base64,${Base64.encode(Bytes.ofData(arrayBuffer))}');
+	#end
 }

@@ -3,8 +3,15 @@ package belin_core.io;
 import haxe.io.Bytes;
 import sys.FileSystem;
 import sys.io.File as SysFile;
+
 #if tink_chunk
 import tink.Chunk;
+#end
+
+#if tink_url
+import haxe.crypto.Base64;
+import haxe.io.Mime;
+import tink.Url;
 #end
 
 /** A reference to a file on the file system. **/
@@ -46,6 +53,12 @@ class File extends FileSystemEntity {
 	/** Replaces in this file the substring which the `pattern` matches with the given `replacement`. **/
 	public function replace(pattern: EReg, replacement: String): Void
 		SysFile.saveContent(path, pattern.replace(SysFile.getContent(path), replacement));
+
+	#if tink_url
+	/** Converts this file to a data URL. **/
+	public function toDataUrl(mediaType: Mime): Url
+		return 'data:${mediaType};base64,${Base64.encode(readAsBytes())}';
+	#end
 
 	#if tink_chunk
 	/** Writes the specified `chunk` to this file. **/
