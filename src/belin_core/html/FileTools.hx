@@ -71,6 +71,6 @@ abstract class FileTools {
 	/** Converts the specified `file` to a data URL. **/
 	public static function toDataUrl(file: File): Promise<Url>
 		return Promise.ofJsPromise(Syntax.code("{0}.arrayBuffer()", file))
-			.next(arrayBuffer -> 'data:${file.type};base64,${Base64.encode(Bytes.ofData(arrayBuffer))}');
+			.next(arrayBuffer -> Url.parse('data:${file.type};base64,${Base64.encode(Bytes.ofData(arrayBuffer))}'));
 	#end
 }

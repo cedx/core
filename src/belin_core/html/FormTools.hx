@@ -1,6 +1,7 @@
 package belin_core.html;
 
 import js.html.Element;
+import js.html.FormData;
 import js.html.FormElement;
 import js.html.InputElement;
 import js.html.ObjectElement;
@@ -11,10 +12,13 @@ using StringTools;
 
 #if tink_multipart
 import js.html.File;
-import js.html.FormData;
 import tink.multipart.Multipart;
 import tink.multipart.Part;
 using tink.io.Source;
+#end
+
+#if tink_url
+import tink.url.Query;
 #end
 
 /** Provides static extensions for forms. **/
@@ -54,6 +58,15 @@ abstract class FormTools {
 		});
 
 		return new Multipart(parts);
+	}
+	#end
+
+	#if tink_url
+	/** Converts the specified form data into a query string. **/
+	public static function toQuery(formData: FormData): Query {
+		final builder = Query.build();
+		formData.forEach((value, name) -> if (value is String) builder.add(name, value));
+		return builder.toString();
 	}
 	#end
 
