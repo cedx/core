@@ -50,9 +50,9 @@ abstract class FormTools {
 
 	#if tink_multipart
 	/** Converts the specified form data into multipart data. **/
-	public static function toMultipart(formData: FormData): Multipart {
+	public static function toMultipart(form: FormElement): Multipart {
 		final parts = [];
-		formData.forEach((value, name) -> switch Std.downcast(value, File) {
+		new FormData(form).forEach((value, name) -> switch Std.downcast(value, File) {
 			case null: parts.push(Part.value(name, cast value));
 			case file: parts.push(Part.file(name, file.name, file.type, Source.ofJsFile(name, file).idealize(_ -> Source.EMPTY)));
 		});
@@ -63,9 +63,9 @@ abstract class FormTools {
 
 	#if tink_url
 	/** Converts the specified form data into a query string. **/
-	public static function toQuery(formData: FormData): Query {
+	public static function toQuery(form: FormElement): Query {
 		final builder = Query.build();
-		formData.forEach((value, name) -> if (value is String) builder.add(name, value));
+		new FormData(form).forEach((value, name) -> if (value is String) builder.add(name, value));
 		return builder.toString();
 	}
 	#end
