@@ -4,7 +4,5 @@
 --define real-position
 --library asys
 --library coconut.data
-# TODO --library smtpmailer
 --library tink_json
-# TODO --library tink_querystring
 --library tink_url

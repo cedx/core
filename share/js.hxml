@@ -6,9 +6,7 @@
 --library bootstrap_bundle
 --library coconut.data
 --library coconut.vdom
-# TODO --library intl
 --library tink_domspec
 --library tink_json
 --library tink_multipart
-# TODO --library tink_querystring
 --library tink_url

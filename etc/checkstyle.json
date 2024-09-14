@@ -2,7 +2,7 @@
 	"defaultSeverity": "ERROR",
 	"exclude": {
 		"path": "RELATIVE_TO_PROJECT",
-		"Dynamic": ["src/belin_core/AnonStruct"],
+		"Dynamic": ["src/belin_core/AnonStruct", "src/belin_core/caching/Cache:CacheSerializer"],
 		"ERegLiteral": ["src/belin_core/StringTools:split"],
 		"LineLength": ["src/belin_core/net/InternetAddress", "test/belin_core/DateRangeTest", "test/belin_core/data/SortTest"]
 	},
