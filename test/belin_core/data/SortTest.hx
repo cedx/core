@@ -82,7 +82,7 @@ import belin_core.data.Sort.SortOrder;
 		return assert(new Sort([new Named(input, Asc)]).exists("foo") == output);
 
 	/** Tests the `get()` method. **/
-	@:variant("foo", Some(core.data.Sort.SortOrder.Asc))
+	@:variant("foo", Some(belin_core.data.Sort.SortOrder.Asc))
 	@:variant("bar", None)
 	public function get(input: String, output: Option<SortOrder>) {
 		final option = new Sort([new Named("foo", Asc)]).get(input);

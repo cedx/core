@@ -14,9 +14,9 @@ function main() {
 		new belin_core.StringToolsTest(),
 		// #if asys new belin_core.caching.FileCacheTest(), #end
 		// new belin_core.caching.MemoryCacheTest(),
-		// new belin_core.data.ErrorsTest(),
-		// new belin_core.data.PaginationTest(),
-		// new belin_core.data.SortTest(),
+		new belin_core.data.ErrorsTest(),
+		new belin_core.data.PaginationTest(),
+		new belin_core.data.SortTest(),
 		new belin_core.di.ContainerTest(),
 		#if (js && !nodejs) new belin_core.html.ElementToolsTest(), #end
 		#if (js && !nodejs) new belin_core.html.FormToolsTest(), #end
