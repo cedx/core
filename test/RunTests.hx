@@ -25,7 +25,7 @@ function main() {
 		new belin_core.net.MailAddressTest(),
 		new belin_core.net.PhoneNumberTest(),
 		new belin_core.net.UrlTest(),
-		// new belin_core.security.AccessLevelTest()
+		new belin_core.security.AccessLevelTest()
 	]);
 
 	ANSI.stripIfUnavailable = false;
