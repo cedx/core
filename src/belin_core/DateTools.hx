@@ -15,11 +15,6 @@ abstract class DateTools {
 	public static function atMidnight(date: Date): Date
 		return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
 
-	/** Gets the number of days in the month of the specified date. **/
-	public static function daysInMonth(date: Date): Int return
-		#if php Std.parseInt(Global.date("t", Std.int(date.getTime() / 1.seconds())))
-		#else new Date(date.getFullYear(), date.getMonth() + 1, 0, 0, 0, 0).getDate() #end;
-
 	/** Gets the date of Easter for a given `year`. **/
 	public static function getEaster(year: Int): Date {
 		final n = year % 19;
@@ -60,7 +55,6 @@ abstract class DateTools {
 	public static function getQuarter(date: Date): Int
 		return Math.ceil((date.getMonth() + 1) / 3);
 
-	// TODO use DateRange !
 	/** Gets the first and last day of the week encompassing the specified date. **/
 	public static function getWeek(date: Date): Pair<Date, Date> {
 		final delta = -((date.getDay() + 6) % 7);

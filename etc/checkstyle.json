@@ -4,7 +4,7 @@
 		"path": "RELATIVE_TO_PROJECT",
 		"Dynamic": ["src/belin_core/AnonStruct"],
 		"ERegLiteral": ["src/belin_core/StringTools:split"],
-		"LineLength": ["src/belin_core/net/InternetAddress", "test/belin_core/data/SortTest"]
+		"LineLength": ["src/belin_core/net/InternetAddress", "test/belin_core/DateRangeTest", "test/belin_core/data/SortTest"]
 	},
 	"checks": [
 		{"type": "ArrayAccess"},

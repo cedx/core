@@ -17,15 +17,6 @@ using belin_core.DateTools;
 	public function atMidnight(input: String, output: String)
 		return assert(Date.fromString(input).atMidnight().getTime() == Date.fromString(output).getTime());
 
-	/** Tests the `daysInMonth()` method. **/
-	@:variant("2000-01-01", 31)
-	@:variant("2008-02-01", 29)
-	@:variant("2009-02-01", 28)
-	@:variant("2009-04-01", 30)
-	@:variant("2024-12-31", 31)
-	public function daysInMonth(input: String, output: Int)
-		return assert(Date.fromString(input).daysInMonth() == output);
-
 	/** Tests the `getEaster()` method. **/
 	@:variant(1901, "1901-04-07")
 	@:variant(1942, "1942-04-05")
