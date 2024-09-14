@@ -3,7 +3,7 @@
 --define js-es=6
 --define js-global=globalThis
 --define no-deprecation-warnings
-# TODO --library asys
+--library asys
 --library coconut.data
 --library hxnodejs
 # TODO --library smtpmailer

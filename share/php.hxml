@@ -2,7 +2,7 @@
 --define analyzer-optimize
 --define no-deprecation-warnings
 --define real-position
-# TODO --library asys
+--library asys
 --library coconut.data
 # TODO --library smtpmailer
 --library tink_json
