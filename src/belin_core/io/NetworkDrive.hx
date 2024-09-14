@@ -33,7 +33,7 @@ final class NetworkDrive {
 	public function new(drive: String, uncPath: String, user = "", password = "") {
 		this.drive = drive.toUpperCase();
 		this.password = password;
-		this.uncPath = normalizePath(uncPath);
+		this.uncPath = normalizeUncPath(uncPath);
 		this.user = user;
 	}
 
@@ -49,12 +49,21 @@ final class NetworkDrive {
 		);
 	}
 
-	/** TODO Returns the local path corresponding to the specified file URI. **/
+	/** Returns the local path corresponding to the specified file URI. **/
 	public static function resolveUri(uri: Url, ?options: {?mount: Bool, ?persistent: Bool}): Promise<String> {
 		final host = uri.host.name ?? "localhost";
-		var path = uri.path.removeTrailingSlashes().urlDecode();
+		final path = uri.path.urlDecode().removeTrailingSlashes();
+		if (uri.scheme == "file" && host == "localhost") {
+			final localPath = (~/^\/[A-Z]:/i.match(path) ? path.substr(1) : path).normalize();
+			return Promise.resolve(Sys.systemName() == "Windows" ? localPath.replace("/", "\\") : localPath);
+		}
+
 		final drive = fromUri(uri);
-		return Promise.resolve("TODO");
+		final promise = (options?.mount ?? false)
+			? drive.isMounted.next(isMounted -> isMounted ? Noise : drive.mount(options?.persistent ?? false))
+			: Promise.NOISE;
+
+		return promise.next(_ -> drive.resolve('/${path.substr(1).split("/").slice(1).join("/")}'));
 	}
 	#end
 
@@ -66,7 +75,7 @@ final class NetworkDrive {
 
 	/** Resolves the specified UNC path into a local path. **/
 	public function resolve(path: String): String {
-		path = normalizePath(path);
+		path = normalizeUncPath(path);
 		return if (!path.startsWith("\\\\")) '$drive:$path' else path.startsWith(uncPath) ? '$drive:${path.substr(uncPath.length)}' : path;
 	}
 
@@ -84,7 +93,7 @@ final class NetworkDrive {
 	}
 
 	/** Normalizes the specified UNC path. **/
-	function normalizePath(path: String): String
+	function normalizeUncPath(path: String): String
 		return path.removeTrailingSlashes().replace("/", "\\");
 }
 #end
