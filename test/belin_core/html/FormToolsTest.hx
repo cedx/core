@@ -109,6 +109,16 @@ using tink.io.Source;
 	}
 	#end
 
+	#if tink_url
+	/** Tests the `toQuery()` method. **/
+	public function toQuery() {
+		final form = new FormData();
+		form.set("foo", "bar");
+		form.set("baz", "qux");
+		return assert(form.toQuery() == "foo=bar&baz=qux");
+	}
+	#end
+
 	/** Tests the `trim()` method. **/
 	public function trim() {
 		// It should trim the value of a single form element.
