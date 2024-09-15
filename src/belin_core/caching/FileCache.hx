@@ -59,7 +59,7 @@ class FileCache implements Cache {
 
 	/** Gets a value indicating whether this cache contains the specified `key`. **/
 	public function exists(key: String): Promise<Bool>
-		return cacheExpired(buildKey(key)).next(expired -> !expired);
+		return cacheExpired(key).next(expired -> !expired);
 
 	/** Gets the value associated with the specified `key`. Returns `None` if the `key` does not exist. **/
 	public function get<T>(key: String): Promise<Option<T>>
@@ -94,17 +94,10 @@ class FileCache implements Cache {
 				? Promise.resolve(cast this)
 				: Promise.reject(new Error("Unable to write the cache file."));
 		#else
-			return AsyncFile.saveContent(file, serializedValue).next(_ -> {
-				final trigger = Promise.trigger();
-				Fs.utimes(file, Date.now(), expires, error -> error != null
-					? trigger.reject(Error.withData("Unable to write the cache file.", error))
-					: trigger.resolve(cast this));
-				trigger.asPromise();
-			});
-			// return AsyncFile.saveContent(file, serializedValue)
-			// 	.next(_ -> Promise.irreversible((resolve, reject) -> Fs.utimes(file, Date.now(), expires, error -> error != null
-			// 		? reject(Error.withData("Unable to write the cache file.", error))
-			// 		: resolve(cast this))));
+			return AsyncFile.saveContent(file, serializedValue)
+				.next(_ -> Promise.irreversible((resolve, reject) -> Fs.utimes(file, Date.now(), expires, error -> error != null
+					? reject(Error.withData("Unable to write the cache file.", error))
+					: resolve(cast this))));
 		#end
 	}
 
@@ -120,6 +113,6 @@ class FileCache implements Cache {
 
 	/** Returns the path of the cache file corresponding to the given `key`. **/
 	function getFilePath(key: String): String
-		return Path.join([path, '$key$fileSuffix']);
+		return Path.join([path, '${buildKey(key)}$fileSuffix']);
 }
 #end
