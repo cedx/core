@@ -1,15 +1,12 @@
 package belin_core.html;
 
-import js.Browser;
-using belin_core.html.FormTools;
-
-#if tink_multipart
 import haxe.io.Mime;
+import js.Browser;
 import js.html.File;
 import js.html.FormData;
 using StringTools;
+using belin_core.html.FormTools;
 using tink.io.Source;
-#end
 
 /** Tests the features of the `FormTools` class. **/
 @:asserts final class FormToolsTest {
@@ -91,7 +88,6 @@ using tink.io.Source;
 		return asserts.done();
 	}
 
-	#if tink_multipart
 	/** Tests the `toMultipart()` method. **/
 	public function toMultipart() {
 		final form = new FormData();
@@ -107,9 +103,7 @@ using tink.io.Source;
 
 		return asserts;
 	}
-	#end
 
-	#if tink_url
 	/** Tests the `toQuery()` method. **/
 	public function toQuery() {
 		final form = new FormData();
@@ -117,7 +111,6 @@ using tink.io.Source;
 		form.set("baz", "qux");
 		return assert(form.toQuery() == "foo=bar&baz=qux");
 	}
-	#end
 
 	/** Tests the `trim()` method. **/
 	public function trim() {

@@ -8,7 +8,6 @@ using StringTools;
 	/** Creates a new test. **/
 	public function new() {}
 
-	#if tink_url
 	/** Tests the `fromUri()` method. **/
 	@:variant("smb://localhost/folder", "Z", "\\\\localhost\\folder", "", "")
 	@:variant("smb://foo:bar@192.168.100.1/dir/file.txt?drive=D", "D", "\\\\192.168.100.1\\dir", "foo", "bar")
@@ -33,7 +32,6 @@ using StringTools;
 
 		return asserts;
 	}
-	#end
 
 	/** Tests the `resolve()` method. **/
 	@:variant("\\\\localhost\\share\\folder\\file.txt", "Z:\\folder\\file.txt")

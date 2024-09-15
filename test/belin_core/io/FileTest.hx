@@ -1,0 +1,16 @@
+package belin_core.io;
+
+import haxe.io.Mime;
+
+/** Tests the features of the `File` class. **/
+@:asserts final class FileTest {
+
+	/** Creates a new test. **/
+	public function new() {}
+
+	/** Tests the `toDataUrl()` method. **/
+	public function toDataUrl() {
+		final url = new File("AUTHORS.txt").toDataUrl(Mime.TextPlain);
+		return assert(url == "data:text/plain;base64,Q8OpZHJpYyBCZWxpbiA8Y2VkcmljQGJlbGluLmlvPg0K");
+	}
+}
