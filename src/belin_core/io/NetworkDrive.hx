@@ -2,9 +2,14 @@ package belin_core.io;
 
 #if asys
 import asys.FileSystem;
-import asys.io.Process;
 using StringTools;
 using haxe.io.Path;
+
+#if nodejs
+import js.node.ChildProcess;
+#else
+import asys.io.Process;
+#end
 
 #if tink_url
 import tink.Url;
@@ -85,11 +90,21 @@ final class NetworkDrive {
 
 	/** Runs the `net use` command. **/
 	function netUse(arguments: Array<String>): Promise<Noise> {
-		final process = new Process(Path.join([Sys.getEnv("windir") ?? "C:/Windows", "System32/net.exe"]), ["use"].concat(arguments));
-		return process.exitCode().next(exitCode -> {
-			process.close();
-			exitCode == 0 ? Noise : Error.withData('The "net use" command failed.', exitCode);
-		});
+		final args = ["use"].concat(arguments);
+		final net = Path.join([Sys.getEnv("windir") ?? "C:/Windows", "System32/net.exe"]);
+
+		#if nodejs
+			return Promise.irreversible((resolve, reject) -> {
+				final callback = (error, stdout, stderr) -> error != null ? reject(Error.ofJsError(error)) : resolve(Noise);
+				ChildProcess.execFile(net, args, callback);
+			});
+		#else
+			final process = new Process(net, args);
+			return process.exitCode().next(exitCode -> {
+				process.close();
+				exitCode == 0 ? Noise : Error.withData('The "net use" command failed.', exitCode);
+			});
+		#end
 	}
 
 	/** Normalizes the specified UNC path. **/
