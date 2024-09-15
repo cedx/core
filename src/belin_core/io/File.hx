@@ -2,7 +2,7 @@ package belin_core.io;
 
 import haxe.io.Bytes;
 import sys.FileSystem;
-import sys.io.File as SysFile;
+import sys.io.File as SyncFile;
 
 #if tink_chunk
 import tink.Chunk;
@@ -26,7 +26,7 @@ class File extends FileSystemEntity {
 
 	/** Copies this file. **/
 	public inline function copy(newPath: String): Void
-		SysFile.copy(path, newPath);
+		SyncFile.copy(path, newPath);
 
 	/** Deletes this file. **/
 	public inline function delete(): Void
@@ -40,7 +40,7 @@ class File extends FileSystemEntity {
 
 	/** Reads the file contents as a list of bytes. **/
 	public inline function readAsBytes(): Bytes
-		return SysFile.getBytes(path);
+		return SyncFile.getBytes(path);
 
 	/** Reads the file contents as lines of text. **/
 	public function readAsLines(): Array<String>
@@ -48,11 +48,11 @@ class File extends FileSystemEntity {
 
 	/** Reads the file contents as a string. **/
 	public inline function readAsString(): String
-		return SysFile.getContent(path);
+		return SyncFile.getContent(path);
 
 	/** Replaces in this file the substring which the `pattern` matches with the given `replacement`. **/
 	public function replace(pattern: EReg, replacement: String): Void
-		SysFile.saveContent(path, pattern.replace(SysFile.getContent(path), replacement));
+		SyncFile.saveContent(path, pattern.replace(SyncFile.getContent(path), replacement));
 
 	#if tink_url
 	/** Converts this file to a data URL. **/
@@ -69,21 +69,21 @@ class File extends FileSystemEntity {
 	/** Writes the specified list of `bytes` to this file. **/
 	public function writeAsBytes(bytes: Bytes, mode: FileMode = Write) switch mode {
 		case Append:
-			final output = SysFile.append(path);
+			final output = SyncFile.append(path);
 			output.writeFullBytes(bytes, 0, bytes.length);
 			output.close();
 		case _:
-			SysFile.saveBytes(path, bytes);
+			SyncFile.saveBytes(path, bytes);
 	}
 
 	/** Writes the specified string `content` to this file. **/
 	public function writeAsString(content: String, mode: FileMode = Write) switch mode {
 		case Append:
-			final output = SysFile.append(path);
+			final output = SyncFile.append(path);
 			output.writeString(content);
 			output.close();
 		case _:
-			SysFile.saveContent(path, content);
+			SyncFile.saveContent(path, content);
 	}
 }
 

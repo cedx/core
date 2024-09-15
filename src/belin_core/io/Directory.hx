@@ -2,7 +2,7 @@ package belin_core.io;
 
 import belin_core.io.FileSystemEntity.FileSystemEntityType;
 import sys.FileSystem;
-import sys.io.File as SysFile;
+import sys.io.File as SyncFile;
 using haxe.io.Path;
 using StringTools;
 
@@ -68,7 +68,7 @@ class Directory extends FileSystemEntity {
 		if (FileSystem.isDirectory(input)) copyDirectory(input, output);
 		else {
 			FileSystem.createDirectory(output.directory());
-			SysFile.copy(input, output);
+			SyncFile.copy(input, output);
 		}
 	}
 
