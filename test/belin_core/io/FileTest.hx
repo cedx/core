@@ -10,7 +10,8 @@ import haxe.io.Mime;
 
 	/** Tests the `toDataUrl()` method. **/
 	public function toDataUrl() {
+		final base64 = Sys.systemName() == "Windows" ? "Q8OpZHJpYyBCZWxpbiA8Y2VkcmljQGJlbGluLmlvPg0K" : "Q8OpZHJpYyBCZWxpbiA8Y2VkcmljQGJlbGluLmlvPgo=";
 		final url = new File("AUTHORS.txt").toDataUrl(Mime.TextPlain);
-		return assert(url == "data:text/plain;base64,Q8OpZHJpYyBCZWxpbiA8Y2VkcmljQGJlbGluLmlvPg0K");
+		return assert(url == 'data:text/plain;base64,$base64');
 	}
 }
