@@ -36,7 +36,7 @@ enum abstract Theme(String) from String to String {
 class ThemeDropdown extends View {
 
 	/** The alignement of the dropdown menu. **/
-	@:attribute var align: ThemeDropdownAlignment = Start;
+	@:attribute var align: ThemeDropdownAlignment = End;
 
 	/** The label of the dropdown menu. **/
 	@:attribute var label = "";
