@@ -7,6 +7,10 @@ implemented in [Haxe](https://haxe.org).
 > This library is dedicated to personal/side projects.  
 > **Use at your own risk!** No support will be provided.
 
+## Documentation
+- [User guide](https://github.com/cedx/core/wiki)
+- [Examples](https://github.com/cedx/core/tree/main/example)
+
 ## Development
 - [Git repository](https://github.com/cedx/core)
 - [Submit an issue](https://github.com/cedx/core/issues)
