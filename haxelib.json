@@ -8,5 +8,5 @@
 	"releasenote": "Initial release.",
 	"tags": ["core", "cross", "framework", "library"],
 	"url": "https://github.com/cedx/core",
-	"version": "0.1.0"
+	"version": "1.0.0"
 }

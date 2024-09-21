@@ -7,14 +7,14 @@
 	"private": true,
 	"repository": "cedx/core",
 	"type": "commonjs",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"author": {
 		"email": "cedric@belin.io",
 		"name": "Cédric Belin",
 		"url": "https://belin.io"
 	},
 	"devDependencies": {
-		"playwright": "^1.47.1",
+		"playwright": "^1.47.2",
 		"serve-handler": "^6.1.5"
 	},
 	"engines": {

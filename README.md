@@ -1,5 +1,5 @@
 # Belin.io Core
-![Haxe](https://badgen.net/badge/haxe/%3E%3D4.3.0/green) ![Version](https://badgen.net/badge/project/v0.1.0/blue) ![License](https://badgen.net/badge/licence/Proprietary/red)
+![Haxe](https://badgen.net/badge/haxe/%3E%3D4.3.0/green) ![Version](https://badgen.net/badge/project/v1.0.0/blue) ![License](https://badgen.net/badge/licence/Proprietary/red)
 
 Base library of [Cédric Belin](https://belin.io), full stack developer,
 implemented in [Haxe](https://haxe.org).
