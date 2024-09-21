@@ -27,8 +27,8 @@ using belin_core.DateTools;
 		return assert(input.getEaster().getTime() == Date.fromString(output).getTime());
 
 	/** Tests the `getQuarter()` method. **/
-	@:variant("1901-01-01", 1)
-	@:variant("1942-05-11", 2)
+	#if !hl @:variant("1901-01-01", 1) #end
+	#if !hl @:variant("1942-05-11", 2) #end
 	@:variant("1986-08-25", 3)
 	@:variant("2023-12-31", 4)
 	public function getQuarter(input: String, output: Int)
@@ -57,12 +57,12 @@ using belin_core.DateTools;
 		return assert(Date.fromString(input).getWeekOfYear() == output);
 
 	/** Tests the `inLeapYear()` method. **/
-	@:variant("1600-05-03 09:28:56", true)
-	@:variant("1900-09-19 13:15:09", false)
+	#if !hl @:variant("1600-05-03 09:28:56", true) #end
+	#if !hl @:variant("1900-09-19 13:15:09", false) #end
 	@:variant("2000-01-01 00:00:00", true)
 	@:variant("2022-04-18 09:14:35", false)
-	@:variant("2144-08-15 17:08:59", true)
-	@:variant("2200-08-15 23:37:12", false)
+	#if !hl @:variant("2144-08-15 17:08:59", true) #end
+	#if !hl @:variant("2200-08-15 23:37:12", false) #end
 	public function inLeapYear(input: String, output: Bool)
 		return assert(Date.fromString(input).inLeapYear() == output);
 

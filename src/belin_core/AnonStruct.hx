@@ -37,7 +37,7 @@ abstract class AnonStruct {
 	/** Removes whitespace from both ends of the string properties of the specified `object`. **/
 	public static function trim<T: {}>(object: T): T {
 		for (field in Reflect.fields(object)) {
-			final value = Reflect.field(object, field);
+			final value: Any = Reflect.field(object, field);
 			if (value is String) Reflect.setField(object, field, (value: String).trim());
 		}
 

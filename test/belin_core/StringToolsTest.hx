@@ -30,6 +30,7 @@ final class StringToolsTest {
 
 	/** Tests the `split()` method. **/
 	@:variant("", 1, [])
+	@:variant("a", 1, ["a"])
 	@:variant("foo", 1, ["f", "o", "o"])
 	@:variant("foo", 2, ["fo", "o"])
 	@:variant("foobar", 3, ["foo", "bar"])

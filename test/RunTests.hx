@@ -12,7 +12,7 @@ function main() {
 		new belin_core.DateToolsTest(),
 		new belin_core.NumberToolsTest(),
 		new belin_core.StringToolsTest(),
-		#if asys new belin_core.caching.FileCacheTest(), #end
+		#if (asys && !hl) new belin_core.caching.FileCacheTest(), #end
 		new belin_core.caching.MemoryCacheTest(),
 		new belin_core.data.ErrorsTest(),
 		new belin_core.data.PaginationTest(),

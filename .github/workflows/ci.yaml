@@ -3,15 +3,18 @@ on: push
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.target == 'hl' && 'windows-latest' || 'ubuntu-latest'}}
     strategy:
       matrix:
-        target: [js, nodejs, php]
+        target: [hl, js, nodejs, php]
     steps:
       - name: Fetch sources
         uses: actions/checkout@v4
       - name: Set up Lix
         uses: lix-pm/setup-lix@master
+      - name: Set up HashLink
+        if: matrix.target == 'hl'
+        uses: cedx/setup-hashlink@v5
       - name: Set up Node.js
         if: matrix.target == 'js' || matrix.target == 'nodejs'
         uses: actions/setup-node@v4
@@ -28,7 +31,9 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
-          path: ~/haxe
+          path: |
+            ~/haxe
+            ~/AppData/Roaming/haxe
           key: haxe-${{runner.os}}-lix-${{hashFiles('.haxerc', 'haxe_libraries/*.hxml')}}
           restore-keys: haxe-${{runner.os}}-lix-
       - name: Install Haxe dependencies

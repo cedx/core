@@ -1,0 +1,9 @@
+--class-path src
+--define analyzer-optimize
+--define hl-ver=1.14.0
+--define no-deprecation-warnings
+--define real-position
+--library asys
+--library coconut.data
+--library tink_json
+--library tink_url

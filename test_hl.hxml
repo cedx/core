@@ -1,9 +1,8 @@
 --class-path test
 --dce full
---define php-front=tests.php
+--hl var/tests.hl
 --library deep_equal
 --library tink_unittest
 --main RunTests
---php var
-share/php.hxml
---cmd php var/tests.php
+share/hl.hxml
+--cmd hl var/tests.hl

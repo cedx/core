@@ -2,7 +2,6 @@
 --dce full
 --js var/tests.js
 --library deep_equal
-# TODO --library tink_stringly
 --library tink_unittest
 --main RunTests
 share/js.hxml

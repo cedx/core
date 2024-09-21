@@ -20,6 +20,7 @@ abstract class StringTools {
 
 	/** Converts a string to an array. **/
 	public static function split(value: String, splitLength = 1): Array<String> {
+		if (value.length == 0) return [];
 		if (splitLength <= 1) return value.split("");
 		if (splitLength >= value.length) return [value];
 

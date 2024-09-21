@@ -25,8 +25,19 @@ package belin_core.data;
 	@:variant([], [])
 	@:variant(["foo" => "bar"], [["foo", "bar"]])
 	@:variant(["foo" => "bar", "baz" => "qux"], [["foo", "bar"], ["baz", "qux"]])
-	public function toError(input: Map<String, String>, output: Array<Array<String>>)
-		return compare(output, (new Errors(input): Error).data);
+	public function toError(input: Map<String, String>, output: Array<Array<String>>) {
+		final data: Array<Array<String>> = (new Errors(input): Error).data;
+		asserts.assert(data.length == output.length);
+
+		final keys = data.map(entry -> entry[0]);
+		final values = data.map(entry -> entry[1]);
+		for (entry in output) {
+			asserts.assert(keys.contains(entry[0]));
+			asserts.assert(values.contains(entry[1]));
+		}
+
+		return asserts.done();
+	}
 
 	/** Tests the `with()` method. **/
 	public function with() {
