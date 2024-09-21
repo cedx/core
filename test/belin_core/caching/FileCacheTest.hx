@@ -8,7 +8,7 @@ using haxe.io.Path;
 @:asserts final class FileCacheTest {
 
 	/** The cache instance used by the tests. **/
-	var cache: FileCache;
+	var cache: FileCache = new FileCache("var/cache");
 
 	/** Creates a new test. **/
 	public function new() {}
@@ -22,8 +22,9 @@ using haxe.io.Path;
 
 	/** This method is invoked before each test. **/
 	@:before public function before() {
-		FileSystem.createDirectory("var/cache");
-		cache = new FileCache("var/cache");
+		if (FileSystem.exists(cache.path)) after();
+		else FileSystem.createDirectory(cache.path);
+		cache = new FileCache(cache.path);
 		return Noise;
 	}
 

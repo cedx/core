@@ -8,7 +8,7 @@ import php.Global;
 abstract class NumberTools {
 
 	/** Rounds a floating-point number. **/
-	public static #if php inline #end function round(value: Float, precision = 0) {
+	public static #if php inline #end function round(value: Float, precision = 0): Float {
 		#if php
 			return Global.round(value, precision);
 		#else

@@ -1,14 +1,9 @@
 package belin_core.caching;
 
-#if php
-import php.Lib;
-#else
-import haxe.Serializer;
-import haxe.Unserializer;
-#end
-
 import belin_core.caching.Cache.CacheOptions;
 import belin_core.caching.Cache.CacheSerializer;
+import haxe.Serializer;
+import haxe.Unserializer;
 using DateTools;
 
 /** Implements an in-memory cache. **/
@@ -30,10 +25,7 @@ class MemoryCache implements Cache {
 	public function new(?options: CacheOptions) {
 		defaultDuration = options?.defaultDuration ?? 0;
 		keyPrefix = options?.keyPrefix ?? "";
-		serializer = options?.serializer ?? {
-			serialize: #if php Lib.serialize #else Serializer.run #end,
-			unserialize: #if php Lib.unserialize #else Unserializer.run #end
-		};
+		serializer = options?.serializer ?? {serialize: Serializer.run, unserialize: Unserializer.run};
 	}
 
 	/** Removes all entries from this cache. **/

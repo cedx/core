@@ -1,24 +1,25 @@
 package belin_core.caching;
 
-#if (asys && !hl && !java)
+#if (asys && !hl)
 import asys.FileSystem;
 import asys.io.File as AsyncFile;
 import belin_core.caching.Cache.CacheOptions;
 import belin_core.caching.Cache.CacheSerializer;
+import haxe.Serializer;
+import haxe.Unserializer;
 import haxe.crypto.Md5;
 using DateTools;
 using Lambda;
 using StringTools;
 using haxe.io.Path;
 
-#if php
-import php.Const;
-import php.Lib;
-import php.Global;
-#else
-import haxe.Serializer;
-import haxe.Unserializer;
+#if java
+import java.io.File;
+#elseif nodejs
 import js.node.Fs;
+#elseif php
+import php.Const;
+import php.Global;
 #end
 
 /** Implements a cache using files. **/
@@ -45,10 +46,7 @@ class FileCache implements Cache {
 		defaultDuration = options?.defaultDuration ?? 0;
 		fileSuffix = options?.fileSuffix ?? ".dat";
 		keyPrefix = options?.keyPrefix ?? "";
-		serializer = options?.serializer ?? {
-			serialize: #if php Lib.serialize #else Serializer.run #end,
-			unserialize: #if php Lib.unserialize #else Unserializer.run #end
-		};
+		serializer = options?.serializer ?? {serialize: Serializer.run, unserialize: Unserializer.run};
 	}
 
 	/** Removes all entries from this cache. **/
@@ -89,15 +87,22 @@ class FileCache implements Cache {
 		final file = getFilePath(key);
 		final serializedValue = serializer.serialize(value);
 
-		#if php
-			return Global.file_put_contents(file, serializedValue, Const.LOCK_EX) && Global.touch(file, Std.int(expires.getTime() / 1.seconds()), Global.time())
-				? Promise.resolve(cast this)
-				: Promise.reject(new Error("Unable to write the cache file."));
-		#else
+		#if java
+			final message = "Unable to write the cache file.";
+			return AsyncFile.saveContent(file, serializedValue)
+				.next(_ -> Error.catchExceptions(() -> new File(file).setLastModified(expires.getTime()), error -> Error.withData(message, error)))
+				.next(success -> success ? Success(cast this) : Failure(new Error(message)));
+		#elseif nodejs
 			return AsyncFile.saveContent(file, serializedValue)
 				.next(_ -> Promise.irreversible((resolve, reject) -> Fs.utimes(file, Date.now(), expires, error -> error != null
 					? reject(Error.withData("Unable to write the cache file.", error))
 					: resolve(cast this))));
+		#elseif php
+			return Global.file_put_contents(file, serializedValue, Const.LOCK_EX) && Global.touch(file, Std.int(expires.getTime() / 1.seconds()), Global.time())
+				? Promise.resolve(cast this)
+				: Promise.reject(new Error("Unable to write the cache file."));
+		#else
+			return Promise.reject(new Error(NotImplemented, "Unable to write the cache file."));
 		#end
 	}
 
