@@ -1,0 +1,8 @@
+--class-path test
+--dce full
+--jvm var/tests.jar
+--library deep_equal
+--library tink_unittest
+--main RunTests
+share/java.hxml
+--cmd java -jar var/tests.jar

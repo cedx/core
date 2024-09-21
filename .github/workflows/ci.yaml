@@ -6,7 +6,7 @@ jobs:
     runs-on: ${{matrix.target == 'hl' && 'windows-latest' || 'ubuntu-latest'}}
     strategy:
       matrix:
-        target: [hl, js, nodejs, php]
+        target: [hl, java, js, nodejs, php]
     steps:
       - name: Fetch sources
         uses: actions/checkout@v4
@@ -15,6 +15,12 @@ jobs:
       - name: Set up HashLink
         if: matrix.target == 'hl'
         uses: cedx/setup-hashlink@v5
+      - name: Set up Java
+        if: matrix.target == 'java'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
       - name: Set up Node.js
         if: matrix.target == 'js' || matrix.target == 'nodejs'
         uses: actions/setup-node@v4

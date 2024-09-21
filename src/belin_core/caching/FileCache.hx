@@ -1,6 +1,6 @@
 package belin_core.caching;
 
-#if (asys && !hl)
+#if (asys && !hl && !java)
 import asys.FileSystem;
 import asys.io.File as AsyncFile;
 import belin_core.caching.Cache.CacheOptions;
