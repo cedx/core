@@ -6,7 +6,9 @@ import sys.io.File as SyncFile;
 using haxe.io.Path;
 using StringTools;
 
-#if nodejs
+#if java
+import java.lang.System;
+#elseif nodejs
 import js.node.Os;
 #elseif php
 import php.Global;
@@ -99,7 +101,9 @@ class Directory extends FileSystemEntity {
 
 	/** Gets the path to the system temporary directory. **/
 	static #if (nodejs || php) inline #end function systemTempDirectory(): String {
-		#if nodejs
+		#if java
+			return System.getProperty("java.io.tmpdir");
+		#elseif nodejs
 			return Os.tmpdir();
 		#elseif php
 			return Global.sys_get_temp_dir();
