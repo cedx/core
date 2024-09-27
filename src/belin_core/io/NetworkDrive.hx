@@ -23,7 +23,7 @@ final class NetworkDrive {
 
 	/** Value indicating whether this network drive is mounted.**/
 	public var isMounted(get, never): Future<Bool>;
-		inline function get_isMounted() return FileSystem.exists('$drive:\\');
+		inline function get_isMounted() return FileSystem.exists('$drive:/');
 
 	/** The underlying UNC path. **/
 	public final uncPath: String;
