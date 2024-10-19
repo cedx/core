@@ -5,7 +5,7 @@
 	"description": "Base library of Cédric Belin, full stack developer.",
 	"license": "MIT",
 	"name": "belin_core",
-	"releasenote": "The `Container.get()` method instantiates the service if the `id` supplied is the qualified name of a known class. [java] Enabled the `FileCache` class. [php] Use the Haxe serializer instead of the native one in `Cache` classes.",
+	"releasenote": "The `Container.get()` method creates the service if the `id` supplied is the qualified name of a known class. [java] Enable the `FileCache` class. [php] Use the Haxe serializer instead of the native one in `Cache` classes.",
 	"tags": ["coconut", "core", "cross", "framework", "library", "tink"],
 	"url": "https://github.com/cedx/core",
 	"version": "1.1.0"
