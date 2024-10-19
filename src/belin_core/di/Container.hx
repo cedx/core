@@ -18,10 +18,13 @@ class Container {
 
 	/** Gets the service registered with the specified identifier. **/
 	public function get<T>(id: String): Option<T> {
-		if (!services.exists(id)) {
-			if (!factories.exists(id)) return None;
-			set(id, factories[id]());
-		}
+		if (!services.exists(id))
+			if (factories.exists(id)) set(id, factories[id]());
+			else {
+				final type = Type.resolveClass(id);
+				if (type == null) return None;
+				set(id, Type.createInstance(type, []));
+			}
 
 		return Some(services[id]);
 	}

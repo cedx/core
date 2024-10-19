@@ -23,14 +23,15 @@ package belin_core.di;
 		final object = {};
 		asserts.assert(container.set(token, object).get(token).equals(object));
 		asserts.assert(container.get("UnknownToken") == None);
+		asserts.compare([], container.set(token, object).get(Type.getClassName(Array)).sure());
 		return asserts.done();
 	}
 
 	/** Tests the `register()` method. **/
 	public function register() {
 		final container = new Container();
-		asserts.assert(!container.exists(token));
 		final object = {};
+		asserts.assert(!container.exists(token));
 		asserts.assert(container.register(token, () -> object).get(token).equals(object));
 		return asserts.done();
 	}
@@ -47,8 +48,8 @@ package belin_core.di;
 	/** Tests the `set()` method. **/
 	public function set() {
 		final container = new Container();
-		asserts.assert(!container.exists(token));
 		final object = {};
+		asserts.assert(!container.exists(token));
 		asserts.assert(container.set(token, object).get(token).equals(object));
 		return asserts.done();
 	}
