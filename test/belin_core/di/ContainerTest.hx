@@ -23,7 +23,7 @@ package belin_core.di;
 		final object = {};
 		asserts.assert(container.set(token, object).get(token).equals(object));
 		asserts.assert(container.get("UnknownToken") == None);
-		asserts.compare([], container.set(token, object).get(Type.getClassName(Array)).sure());
+		asserts.compare([], container.set(token, object).get(Type.getClassName(Array)).orNull());
 		return asserts.done();
 	}
 
