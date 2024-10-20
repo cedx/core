@@ -8,5 +8,5 @@
 	"releasenote": "The `Container.get()` method creates the service if the `id` supplied is the qualified name of a known class. [java] Enable the `FileCache` class. [php] Use the Haxe serializer instead of the native one in `Cache` classes.",
 	"tags": ["coconut", "core", "cross", "framework", "library", "tink"],
 	"url": "https://github.com/cedx/core",
-	"version": "1.1.0"
+	"version": "1.2.0"
 }
