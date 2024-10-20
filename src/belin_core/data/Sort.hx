@@ -16,7 +16,7 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 
 	/** Appends the specified attribute to this sort. **/
 	public function append(attribute: String, order: SortOrder): Sort
-		return this.filter(item -> item.name != attribute).append(new Named(attribute, order));
+		return this.filter(item -> item.name != attribute).append(new SortEntry(attribute, order));
 
 	/** Gets the attribute/order pair at the specified index. **/
 	public inline function at(index: Int): Option<SortEntry>
@@ -57,12 +57,12 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 		return new Sort(value.length == 0 ? null : [for (item in value.split(",")) {
 			final order = item.startsWith("-") ? Desc : Asc;
 			final attribute = order == Asc ? item : item.substr(1);
-			new Named(attribute, order);
+			new SortEntry(attribute, order);
 		}]);
 
 	/** Prepends the specified attribute to this sort. **/
 	public function prepend(attribute: String, order: SortOrder): Sort
-		return this.filter(item -> item.name != attribute).prepend(new Named(attribute, order));
+		return this.filter(item -> item.name != attribute).prepend(new SortEntry(attribute, order));
 
 	/** Removes the specified attribute from this sort. **/
 	public function remove(attribute: String): Sort
@@ -70,7 +70,7 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 
 	/** Sets the order of the specified attribute. **/
 	@:op([]) public function set(attribute: String, order: SortOrder): Sort
-		return exists(attribute) ? this.replace(item -> item.name == attribute, item -> new Named(item.name, order)) : append(attribute, order);
+		return exists(attribute) ? this.replace(item -> item.name == attribute, item -> new SortEntry(item.name, order)) : append(attribute, order);
 
 	/** Converts this sort to an SQL clause. **/
 	public function toSql(?escape: String -> String): String
@@ -80,7 +80,7 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 	@:to public function toString(): String
 		return [for (item in this) '${item.value == Desc ? "-" : ""}${item.name}'].join(",");
 
-	/** Creates a new sort from the specified entry. **/
+	/** Creates a new sort from the specified attribute/order pair. **/
 	@:from static function ofEntry(entry: SortEntry): Sort
 		return new Sort([entry]);
 }
