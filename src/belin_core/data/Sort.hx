@@ -8,10 +8,10 @@ using StringTools;
 @:forward(iterator, keyValueIterator, length, toArray)
 @:jsonParse(belin_core.data.Sort.parse)
 @:jsonStringify(sort -> sort.toString())
-abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<SortOrder>> {
+abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 
 	/** Creates a new sort. **/
-	public function new(?attributes: List<Named<SortOrder>>)
+	public function new(?attributes: List<SortEntry>)
 		this = attributes ?? new List();
 
 	/** Appends the specified attribute to this sort. **/
@@ -19,7 +19,7 @@ abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<
 		return this.filter(item -> item.name != attribute).append(new Named(attribute, order));
 
 	/** Gets the attribute/order pair at the specified index. **/
-	public inline function at(index: Int): Option<Named<SortOrder>>
+	public inline function at(index: Int): Option<SortEntry>
 		return this.get(index);
 
 	/** Compares the specified objects, according to the current sort attributes. **/
@@ -52,10 +52,6 @@ abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<
 	public function indexOf(attribute: String): Int
 		return Lambda.findIndex(this, item -> item.name == attribute);
 
-	/** Creates a new sort from the specified map. **/
-	@:from public static function ofMap(attributes: Map<String, SortOrder>): Sort
-		return new Sort([for (key => value in attributes) new Named(key, value)]);
-
 	/** Creates a new sort from the specified string. **/
 	@:from public static function parse(value: String): Sort
 		return new Sort(value.length == 0 ? null : [for (item in value.split(",")) {
@@ -83,7 +79,14 @@ abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<
 	/** Returns a string representation of this object. **/
 	@:to public function toString(): String
 		return [for (item in this) '${item.value == Desc ? "-" : ""}${item.name}'].join(",");
+
+	/** Creates a new sort from the specified entry. **/
+	@:from static function ofEntry(entry: SortEntry): Sort
+		return new Sort([entry]);
 }
+
+/** Represents an attribute/order pair of a sort. **/
+typedef SortEntry = Named<SortOrder>;
 
 /** Specifies the order of a sort parameter. **/
 enum abstract SortOrder(String) from String to String {
