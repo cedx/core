@@ -23,7 +23,8 @@ abstract class FileSystemEntity {
 	public final path: String;
 
 	/** Creates a new file system entity. **/
-	public function new(path: String) this.path = path;
+	public function new(path: String)
+		this.path = path;
 
 	/** Copies this file system entity. **/
 	public abstract function copy(newPath: String): Void;
