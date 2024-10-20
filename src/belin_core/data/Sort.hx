@@ -81,7 +81,7 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 		return [for (item in this) '${item.value == Desc ? "-" : ""}${item.name}'].join(",");
 
 	/** Creates a new sort from the specified attribute/order pair. **/
-	@:from static function ofEntry(entry: SortEntry): Sort
+	@:from static inline function ofEntry(entry: SortEntry): Sort
 		return new Sort([entry]);
 }
 
