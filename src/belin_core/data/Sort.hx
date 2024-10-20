@@ -52,6 +52,10 @@ abstract Sort(List<Named<SortOrder>>) from List<Named<SortOrder>> to List<Named<
 	public function indexOf(attribute: String): Int
 		return Lambda.findIndex(this, item -> item.name == attribute);
 
+	/** Creates a new sort from the specified map. **/
+	@:from public static function ofMap(attributes: Map<String, SortOrder>): Sort
+		return new Sort([for (key => value in attributes) new Named(key, value)]);
+
 	/** Creates a new sort from the specified string. **/
 	@:from public static function parse(value: String): Sort
 		return new Sort(value.length == 0 ? null : [for (item in value.split(",")) {
