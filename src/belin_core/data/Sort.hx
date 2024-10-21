@@ -14,6 +14,18 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 	public function new(?attributes: List<SortEntry>)
 		this = attributes ?? new List();
 
+	/** Creates a new sort from the specified attribute and order. **/
+	public static function of(attribute: String, order: SortOrder): Sort
+		return new Sort([new SortEntry(attribute, order)]);
+
+	/** Creates a new sort from the specified string. **/
+	@:from public static function parse(value: String): Sort
+		return new Sort(value.length == 0 ? null : [for (item in value.split(",")) {
+			final order = item.startsWith("-") ? Desc : Asc;
+			final attribute = order == Asc ? item : item.substr(1);
+			new SortEntry(attribute, order);
+		}]);
+
 	/** Appends the specified attribute to this sort. **/
 	public function append(attribute: String, order: SortOrder): Sort
 		return this.filter(item -> item.name != attribute).append(new SortEntry(attribute, order));
@@ -52,14 +64,6 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 	public function indexOf(attribute: String): Int
 		return Lambda.findIndex(this, item -> item.name == attribute);
 
-	/** Creates a new sort from the specified string. **/
-	@:from public static function parse(value: String): Sort
-		return new Sort(value.length == 0 ? null : [for (item in value.split(",")) {
-			final order = item.startsWith("-") ? Desc : Asc;
-			final attribute = order == Asc ? item : item.substr(1);
-			new SortEntry(attribute, order);
-		}]);
-
 	/** Prepends the specified attribute to this sort. **/
 	public function prepend(attribute: String, order: SortOrder): Sort
 		return this.filter(item -> item.name != attribute).prepend(new SortEntry(attribute, order));
@@ -79,10 +83,6 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 	/** Returns a string representation of this object. **/
 	@:to public function toString(): String
 		return [for (item in this) '${item.value == Desc ? "-" : ""}${item.name}'].join(",");
-
-	/** Creates a new sort from the specified attribute/order pair. **/
-	@:from static inline function ofEntry(entry: SortEntry): Sort
-		return new Sort([entry]);
 }
 
 /** Represents an attribute/order pair of a sort. **/

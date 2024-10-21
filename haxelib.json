@@ -5,7 +5,7 @@
 	"description": "Base library of Cédric Belin, full stack developer.",
 	"license": "MIT",
 	"name": "belin_core",
-	"releasenote": "Added the `SortEntry` type definition, added the `Sort.ofEntry()` method.",
+	"releasenote": "Added the `SortEntry` type definition, added the `Sort.of()` static method.",
 	"tags": ["coconut", "core", "cross", "framework", "library", "tink"],
 	"url": "https://github.com/cedx/core",
 	"version": "1.2.0"
