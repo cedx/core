@@ -15,7 +15,7 @@ abstract Sort(List<SortEntry>) from List<SortEntry> to List<SortEntry> {
 		this = attributes ?? new List();
 
 	/** Creates a new sort from the specified attribute and order. **/
-	public static function of(attribute: String, order: SortOrder): Sort
+	public static function of(attribute: String, order: SortOrder = Asc): Sort
 		return new Sort([new SortEntry(attribute, order)]);
 
 	/** Creates a new sort from the specified string. **/
