@@ -29,7 +29,7 @@ import belin_core.data.Sort.SortOrder;
 	/** Tests the `append()` method. **/
 	public function append() {
 		// It should append a new entry to the end.
-		var sort = new Sort([new SortEntry("foo", Asc)]).append("bar", Asc);
+		var sort = Sort.of("foo").append("bar", Asc);
 		asserts.compare([new SortEntry("foo", Asc), new SortEntry("bar", Asc)], sort.toArray());
 
 		// It should move an existing entry to the end and update its value.
@@ -55,18 +55,18 @@ import belin_core.data.Sort.SortOrder;
 		final x = {index: 1, name: "abc", type: "object"};
 		final y = {index: 2, name: "xyz", type: "object"};
 
-		var sort = new Sort([new SortEntry("index", Asc)]);
+		var sort = Sort.of("index");
 		asserts.assert(sort.compare(x, y) < 0);
-		sort = new Sort([new SortEntry("index", Desc)]);
+		sort = Sort.of("index", Desc);
 		asserts.assert(sort.compare(x, y) > 0);
-		sort = new Sort([new SortEntry("name", Asc)]);
+		sort = Sort.of("name");
 		asserts.assert(sort.compare(x, y) < 0);
-		sort = new Sort([new SortEntry("name", Desc)]);
+		sort = Sort.of("name", Desc);
 		asserts.assert(sort.compare(x, y) > 0);
 
-		sort = new Sort([new SortEntry("type", Asc)]);
+		sort = Sort.of("type", Asc);
 		asserts.assert(sort.compare(x, y) == 0);
-		sort = new Sort([new SortEntry("type", Desc)]);
+		sort = Sort.of("type", Desc);
 		asserts.assert(sort.compare(x, y) == 0);
 		sort = new Sort([new SortEntry("type", Asc), new SortEntry("index", Asc)]);
 		asserts.assert(sort.compare(x, y) < 0);
@@ -80,13 +80,13 @@ import belin_core.data.Sort.SortOrder;
 	@:variant("foo", true)
 	@:variant("bar", false)
 	public function exists(input: String, output: Bool)
-		return assert(new Sort([new SortEntry(input, Asc)]).exists("foo") == output);
+		return assert(Sort.of(input).exists("foo") == output);
 
 	/** Tests the `get()` method. **/
 	@:variant("foo", Some(belin_core.data.Sort.SortOrder.Asc))
 	@:variant("bar", None)
 	public function get(input: String, output: Option<SortOrder>) {
-		final option = new Sort([new SortEntry("foo", Asc)]).get(input);
+		final option = Sort.of("foo").get(input);
 		return switch output {
 			case None: assert(option == None);
 			case Some(order): assert(option.equals(order));
@@ -116,7 +116,7 @@ import belin_core.data.Sort.SortOrder;
 
 	/** Tests the `prepend()` method. **/
 	public function prepend() {
-		var sort = new Sort([new SortEntry("foo", Asc)]).prepend("bar", Asc);
+		var sort = Sort.of("foo").prepend("bar", Asc);
 		asserts.compare([new SortEntry("bar", Asc), new SortEntry("foo", Asc)], sort.toArray());
 		sort = sort.prepend("foo", Desc);
 		asserts.compare([new SortEntry("foo", Desc), new SortEntry("bar", Asc)], sort.toArray());
