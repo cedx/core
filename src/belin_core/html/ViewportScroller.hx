@@ -4,6 +4,13 @@ import js.Browser;
 import js.html.Element;
 import js.html.ScrollBehavior;
 
+/** Defines the scrolling options. **/
+typedef ScrollOptions = {
+
+	/** Value indicating whether scrolling is instant or animates smoothly. **/
+	var ?behavior: ScrollBehavior;
+}
+
 /** Manages the scroll position. **/
 class ViewportScroller {
 
@@ -30,23 +37,23 @@ class ViewportScroller {
 		this.viewport = viewport ?? () -> Browser.document.scrollingElement ?? Browser.document.documentElement;
 
 	/** Scrolls to the specified `anchor`. **/
-	public function scrollToAnchor(anchor: String, ?options: {?behavior: ScrollBehavior}): Void {
+	public function scrollToAnchor(anchor: String, ?options: ScrollOptions): Void {
 		final element = Browser.document.getElementById(anchor) ?? Browser.document.body.querySelector('[name="$anchor"]');
 		if (element != null) scrollToElement(element, options);
 	}
 
 	/** Scrolls to the specified `element`. **/
-	public function scrollToElement(element: Element, ?options: {?behavior: ScrollBehavior}): Void {
+	public function scrollToElement(element: Element, ?options: ScrollOptions): Void {
 		final rectangle = element.getBoundingClientRect();
 		final viewport = viewport();
 		scrollToPosition(rectangle.left + viewport.scrollLeft, rectangle.top + viewport.scrollTop - scrollOffset, options);
 	}
 
 	/** Scrolls to the specified position. **/
-	public function scrollToPosition(x: Float, y: Float, ?options: {?behavior: ScrollBehavior}): Void
+	public function scrollToPosition(x: Float, y: Float, ?options: ScrollOptions): Void
 		viewport().scrollTo({left: x, top: y, behavior: options?.behavior ?? AUTO});
 
 	/** Scrolls to the top. **/
-	public inline function scrollToTop(?options: {?behavior: ScrollBehavior}): Void
+	public inline function scrollToTop(?options: ScrollOptions): Void
 		scrollToPosition(0, 0, options);
 }
