@@ -13,7 +13,7 @@ enum abstract AccessLevel(String) from String to String {
 	var Admin = "admin";
 
 	/** Returns a value indicating whether this access level is greater than the specified one. **/
-	@:op(a > b) function greaterThan(other: AccessLevel): Bool
+	@:op(x > y) function greaterThan(other: AccessLevel): Bool
 		return switch abstract {
 			case Read: false;
 			case Write: other == Read;
@@ -21,7 +21,7 @@ enum abstract AccessLevel(String) from String to String {
 		}
 
 	/** Returns a value indicating whether this access level is greater than or equal to the specified one. **/
-	@:op(a >= b) function greaterThanOrEqual(other: AccessLevel): Bool
+	@:op(x >= y) function greaterThanOrEqual(other: AccessLevel): Bool
 		return switch abstract {
 			case Read: other == Read;
 			case Write: other == Read || other == Write;
@@ -29,10 +29,10 @@ enum abstract AccessLevel(String) from String to String {
 		}
 
 	/** Returns a value indicating whether this access level is less than the specified one. **/
-	@:op(a < b) inline function lessThan(other: AccessLevel): Bool
+	@:op(x < y) inline function lessThan(other: AccessLevel): Bool
 		return !greaterThanOrEqual(other);
 
 	/** Returns a value indicating whether this access level is less than or equal to the specified one. **/
-	@:op(a <= b) inline function lessThanOrEqual(other: AccessLevel): Bool
+	@:op(x <= y) inline function lessThanOrEqual(other: AccessLevel): Bool
 		return !greaterThan(other);
 }
