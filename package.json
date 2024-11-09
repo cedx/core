@@ -1,0 +1,58 @@
+{
+	"bugs": "https://github.com/cedx/core/issues",
+	"description": "Base library of Cédric Belin, full stack developer.",
+	"homepage": "https://github.com/cedx/core",
+	"license": "MIT",
+	"name": "@cedx/core",
+	"repository": "cedx/core",
+	"type": "module",
+	"version": "1.0.0",
+	"author": {
+		"email": "cedric@belin.io",
+		"name": "Cédric Belin",
+		"url": "https://belin.io"
+	},
+	"devDependencies": {
+		"@coffeelint/cli": "^5.2.11",
+		"@rollup/plugin-node-resolve": "^15.3.0",
+		"@types/chai": "^5.0.1",
+		"@types/koa__router": "^12.0.4",
+		"@types/mocha": "^10.0.9",
+		"@types/node": "^22.9.0",
+		"@types/serve-handler": "^6.1.4",
+		"chai": "^5.1.2",
+		"coffeescript": "^2.7.0",
+		"mocha": "^10.8.2",
+		"puppeteer": "^23.7.1",
+		"rollup": "^4.24.4",
+		"serve-handler": "^6.1.6"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"exports": {
+		"./*.js": {
+			"types": "./lib/*.d.ts",
+			"default": "./lib/*.js"
+		}
+	},
+	"files": [
+		"lib/",
+		"src/"
+	],
+	"keywords": [
+		"belin",
+		"client",
+		"core",
+		"framework",
+		"library",
+		"server",
+		"ui"
+	],
+	"peerDependencies": {
+		"@koa/router": ">=13.1.0"
+	},
+	"scripts": {
+		"test": "cake test"
+	}
+}
