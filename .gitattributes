@@ -1,0 +1,26 @@
+* text=auto
+.* text
+
+*.cjs text
+*.coffee text
+*.css text diff=css
+*.html text diff=html
+*.http text
+*.js text
+*.json text
+*.md text diff=markdown
+*.mjs text
+*.ps1 text
+*.sql text
+*.svg text
+*.ts text
+*.txt text
+*.yaml text
+*.yml text
+
+*.ico binary
+*.jpg binary
+*.pdf binary
+*.png binary
+*.webp binary
+*.woff2 binary

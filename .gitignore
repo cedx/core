@@ -1,0 +1,8 @@
+/**/.DS_Store
+/.idea/
+/lib/**/*.js
+/lib/**/*.js.map
+/node_modules/
+/npm-debug.log
+/var/
+/wiki/
