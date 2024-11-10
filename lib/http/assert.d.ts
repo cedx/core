@@ -22,7 +22,7 @@ export type AssertIdentifierOptions = Partial<{
 	/**
 	 * Value indicating where to search for the request parameter.
 	 */
-	source: "params"|"query";
+	source: "body"|"params"|"query";
 
 	/**
 	 * The status code to use when the assertion fails.
