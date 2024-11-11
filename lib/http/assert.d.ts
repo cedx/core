@@ -1,4 +1,4 @@
-import {RouterContext} from "@koa/router";
+import {Context} from "koa";
 import {Status} from "./status.js";
 
 /**
@@ -7,7 +7,7 @@ import {Status} from "./status.js";
  * @param options Values customizing the assertion.
  * @returns The parsed identifier.
  */
-export function assertIdentifier(ctx: RouterContext, options?: AssertIdentifierOptions): number;
+export function assertIdentifier(ctx: Context, options?: AssertIdentifierOptions): number;
 
 /**
  * Defines the options of the {@link assertIdentifier} function.
