@@ -50,7 +50,8 @@
 		"ui"
 	],
 	"peerDependencies": {
-		"koa": ">=2.15.0"
+		"koa": ">=2.15.0",
+		"lit": ">=3.2.0"
 	},
 	"scripts": {
 		"test": "cake test"
