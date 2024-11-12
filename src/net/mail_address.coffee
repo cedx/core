@@ -6,7 +6,7 @@ export class MailAddress
 
 	# The host portion of the address.
 	Object.defineProperty @prototype, "host",
-		get: -> @_value.split("@").at -1 ? ""
+		get: -> @_value.split("@").at(-1) or ""
 
 	# Value indicating whether this mail address is empty.
 	Object.defineProperty @prototype, "isEmpty",
@@ -18,7 +18,7 @@ export class MailAddress
 
 	# The user information.
 	Object.defineProperty @prototype, "user",
-		get: -> @_value.split("@").at 0 ? ""
+		get: -> @_value.split("@").at(0) or ""
 
 	# Creates a new mail address.
 	constructor: (value) ->
