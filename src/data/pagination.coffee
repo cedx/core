@@ -31,9 +31,9 @@ export class Pagination
 
 	# Creates a new pagination from the HTTP headers of the specified response.
 	@fromResponse: (response) -> new @
-		page: Number response.headers.get("x-pagination-current-page") ? "1"
-		pageSize: Number response.headers.get("x-pagination-per-page") ? "25"
-		totalCount: Number response.headers.get("x-pagination-total-count") ? "0"
+		page: Number response.headers.get("x-pagination-current-page") or "1"
+		pageSize: Number response.headers.get("x-pagination-per-page") or "25"
+		totalCount: Number response.headers.get("x-pagination-total-count") or "0"
 
 # A list with information relevant to the pagination of its items.
 export class PaginatedList

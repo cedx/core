@@ -12,7 +12,7 @@ export class Region
 		@code = code.toUpperCase()
 
 	# Returns an appropriately localized display name for the specified locale.
-	displayName: (locale) -> new Intl.DisplayNames(locale, type: "region").of(@code) ? @code
+	displayName: (locale) -> new Intl.DisplayNames(locale, type: "region").of(@code) or @code
 
 	# Returns a JSON representation of this object.
 	toJSON: -> @toString()

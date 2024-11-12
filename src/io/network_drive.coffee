@@ -30,7 +30,7 @@ export class NetworkDrive
 		@_user = user
 
 	# Creates a new network drive from the specified file URI.
-	@fromUri: (uri) -> new @ uri.searchParams.get("drive") ? "Z",
+	@fromUri: (uri) -> new @ uri.searchParams.get("drive") or "Z",
 		"\\\\#{if uri.hostname then uri.hostname else "localhost"}\\#{decodeURIComponent(uri.pathname)[1..].split("/").at 0}"
 		decodeURIComponent uri.username
 		decodeURIComponent uri.password
@@ -62,7 +62,7 @@ export class NetworkDrive
 
 	# Runs the `net use` command.
 	_netUse: (args) ->
-		executable = if platform is "win32" then join env.windir ? "C:/Windows", "System32/net.exe" else "net"
+		executable = if platform is "win32" then join env.windir or "C:/Windows", "System32/net.exe" else "net"
 		run executable, ["use", args...]
 
 	# Normalizes the specified UNC path.

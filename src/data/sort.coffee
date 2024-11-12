@@ -32,7 +32,7 @@ export class Sort
 		this # coffeelint: disable-line = no_this
 
 	# Gets the attribute/order pair at the specified index.
-	at: (index) -> @_attributes.at(index) ? null
+	at: (index) -> @_attributes.at(index) or null
 
 	# Compares the specified objects, according to the current sort attributes.
 	compare: (x, y) ->

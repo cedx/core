@@ -15,7 +15,7 @@ export class ViewportScroller
 			@_scrollOffset + (actionBar?.offsetHeight ? 0)
 
 	# Creates a new viewport scroller.
-	constructor: (viewport = -> document.scrollingElement ? document.documentElement) ->
+	constructor: (viewport = -> document.scrollingElement or document.documentElement) ->
 
 		# The top offset used when scrolling to an element.
 		@_scrollOffset = -1
@@ -25,7 +25,7 @@ export class ViewportScroller
 
 	# Scrolls to the specified anchor.
 	scrollToAnchor: (anchor, options = {}) ->
-		element = document.getElementById(anchor) ? document.body.querySelector "[name=\"#{anchor}\"]"
+		element = document.getElementById(anchor) or document.body.querySelector "[name=\"#{anchor}\"]"
 		@scrollToElement element, options if element
 
 	# Scrolls to the specified element.
@@ -35,7 +35,7 @@ export class ViewportScroller
 		@scrollToPosition left + scrollLeft, top + scrollTop - @scrollOffset, options
 
 	# Scrolls to the specified position.
-	scrollToPosition: (x, y, options = {}) -> @_viewport().scrollTo left: x, top: y, behavior: options.behavior ? "auto"
+	scrollToPosition: (x, y, options = {}) -> @_viewport().scrollTo left: x, top: y, behavior: options.behavior or "auto"
 
 	# Scrolls to the top.
 	scrollToTop: (options = {}) -> @scrollToPosition 0, 0, options
