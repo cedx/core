@@ -38,4 +38,4 @@ export truncate = (value, length, ellipsis = "...") ->
 	if value.length > length then value[...length] + ellipsis else value
 
 # Replaces invalid XML characters in a string with their valid XML equivalent.
-export xmlEscape = (value) -> value.replace /[&<>"']/g, (character) -> xmlEntities.get character ? character
+export xmlEscape = (value) -> value.replace /[&<>"']/g, (character) -> xmlEntities.get(character) or character
