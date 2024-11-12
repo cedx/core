@@ -39,6 +39,6 @@ export class Client
 			loader?.start()
 			request = new Request new URL(url, @baseUrl), {options..., method, headers, body}
 			response = await fetch request
-			if response.ok then response else throw new Error response
+			if response.ok then response else throw Error response
 		finally
 			loader?.stop()
