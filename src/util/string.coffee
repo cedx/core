@@ -18,7 +18,7 @@ export reverse = (value) -> Array.from(value).reverse().join ""
 
 # Converts a string to an array.
 export split = (value, splitLength = 1) ->
-	if splitLength is 1 then Array.from value else value.match new RegExp(".{1,#{splitLength}}", "gsy") ? []
+	if splitLength is 1 then Array.from value else value.match(new RegExp(".{1,#{splitLength}}", "gsy")) or []
 
 # Removes the HTML tags from the specified string.
 export stripTags = (value) -> value.replace /<[^>]+>/g, ""
