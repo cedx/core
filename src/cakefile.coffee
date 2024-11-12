@@ -10,7 +10,7 @@ tests = (join "test", file for file from readdirSync "test" when file.endsWith "
 
 task "build", "Builds the project.", (options) ->
 	sourcemaps = if options.map then ["--map"] else []
-	npx "coffee", "--compile", sourcemaps..., "--no-header", "--output", "lib", "src"
+	run "coffee", "--compile", sourcemaps..., "--no-header", "--output", "lib", "src"
 
 task "clean", "Deletes all generated files.", ->
 	files = readdirSync "lib", recursive: yes, withFileTypes: yes
@@ -31,14 +31,14 @@ task "publish", "Publishes the package.", ->
 
 task "test", "Runs the test suite.", ->
 	env.NODE_ENV = "test"
-	npx "coffee", "--compile", "--map", "--no-header", "--output", "lib", "src", "test", tests...
+	run "coffee", "--compile", "--map", "--no-header", "--output", "lib", "src", "test", tests...
 	npx "rollup", "--config=etc/rollup.js"
 	run "node", "lib/puppeteer.js"
 	npx "mocha", "lib/server.js"
 
 task "watch", "Watches for file changes.", (options) ->
 	sourcemaps = if options.map then ["--map"] else []
-	npx "coffee", "--compile", sourcemaps..., "--no-header", "--output", "lib", "--watch", "src", "test", tests...
+	run "coffee", "--compile", sourcemaps..., "--no-header", "--output", "lib", "--watch", "src", "test", tests...
 
 # Executes a command from a local package.
 npx = (command, args...) -> run "npm", "exec", "--", command, args...
