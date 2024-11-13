@@ -2,7 +2,6 @@ import gulp from "gulp"
 import {spawn} from "node:child_process"
 import {readdir, rm} from "node:fs/promises"
 import {join} from "node:path"
-import {env} from "node:process"
 
 # Builds the project.
 export build = ->
@@ -27,7 +26,6 @@ export publish = ->
 
 # Runs the test suite.
 export test = ->
-	env.NODE_ENV = "test"
 	await npx "coffee", "--compile", "--map", "--no-header", "--output", "lib", "src", "test"
 	await npx "rollup", "--config=etc/rollup.js"
 	await run "node", "lib/puppeteer.js"
