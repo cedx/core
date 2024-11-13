@@ -45,7 +45,7 @@ export class RouterEvent extends Event {
 	/**
 	 * The event type.
 	 */
-	static readonly type = "router:navigate";
+	static readonly type: string;
 
 	/**
 	 * The new route.
