@@ -4,9 +4,7 @@ import {css, LitElement} from "lit"
 export class Component extends LitElement
 
 	# The component styles.
-	@styles = [document.adoptedStyleSheets, css"
-		:host { contain: content; }
-	"];
+	@styles = [document.adoptedStyleSheets, css":host { contain: content; }"]
 
 	# Creates a new custom element.
 	constructor: (options = {}) ->
