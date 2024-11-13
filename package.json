@@ -53,6 +53,8 @@
 		"ui"
 	],
 	"peerDependencies": {
+		"@lit-labs/router": ">=0.1.0",
+		"bootstrap": ">=5.3.0",
 		"koa": ">=2.15.0",
 		"lit": ">=3.2.0"
 	},
