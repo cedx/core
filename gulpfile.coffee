@@ -29,9 +29,9 @@ export publish = ->
 export test = ->
 	env.NODE_ENV = "test"
 	await npx "coffee", "--compile", "--map", "--no-header", "--output", "lib", "src", "test"
-	#await npx "rollup", "--config=etc/rollup.js"
-	#await run "node", "lib/puppeteer.js"
-	await npx "mocha", "lib/server.js"
+	await npx "rollup", "--config=etc/rollup.js"
+	await run "node", "lib/puppeteer.js"
+	await npx "mocha", "--require=source-map-support/register", "lib/server.js"
 
 # Watches for file changes.
 export watch = ->
