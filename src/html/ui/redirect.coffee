@@ -28,10 +28,8 @@ export class Redirect extends Component
 	# Method invoked when this component is connected.
 	connectedCallback: ->
 		super.connectedCallback()
-
-		if @router
-			await @updateComplete
-			return @router.goto @route, push: @push
-
-		if @push then location.assign @route
-		else location.replace @route
+		await @updateComplete
+		switch
+			when @router? then @router.goto @route, push: @push
+			when @push then location.assign @route
+			else location.replace @route
