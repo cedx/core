@@ -8,8 +8,7 @@ export class ActionBar extends Component
 	customElements.define "action-bar", @
 
 	# Creates a new action bar.
-	constructor: ->
-		super shadowRoot: on
+	constructor: -> super shadowRoot: on
 
 	# Method invoked when this component is disconnected.
 	disconnectedCallback: ->
