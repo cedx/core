@@ -7,7 +7,7 @@ export class Router extends LitRouter
 
 	# Creates a new router.
 	constructor: (host, routes, options = {}) ->
-		super host, routes, fallback: options.fallback or {render: -> html'<error-handler code="404"></error-handler>'}
+		super host, routes, fallback: options.fallback or render: -> html'<error-handler code="404"></error-handler>'
 		basePath = options.basePath or document.head.querySelector("base")?.getAttribute("href") or ""
 
 		# The base path of the application.
@@ -35,7 +35,7 @@ export class Router extends LitRouter
 
 	# Registers a function that will be invoked whenever the `navigate` event is triggered.
 	onNavigate: (listener) ->
-		addEventListener RouterEvent.type, listener, passive: yes
+		addEventListener RouterEvent.type, listener
 		this # coffeelint: disable-line = no_this
 
 # An event dispatched when the current route has been changed.

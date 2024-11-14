@@ -30,7 +30,7 @@ export class Redirect extends Component
 		super.connectedCallback()
 
 		if @router
-			await @updateComplete;
+			await @updateComplete
 			return @router.goto @route, push: @push
 
 		if @push then location.assign @route

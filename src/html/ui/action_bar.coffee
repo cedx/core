@@ -20,7 +20,7 @@ export class ActionBar extends Component
 		await @updateComplete
 		navbarHeight = parseInt getComputedStyle(document.documentElement).getPropertyValue "--navbar-height"
 		mainOffset = @offsetHeight + if Number.isNaN(navbarHeight) then 0 else navbarHeight
-		documentElement.style.setProperty "--main-offset", "#{mainOffset}px"
+		document.documentElement.style.setProperty "--main-offset", "#{mainOffset}px"
 
 	# Renders this component.
 	render: -> html"""

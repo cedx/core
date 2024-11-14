@@ -33,19 +33,19 @@ export openFile = (file, options = {}) ->
 export printFile = (file) ->
 	url = URL.createObjectURL file
 	frame = document.createElement "iframe"
-	frame.addEventListener "load", (-> frame.contentWindow?.print()), passive: yes
+	frame.addEventListener "load", -> frame.contentWindow.print()
 	frame.hidden = yes
 	frame.src = url
 
 	handler = ->
 		document.body.removeChild frame
 		URL.revokeObjectURL url
-	window.addEventListener "focus", handler, once: yes, passive: yes
+	window.addEventListener "focus", handler, once: yes
 	document.body.appendChild frame
 
 # Converts the specified file to a data URL.
 export toDataUrl = (file) -> new Promise (resolve, reject) ->
 	reader = new FileReader
-	reader.addEventListener "error", reject, passive: yes
-	reader.addEventListener "load", (-> resolve new URL reader.result), passive: yes
+	reader.addEventListener "error", reject
+	reader.addEventListener "load", (-> resolve new URL reader.result)
 	reader.readAsDataURL file
