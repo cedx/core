@@ -7,7 +7,7 @@ export abstract class Component extends LitElement {
 
 	/**
 	 * Creates a new custom element.
-	 * @param options An object providing values to initialize this instance.
+	 * @param options Value indicating whether this component uses a shadow root.
 	 */
 	constructor(options?: {shadowRoot?: boolean});
 }

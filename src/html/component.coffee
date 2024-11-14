@@ -11,7 +11,7 @@ export class Component extends LitElement
 		super()
 
 		# Value indicating whether this component uses a shadow root.
-		@_useShadowRoot = options.shadowRoot ? no
+		@_useShadowRoot = options.shadowRoot or no
 
 	# Returns the node into which this component should render.
 	createRenderRoot: ->
