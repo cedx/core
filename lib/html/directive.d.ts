@@ -5,4 +5,4 @@ import {TemplateResult} from "lit";
  * @param value The string to format.
  * @returns The formatted string.
  */
-export function nl2br(value: string): Iterable<TemplateResult>;
+export function newLineToBr(value: string): Iterable<TemplateResult>;

@@ -46,5 +46,5 @@ export class PageTitle extends Component
 
 	# Method invoked after each rendering.
 	updated: ->
-		text = @text.trim() or @textContent?.trim() or "";
+		text = @text.trim() or @textContent?.trim() or ""
 		document.title = if @_isStandalone then text else [text, @_appName].filter((item) -> item.length).join " #{@delimiter} "
