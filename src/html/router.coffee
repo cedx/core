@@ -28,7 +28,9 @@ export class Router extends LitRouter
 		history.pushState {}, "", route if options.push
 
 		behavior = "instant"
-		@_scroller?.scrollToTop({behavior}) or scrollTo {left: 0, top: 0, behavior}
+		if @_scroller? then @_scroller.scrollToTop {behavior}
+		else scrollTo {left: 0, top: 0, behavior}
+
 		dispatchEvent new RouterEvent route
 
 	# Registers a function that will be invoked whenever the `navigate` event is triggered.
