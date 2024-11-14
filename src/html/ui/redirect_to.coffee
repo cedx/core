@@ -1,7 +1,7 @@
 import {Component} from "../component.js"
 
 # Navigates to a new location.
-export class Redirect extends Component
+export class RedirectTo extends Component
 
 	# Registers the component.
 	customElements.define "redirect-to", @

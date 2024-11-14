@@ -4,7 +4,7 @@ import {Router} from "../router.js";
 /**
  * Navigates to a new location.
  */
-export class Redirect extends Component {
+export class RedirectTo extends Component {
 
 	/**
 	 * Value indicating whether to push a new entry onto the history instead of replacing the current one.
@@ -31,6 +31,6 @@ declare global {
 	 * The map of HTML tag names.
 	 */
 	interface HTMLElementTagNameMap {
-		"redirect-to": Redirect;
+		"redirect-to": RedirectTo;
 	}
 }
