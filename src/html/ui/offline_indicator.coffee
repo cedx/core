@@ -32,7 +32,7 @@ export class OfflineIndicator extends Component
 	handleEvent: -> @_isOnline = navigator.onLine
 
 	# Renders this component.
-	render: -> _when not @_isOnline, html"""
+	render: -> _when not @_isOnline, -> html"""
 		<slot>
 			<div class="alert alert-danger border-end-0 border-start-0 mb-0 rounded-0">
 				<i class="icon icon-fill fw-bold me-1">error</i> Le réseau est inaccessible.

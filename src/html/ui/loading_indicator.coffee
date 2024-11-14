@@ -1,5 +1,4 @@
 import {html} from "lit"
-import {when as _when} from "lit/directives/when.js"
 import {Component} from "../component.js"
 
 # A component that shows up when an HTTP request starts, and hides when all concurrent HTTP requests are completed.
