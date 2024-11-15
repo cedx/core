@@ -2,7 +2,7 @@ import {html} from "lit"
 import {classMap} from "lit/directives/class-map.js"
 import {when as _when} from "lit/directives/when.js"
 import {Component} from "../component.js"
-import {Theme} from "../theme.js"
+import {Theme, themeIcon, themeLabel} from "../theme.js"
 
 # A dropdown menu for switching the color mode.
 export class ThemeDropdown extends Component
