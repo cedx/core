@@ -19,7 +19,6 @@ export class ThemeDropdown extends Component
 	# Creates a new theme dropdown.
 	constructor: ->
 		super()
-		theme = localStorage.getItem "theme"
 
 		# The alignement of the dropdown menu.
 		@align = "end"
@@ -31,7 +30,7 @@ export class ThemeDropdown extends Component
 		@_mediaQuery = matchMedia "(prefers-color-scheme: dark)"
 
 		# The current theme.
-		@_theme = if Object.values(Theme).includes theme then theme else Theme.auto
+		@_theme = if Object.values(Theme).includes theme = localStorage.getItem "theme" then theme else Theme.auto
 
 	# The current theme.
 	Object.defineProperty @prototype, "theme",
