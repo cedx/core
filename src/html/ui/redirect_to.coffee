@@ -27,7 +27,7 @@ export class RedirectTo extends Component
 
 	# Method invoked when this component is connected.
 	connectedCallback: ->
-		super.connectedCallback()
+		super()
 		await @updateComplete
 		switch
 			when @router? then @router.goto @route, push: @push

@@ -15,4 +15,4 @@ export class Component extends LitElement
 
 	# Returns the node into which this component should render.
 	createRenderRoot: ->
-		if @_useShadowRoot then super.createRenderRoot() else @
+		if @_useShadowRoot then super() else @

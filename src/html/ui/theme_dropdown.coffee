@@ -42,14 +42,14 @@ export class ThemeDropdown extends Component
 
 	# Method invoked when this component is connected.
 	connectedCallback: ->
-		super.connectedCallback()
+		super()
 		@_applyTheme()
 		@_mediaQuery.addEventListener "change", @
 
 	# Method invoked when this component is disconnected.
 	disconnectedCallback: ->
 		@_mediaQuery.removeEventListener "change", @
-		super.disconnectedCallback()
+		super()
 
 	# Handles the events.
 	handleEvent: -> @_applyTheme()

@@ -30,13 +30,13 @@ export class PageTitle extends Component
 
 	# Method invoked when this component is connected.
 	connectedCallback: ->
-		super.connectedCallback()
+		super()
 		addEventListener "appinstalled", @
 
 	# Method invoked when this component is disconnected.
 	disconnectedCallback: ->
 		removeEventListener "appinstalled", @
-		super.disconnectedCallback()
+		super()
 
 	# Handles the events.
 	handleEvent: -> @_isStandalone = yes

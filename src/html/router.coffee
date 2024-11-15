@@ -24,7 +24,7 @@ export class Router extends LitRouter
 		document.body.querySelector("loading-indicator")?.stop force: yes
 		Tooltip.getInstance(element)?.dispose() for element from document.body.querySelectorAll '[data-bs-toggle="tooltip"]'
 
-		await super.goto if route.startsWith("/") or not @_basePath then route else "#{@_basePath}/#{route}"
+		await super if route.startsWith("/") or not @_basePath then route else "#{@_basePath}/#{route}"
 		history.pushState {}, "", route if options.push
 
 		behavior = "instant"

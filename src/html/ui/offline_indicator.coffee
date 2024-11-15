@@ -20,13 +20,13 @@ export class OfflineIndicator extends Component
 
 	# Method invoked when this component is connected.
 	connectedCallback: ->
-		super.connectedCallback()
+		super()
 		addEventListener event, @ for event from ["online", "offline"]
 
 	# Method invoked when this component is disconnected.
 	disconnectedCallback: ->
 		removeEventListener event, @ for event from ["online", "offline"]
-		super.disconnectedCallback()
+		super()
 
 	# Handles the events.
 	handleEvent: -> @_isOnline = navigator.onLine

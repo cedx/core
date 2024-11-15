@@ -13,7 +13,7 @@ export class ActionBar extends Component
 	# Method invoked when this component is disconnected.
 	disconnectedCallback: ->
 		document.documentElement.style.removeProperty "--main-offset"
-		super.disconnectedCallback()
+		super()
 
 	# Method invoked after the first rendering.
 	firstUpdated: ->
