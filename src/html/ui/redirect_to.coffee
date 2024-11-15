@@ -3,9 +3,6 @@ import {Component} from "../component.js"
 # Navigates to a new location.
 export class RedirectTo extends Component
 
-	# Registers the component.
-	customElements.define "redirect-to", @
-
 	# The reactive properties.
 	@properties =
 		push: type: Boolean
@@ -33,3 +30,6 @@ export class RedirectTo extends Component
 			when @router? then @router.goto @route, push: @push
 			when @push then location.assign @route
 			else location.replace @route
+
+	# Registers the component.
+	customElements.define "redirect-to", @

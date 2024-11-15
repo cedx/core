@@ -4,9 +4,6 @@ import {Component} from "../component.js"
 # A component that shows up when an HTTP request starts, and hides when all concurrent HTTP requests are completed.
 export class LoadingIndicator extends Component
 
-	# Registers the component.
-	customElements.define "loading-indicator", @
-
 	# Creates a new loading indicator.
 	constructor: ->
 		super shadowRoot: on
@@ -35,3 +32,6 @@ export class LoadingIndicator extends Component
 			<div class="spinner-border text-light"></div>
 		</slot>
 	"""
+
+	# Registers the component.
+	customElements.define "loading-indicator", @

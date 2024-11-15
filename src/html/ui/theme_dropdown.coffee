@@ -7,9 +7,6 @@ import {Theme, themeIcon, themeLabel} from "../theme.js"
 # A dropdown menu for switching the color mode.
 export class ThemeDropdown extends Component
 
-	# Registers the component.
-	customElements.define "theme-dropdown", @
-
 	# The reactive properties.
 	@properties =
 		align: type: String
@@ -77,3 +74,6 @@ export class ThemeDropdown extends Component
 	_applyTheme: -> document.documentElement.dataset.bsTheme =
 		if @_theme is Theme.auto then (if @_mediaQuery.matches then Theme.dark else Theme.light)
 		else @_theme
+
+	# Registers the component.
+	customElements.define "theme-dropdown", @

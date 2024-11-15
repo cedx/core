@@ -4,9 +4,6 @@ import {Component} from "../component.js"
 # An action bar located under the navigation bar.
 export class ActionBar extends Component
 
-	# Registers the component.
-	customElements.define "action-bar", @
-
 	# Creates a new action bar.
 	constructor: -> super shadowRoot: on
 
@@ -28,3 +25,6 @@ export class ActionBar extends Component
 			<slot class="d-flex justify-content-between align-items-center"></slot>
 		</aside>
 	"""
+
+	# Registers the component.
+	customElements.define "action-bar", @

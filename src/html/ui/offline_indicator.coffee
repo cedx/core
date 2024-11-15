@@ -5,9 +5,6 @@ import {Component} from "../component.js"
 # A component that shows up when the network is unavailable, and hides when connectivity is restored.
 export class OfflineIndicator extends Component
 
-	# Registers the component.
-	customElements.define "offline-indicator", @
-
 	# The reactive properties.
 	@properties = _isOnline: state: on
 
@@ -40,3 +37,6 @@ export class OfflineIndicator extends Component
 			</div>
 		</slot>
 	"""
+
+	# Registers the component.
+	customElements.define "offline-indicator", @

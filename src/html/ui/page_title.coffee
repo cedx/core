@@ -3,9 +3,6 @@ import {Component} from "../component.js"
 # A component setting the document title.
 export class PageTitle extends Component
 
-	# Registers the component.
-	customElements.define "page-title", @
-
 	# The reactive properties.
 	@properties =
 		delimiter: type: String
@@ -48,3 +45,6 @@ export class PageTitle extends Component
 	updated: ->
 		text = @text.trim() or @textContent?.trim() or ""
 		document.title = if @_isStandalone then text else [text, @_appName].filter((item) -> item.length).join " #{@delimiter} "
+
+	# Registers the component.
+	customElements.define "page-title", @
