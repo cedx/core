@@ -10,10 +10,6 @@ run = promisify execFile
 # Represents a Windows network drive.
 export class NetworkDrive
 
-	# Value indicating whether this network drive is mounted.
-	Object.defineProperty @prototype, "isMounted",
-		get: -> try await access "#{@drive}:/"; yes catch then no
-
 	# Creates a new network drive.
 	constructor: (drive, uncPath, user = "", password = "") ->
 
@@ -28,6 +24,10 @@ export class NetworkDrive
 
 		# The username to use for mounting this network drive.
 		@_user = user
+
+	# Value indicating whether this network drive is mounted.
+	Object.defineProperty @prototype, "isMounted",
+		get: -> try await access "#{@drive}:/"; yes catch then no
 
 	# Creates a new network drive from the specified file URI.
 	@fromUri: (uri) -> new @ uri.searchParams.get("drive") or "Z",

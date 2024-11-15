@@ -7,6 +7,12 @@ export class InternetAddress
 	# The regular expression used to validate an IPv4 address.
 	@ipv6Pattern = /^(([a-f\d]{1,4}:){7}[a-f\d]{1,4}|([a-f\d]{1,4}:){1,7}:|([a-f\d]{1,4}:){1,6}:[a-f\d]{1,4}|([a-f\d]{1,4}:){1,5}(:[a-f\d]{1,4}){1,2}|([a-f\d]{1,4}:){1,4}(:[a-f\d]{1,4}){1,3}|([a-f\d]{1,4}:){1,3}(:[a-f\d]{1,4}){1,4}|([a-f\d]{1,4}:){1,2}(:[a-f\d]{1,4}){1,5}|[a-f\d]{1,4}:((:[a-f\d]{1,4}){1,6})|:((:[a-f\d]{1,4}){1,7}|:)|fe80:(:[a-f\d]{0,4}){0,4}%[a-z\d]+|::(ffff(:0{1,4})?:)?((25[0-5]|(2[0-4]|1?\d)?\d)\.){3}(25[0-5]|(2[0-4]|1?\d)?\d)|([a-f\d]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1?\d)?\d)\.){3}(25[0-5]|(2[0-4]|1?\d)?\d))$/ # coffeelint: disable-line = max_line_length
 
+	# Creates a new IP address.
+	constructor: (value) ->
+
+		# The normalized address.
+		@_value = @_sanitize value.trim().toLowerCase()
+
 	# The IPv6 numeric address.
 	Object.defineProperty @prototype, "address",
 		get: -> if @type is InternetAddressType.IPv4 then "::ffff:#{@_value}" else @_value
@@ -22,12 +28,6 @@ export class InternetAddress
 	# The address family.
 	Object.defineProperty @prototype, "type",
 		get: -> if @_value.includes ":" then InternetAddressType.IPv6 else InternetAddressType.IPv4
-
-	# Creates a new IP address.
-	constructor: (value) ->
-
-		# The normalized address.
-		@_value = @_sanitize value.trim().toLowerCase()
 
 	# Returns a JSON representation of this object.
 	toJSON: -> @toString()

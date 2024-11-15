@@ -1,6 +1,18 @@
 # Represents information relevant to the pagination of data items.
 export class Pagination
 
+	# Creates a new pagination.
+	constructor: (options = {}) ->
+
+		# The current page number.
+		@page = Math.max 1, options.page ? 1
+
+		# The number of items per page.
+		@pageSize = Math.max 1, Math.min 100, options.pageSize ? 25
+
+		# The total number of items.
+		@totalCount = Math.max 0, options.totalCount ? 0
+
 	# The data limit.
 	Object.defineProperty @prototype, "limit",
 		get: -> @pageSize
@@ -17,18 +29,6 @@ export class Pagination
 	Object.defineProperty @prototype, "searchParams",
 		get: -> new URLSearchParams page: @page.toString(), perPage: @pageSize.toString()
 
-	# Creates a new pagination.
-	constructor: (options = {}) ->
-
-		# The current page number.
-		@page = Math.max 1, options.page ? 1
-
-		# The number of items per page.
-		@pageSize = Math.max 1, Math.min 100, options.pageSize ? 25
-
-		# The total number of items.
-		@totalCount = Math.max 0, options.totalCount ? 0
-
 	# Creates a new pagination from the HTTP headers of the specified response.
 	@fromResponse: (response) -> new @
 		page: Number response.headers.get("x-pagination-current-page") or "1"
@@ -38,10 +38,6 @@ export class Pagination
 # A list with information relevant to the pagination of its items.
 export class PaginatedList
 
-	# The number of items in this list.
-	Object.defineProperty @prototype, "length",
-		get: -> @items.length
-
 	# Creates a new paginated list.
 	constructor: (options = {}) ->
 
@@ -50,6 +46,10 @@ export class PaginatedList
 
 		# The information relevant to the pagination of the list items.
 		@pagination = options.pagination ? new Pagination
+
+	# The number of items in this list.
+	Object.defineProperty @prototype, "length",
+		get: -> @items.length
 
 	# Creates an empty paginated list.
 	@empty: (pageSize) -> new @ pagination: new Pagination pageSize: pageSize

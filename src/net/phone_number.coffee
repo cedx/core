@@ -6,6 +6,12 @@ export class PhoneNumber
 	# The regular expression used to validate a phone number.
 	@pattern = /^[+0]\d{9,}$/
 
+	# Creates a new phone number.
+	constructor: (value) ->
+
+		# The normalized phone number.
+		@_value = @_normalize value.trim()
+
 	# Value indicating whether this phone number is empty.
 	Object.defineProperty @prototype, "isEmpty",
 		get: -> not @_value.length
@@ -13,12 +19,6 @@ export class PhoneNumber
 	# Value indicating whether this phone number is valid.
 	Object.defineProperty @prototype, "isValid",
 		get: -> PhoneNumber.pattern.test @_value
-
-	# Creates a new phone number.
-	constructor: (value) ->
-
-		# The normalized phone number.
-		@_value = @_normalize value.trim()
 
 	# Formats this phone number according to the locale.
 	format: ->

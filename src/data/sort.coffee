@@ -1,15 +1,15 @@
 # Represents information relevant to the sorting of data items.
 export class Sort
 
-	# The number of attributes.
-	Object.defineProperty @prototype, "length",
-		get: -> @_attributes.length
-
 	# Creates new sort.
 	constructor: (attributes = []) ->
 
 		# The list of attribute/order pairs.
 		@_attributes = attributes
+
+	# The number of attributes.
+	Object.defineProperty @prototype, "length",
+		get: -> @_attributes.length
 
 	# Creates a new sort from the specified attribute and order.
 	@of: (attribute, order = SortOrder.asc) -> new @ [[attribute, order]]
