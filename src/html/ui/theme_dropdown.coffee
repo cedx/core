@@ -12,8 +12,8 @@ export class ThemeDropdown extends Component
 
 	# The reactive properties.
 	@properties =
-		align: {}
-		label: {}
+		align: type: String
+		label: type: String
 		_theme: state: on
 
 	# Creates a new theme dropdown.

@@ -9,7 +9,7 @@ export class RedirectTo extends Component
 	# The reactive properties.
 	@properties =
 		push: type: Boolean
-		route: {}
+		route: type: String
 		router: attribute: off
 
 	# Creates a new loading indicator.

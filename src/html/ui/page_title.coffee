@@ -8,8 +8,8 @@ export class PageTitle extends Component
 
 	# The reactive properties.
 	@properties =
-		delimiter: {}
-		text: {}
+		delimiter: type: String
+		text: type: String
 		_applicationName: state: on
 
 	# Creates a new page title.
