@@ -14,5 +14,4 @@ export class Component extends LitElement
 		@_useShadowRoot = options.shadowRoot or no
 
 	# Returns the node into which this component should render.
-	createRenderRoot: ->
-		if @_useShadowRoot then super() else @
+	createRenderRoot: -> if @_useShadowRoot then super() else @
