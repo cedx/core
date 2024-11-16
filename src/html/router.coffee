@@ -46,7 +46,7 @@ export class RouterEvent extends Event
 
 	# Creates a new router event.
 	constructor: (route) ->
-		super Router.type
+		super RouterEvent.type
 
 		# The new route.
 		@route = route
