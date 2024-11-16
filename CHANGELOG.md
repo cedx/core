@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [1.2.2](https://github.com/cedx/core/compare/v1.2.1...v1.2.2)
+- Fixed the `PageTitle` component.
+
 ## Version [1.2.1](https://github.com/cedx/core/compare/v1.2.0...v1.2.1)
 - Fixed the registration of Web components.
 
