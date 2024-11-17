@@ -9,8 +9,7 @@ export build = ->
 
 # Deletes all generated files.
 export clean = ->
-	files = await readdir "lib", recursive: yes, withFileTypes: yes
-	await rm join file.parentPath, file.name for file from files when file.isFile() and not file.name.endsWith ".d.ts"
+	await rm "lib", force: yes, recursive: yes
 	await rm join("var", file), recursive: yes for file from await readdir "var" when file isnt ".gitkeep"
 
 # Performs the static analysis of source code.

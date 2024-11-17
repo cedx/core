@@ -35,7 +35,7 @@
 	},
 	"exports": {
 		"./*.js": {
-			"types": "./lib/*.d.ts",
+			"types": "./src/*.d.ts",
 			"default": "./lib/*.js"
 		}
 	},
