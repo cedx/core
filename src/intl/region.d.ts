@@ -25,16 +25,4 @@ export class Region {
 	 * @returns The localized display name in the specified locale.
 	 */
 	displayName(locale: Intl.Locale|string): string;
-
-	/**
-	 * Returns a JSON representation of this object.
-	 * @returns The JSON representation of this object.
-	 */
-	toJSON(): string;
-
-	/**
-	 * Returns a string representation of this object.
-	 * @returns The string representation of this object.
-	 */
-	toString(): string;
 }
