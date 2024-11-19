@@ -11,6 +11,7 @@ export class ThemeDropdown extends Component
 	@properties =
 		align: type: String
 		label: type: String
+		storageKey: type: String
 		_theme: state: on
 
 	# Creates a new theme dropdown.
@@ -23,17 +24,20 @@ export class ThemeDropdown extends Component
 		# The label of the dropdown menu.
 		@label = ""
 
+		# The key of the storage entry providing the saved theme.
+		@storageKey = "theme"
+
 		# The media query used to check the system theme.
 		@_mediaQuery = matchMedia "(prefers-color-scheme: dark)"
 
 		# The current theme.
-		@_theme = if Object.values(Theme).includes theme = localStorage.getItem "theme" then theme else Theme.auto
+		@_theme = if Object.values(Theme).includes theme = localStorage.getItem @storageKey then theme else Theme.auto
 
 	# The current theme.
 	Object.defineProperty @prototype, "theme",
 		get: -> @_theme
 		set: (value) -> if value isnt @_theme
-			localStorage.setItem "theme", @_theme = value
+			localStorage.setItem @storageKey, @_theme = value
 			@_applyTheme()
 
 	# Method invoked when this component is connected.

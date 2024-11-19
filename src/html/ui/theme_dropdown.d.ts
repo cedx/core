@@ -17,6 +17,11 @@ export class ThemeDropdown extends Component {
 	label: string;
 
 	/**
+	 * The key of the storage entry providing the saved theme.
+	 */
+	storageKey: string;
+
+	/**
 	 * The current theme.
 	 */
 	theme: Theme;
