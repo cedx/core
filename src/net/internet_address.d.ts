@@ -38,6 +38,18 @@ export class InternetAddress {
 	 * @param value The IP address.
 	 */
 	constructor(value: string);
+
+	/**
+	 * Returns a JSON representation of this object.
+	 * @returns The JSON representation of this object.
+	 */
+	toJSON(): string;
+
+	/**
+	 * Returns a string representation of this object.
+	 * @returns The string representation of this object.
+	 */
+	toString(): string;
 }
 
 /**

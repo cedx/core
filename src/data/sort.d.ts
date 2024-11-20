@@ -116,11 +116,23 @@ export class Sort {
 	set(attribute: string, order: SortOrder): this;
 
 	/**
+	 * Returns a JSON representation of this object.
+	 * @returns The JSON representation of this object.
+	 */
+	toJSON(): string;
+
+	/**
 	 * Converts this sort to an SQL clause.
 	 * @param escape A function used to escape the SQL identifiers.
 	 * @returns The SQL clause corresponding to this object.
 	 */
 	toSql(escape?: (identifier: string) => string): string;
+
+	/**
+	 * Returns a string representation of this object.
+	 * @returns The string representation of this object.
+	 */
+	toString(): string;
 }
 
 /**
