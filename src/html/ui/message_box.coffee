@@ -61,13 +61,13 @@ export class MessageBox extends Component
 	confirm: (caption, message, options = {}) ->
 		context = options.context ? Context.warning
 		@show message,
+			caption: caption
+			context: context
+			icon: options.icon ? contextIcon context
 			buttons: options.buttons ? [
 				{label: "OK", value: MessageBoxResult.ok}
 				{label: "Annuler", value: MessageBoxResult.cancel, variant: Variant.secondary}
 			]
-			caption: caption # coffeelint: disable-line = object_shorthand
-			context: context # coffeelint: disable-line = object_shorthand
-			icon: options.icon ? contextIcon context
 
 	# Method invoked after the first rendering.
 	firstUpdated: -> @_root = @querySelector "dialog"
