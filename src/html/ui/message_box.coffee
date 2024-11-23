@@ -1,7 +1,7 @@
 import {html} from "lit"
 import {classMap} from "lit/directives/class-map.js"
 import {when as _when} from "lit/directives/when.js"
-import {Context} from "../../data/context.js"
+import {Context, contextIcon} from "../../data/context.js"
 import {Component} from "../component.js"
 import {Variant} from "../variant.js"
 
@@ -78,20 +78,20 @@ export class MessageBox extends Component
 			@click=#{@_onDialogClick} @close=#{@_onDialogClose}>
 			<form class="modal-content" method="dialog">
 				<div class="modal-header user-select-none">
-					#{_when @caption, => html"""
-						<h1 class="modal-title fs-5">#{@caption}</h1>
+					#{_when @_caption, => html"""
+						<h1 class="modal-title fs-5">#{@_caption}</h1>
 					"""}
 					<button class="btn-close"></button>
 				</div>
 				<div class="modal-body d-flex">
-					#{_when @icon, => html"""
-						<i class="icon icon-fill fs-1 fw-semibold me-2 #{classMap ["text-#{@context}"]: @context}">#{@icon}</i>
+					#{_when @_icon, => html"""
+						<i class="icon icon-fill fs-1 fw-semibold me-2 #{classMap ["text-#{@_context}"]: @_context}">#{@_icon}</i>
 					"""}
-					<div class="flex-grow-1">#{@content}</div>
+					<div class="flex-grow-1">#{@_content}</div>
 				</div>
-				#{_when @buttons.length, => html"""
+				#{_when @_buttons.length, => html"""
 					<div class="modal-footer user-select-none">
-						#{@buttons.map (button) -> html"""
+						#{@_buttons.map (button) -> html"""
 							<button class="btn btn-#{button.variant or Variant.primary}" value=#{button.value or MessageBoxResult.none}>
 								#{_when button.icon, -> html"""<i class="icon icon-fill #{classMap "me-1": button.label}">#{button.icon}</i>"""}
 								#{button.label}
@@ -126,7 +126,7 @@ export class MessageBox extends Component
 	_onDialogClose: -> @_resolve @_root.returnValue
 
 	# Registers the component.
-	customElements.define "captcha-dialog", @
+	customElements.define "message-box", @
 
 # Specifies the return value of a message box.
 export MessageBoxResult = Object.freeze

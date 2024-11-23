@@ -1,3 +1,4 @@
+import {TemplateResult} from "lit";
 import {Context} from "../../data/context.js";
 import {Component} from "../component.js";
 import {Variant} from "../variant.js";
@@ -19,7 +20,7 @@ export class MessageBox extends Component {
 	 * @param options The message box options.
 	 * @returns Resolves with the value of the clicked button.
 	 */
-	alert(caption: string, message: string, options?: MessageBoxOptions): Promise<string>;
+	alert(caption: string, message: TemplateResult, options?: MessageBoxOptions): Promise<string>;
 
 	/**
 	 * Closes the message box.
@@ -34,7 +35,7 @@ export class MessageBox extends Component {
 	 * @param options The message box options.
 	 * @returns Resolves with the value of the clicked button.
 	 */
-	confirm(caption: string, message: string, options?: MessageBoxOptions): Promise<string>;
+	confirm(caption: string, message: TemplateResult, options?: MessageBoxOptions): Promise<string>;
 
 	/**
 	 * Opens a modal dialog with the specified message and options.
@@ -42,7 +43,7 @@ export class MessageBox extends Component {
 	 * @param options The message box options.
 	 * @returns Resolves with the value of the clicked button.
 	 */
-	show(message: string, options?: MessageBoxOptions): Promise<string>;
+	show(message: TemplateResult, options?: MessageBoxOptions): Promise<string>;
 }
 
 /**
