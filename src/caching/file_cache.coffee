@@ -1,4 +1,4 @@
-import {createHash} from "node:crypto"
+import {hash} from "node:crypto"
 import {readdir, readFile, stat, unlink, utimes, writeFile} from "node:fs/promises"
 import {join} from "node:path"
 import {Duration} from "../util/duration.js"
@@ -45,7 +45,7 @@ export class FileCache
 		this # coffeelint: disable-line = no_this
 
 	# Builds a normalized cache key from the given key.
-	_buildKey: (key) -> createHash("md5").update("#{@_keyPrefix}#{key}").digest "hex"
+	_buildKey: (key) -> hash "md5", "#{@_keyPrefix}#{key}"
 
 	# Returns a value indicating whether the cached data with the specified key has expired.
 	_cacheExpired: (key) ->
