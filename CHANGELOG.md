@@ -3,6 +3,7 @@
 ## Version [1.4.0](https://github.com/cedx/core/compare/v1.3.0...v1.4.0)
 - Added the `MessageBox` component.
 - Added the `Clock` controller.
+- Fixed the `Client._fetch()` method.
 
 ## Version [1.3.0](https://github.com/cedx/core/compare/v1.2.2...v1.3.0)
 - Added the `ThemeDropdown.storageKey` property.
