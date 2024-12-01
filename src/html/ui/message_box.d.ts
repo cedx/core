@@ -123,3 +123,16 @@ export const MessageBoxResult: Readonly<{
  * Specifies the return value of a message box.
  */
 export type MessageBoxResult = typeof MessageBoxResult[keyof typeof MessageBoxResult];
+
+/**
+ * Declaration merging.
+ */
+declare global {
+
+	/**
+	 * The map of HTML tag names.
+	 */
+	interface HTMLElementTagNameMap {
+		"message-box": MessageBox;
+	}
+}
