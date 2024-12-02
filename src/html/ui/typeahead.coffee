@@ -45,7 +45,7 @@ export class Typeahead extends Component
 	# Method invoked when this component is connected.
 	connectedCallback: ->
 		super()
-		handler = (query) => try @_items = await @handler(query) catch then @_items = new Map
+		handler = (query) => try @_items = await @handler query catch then @_items = new Map
 		@_debounced = @_debounce handler, @wait
 
 	# Renders this component.
