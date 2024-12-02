@@ -1,4 +1,6 @@
 import {html} from "lit"
+import {classMap} from "lit/directives/class-map.js"
+import {when as _when} from "lit/directives/when.js"
 import {Component} from "../component.js"
 import {Size} from "../size.js"
 import {Variant} from "../variant.js"
@@ -65,9 +67,9 @@ export class FullScreenToggler extends Component
 
 	# Renders this component.
 	render: -> html"""
-		<button class="btn btn-#{x => x.size} btn-#{x => x.variant}" @click=#{x => x.toggleFullScreen()}>
-			#{when(x => x.icon, html<FullScreenToggler>`<i class="icon #{x => x.label ? "me-1" : ""}">#{x => x.icon}</i>`)}
-			#{when(x => x.label, html<FullScreenToggler>`#{x => x.label}`)}
+		<button class="btn #{classMap ["btn-#{@variant}"]: on, ["btn-#{@size}"]: @size}" @click=#{@toggleFullScreen}>
+			#{_when @icon, => html"""<i class="icon #{classMap "me-1": @label}">#{@icon}</i>"""}
+			#{_when @label, => @label}
 		</button>
 	"""
 
@@ -77,10 +79,12 @@ export class FullScreenToggler extends Component
 
 	# Acquires a new wake lock.
 	_acquireWakeLock: ->
+		return Promise.resolve() unless @wakeLock
 		@_sentinel = await navigator.wakeLock.request() if not @_sentinel or @_sentinel.released
 
 	# Releases the acquired wake lock.
 	_releaseWakeLock: ->
+		return Promise.resolve() unless @wakeLock
 		await @_sentinel.release() if @_sentinel and not @_sentinel.released
 		@_sentinel = null
 
