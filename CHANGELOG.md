@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [1.7.0](https://github.com/cedx/core/compare/v1.6.0...v1.7.0)
+- Added the `Toaster` component.
+
 ## Version [1.6.0](https://github.com/cedx/core/compare/v1.5.0...v1.6.0)
 - Added the `FullScreenToggler` and `Typeahead` components.
 
