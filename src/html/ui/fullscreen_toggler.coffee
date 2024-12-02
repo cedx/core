@@ -17,7 +17,7 @@ export class FullScreenToggler extends Component
 		variant: type: String
 		wakeLock: type: Boolean
 
-	# Creates a new loading indicator.
+	# Creates a new fullscreen toggler.
 	constructor: ->
 		super()
 

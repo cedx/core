@@ -14,7 +14,7 @@ export class Typeahead extends Component
 		wait: type: Number
 		_items: state: on
 
-	# Creates a new loading indicator.
+	# Creates a new typeahead.
 	constructor: ->
 		super()
 

@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@coffeelint/cli": "^5.2.11",
 		"@rollup/plugin-node-resolve": "^15.3.0",
+		"@types/bootstrap": "^5.2.10",
 		"@types/chai": "^5.0.1",
 		"@types/gulp": "^4.0.17",
 		"@types/koa": "^2.15.0",

@@ -1,3 +1,5 @@
+import {Duration} from "../util/duration.js"
+
 # A controller managing a clock.
 export class Clock
 
@@ -12,7 +14,7 @@ export class Clock
 		@_host.addController @
 
 		# The timer delay, in milliseconds.
-		@_timeout = timeout * 1000
+		@_timeout = timeout * Duration.second
 
 		# The timer identifier.
 		@_timer = 0
