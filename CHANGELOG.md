@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [1.5.0](https://github.com/cedx/core/compare/v1.4.0...v1.5.0)
+- Added the `locale` parameter to the `capitalize()` function.
+- Added the `PostalAddress` class.
+
 ## Version [1.4.0](https://github.com/cedx/core/compare/v1.3.0...v1.4.0)
 - Added the `MessageBox` component.
 - Added the `Clock` controller.
