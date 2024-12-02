@@ -70,7 +70,7 @@ export class MessageBox extends Component
 			]
 
 	# Method invoked after the first rendering.
-	firstUpdated: -> @_root = @querySelector "dialog"
+	firstUpdated: -> @_root = @renderRoot.querySelector "dialog"
 
 	# Renders this component.
 	render: -> html"""
