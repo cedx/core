@@ -8,7 +8,7 @@ xmlEntities = new Map [
 ]
 
 # Converts the first character to uppercase.
-export capitalize = (value) -> value.charAt(0).toLocaleUpperCase() + value[1..]
+export capitalize = (value, locale = navigator.language) -> value.charAt(0).toLocaleUpperCase(locale) + value[1..]
 
 # Replaces all new lines in the specified value by HTML line breaks.
 export newLineToBr = (value) -> value.split(/\r?\n/g).join "<br>"

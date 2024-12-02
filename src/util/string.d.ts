@@ -1,9 +1,10 @@
 /**
  * Converts the first character to uppercase.
  * @param value The string to process.
+ * @param locale The current locale.
  * @returns The processed string.
  */
-export function capitalize(value: string): string;
+export function capitalize(value: string, locale?: Intl.Locale|string): string;
 
 /**
  * Replaces all new lines in the specified value by HTML line breaks.
