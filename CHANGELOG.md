@@ -1,7 +1,7 @@
 # Changelog
 
 ## Version [1.6.0](https://github.com/cedx/core/compare/v1.5.0...v1.6.0)
-- Added the `FullScreenToggler` component.
+- Added the `FullScreenToggler` and `Typeahead` components.
 
 ## Version [1.5.0](https://github.com/cedx/core/compare/v1.4.0...v1.5.0)
 - Added the `locale` parameter to the `capitalize()` function.

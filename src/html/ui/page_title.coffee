@@ -8,7 +8,7 @@ export class PageTitle extends Component
 	@properties =
 		delimiter: type: String
 		text: type: String
-		_applicationName: state: on
+		_isStandalone: state: on
 
 	# Creates a new page title.
 	constructor: ->
