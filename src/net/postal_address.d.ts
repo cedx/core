@@ -43,7 +43,7 @@ export class PostalAddress {
 }
 
 /**
- * Defines the options of an {@link PostalAddress} instance.
+ * Defines the options of a {@link PostalAddress} instance.
  */
 export type PostalAddressOptions = Partial<{
 

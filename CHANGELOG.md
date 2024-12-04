@@ -2,6 +2,7 @@
 
 ## Version [1.7.0](https://github.com/cedx/core/compare/v1.6.0...v1.7.0)
 - Added the `Toaster` component.
+- Added the `liveReload()` function.
 - Removed the `assertIdentifier()` and `isIdentifier()` functions.
 
 ## Version [1.6.0](https://github.com/cedx/core/compare/v1.5.0...v1.6.0)
