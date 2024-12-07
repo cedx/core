@@ -26,7 +26,7 @@ export class NetworkDrive
 		@_user = user
 
 	# Value indicating whether this network drive is mounted.
-	Object.defineProperty @prototype, "isMounted",
+	Object.defineProperty @::, "isMounted",
 		get: -> try await access "#{@drive}:/"; yes catch then no
 
 	# Creates a new network drive from the specified file URI.

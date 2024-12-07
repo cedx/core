@@ -8,7 +8,7 @@ export class Sort
 		@_attributes = attributes
 
 	# The number of attributes.
-	Object.defineProperty @prototype, "length",
+	Object.defineProperty @::, "length",
 		get: -> @_attributes.length
 
 	# Creates a new sort from the specified attribute and order.

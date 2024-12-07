@@ -13,11 +13,11 @@ export class PhoneNumber
 		@_value = @_normalize value.trim()
 
 	# Value indicating whether this phone number is empty.
-	Object.defineProperty @prototype, "isEmpty",
+	Object.defineProperty @::, "isEmpty",
 		get: -> not @_value.length
 
 	# Value indicating whether this phone number is valid.
-	Object.defineProperty @prototype, "isValid",
+	Object.defineProperty @::, "isValid",
 		get: -> PhoneNumber.pattern.test @_value
 
 	# Formats this phone number according to the locale.

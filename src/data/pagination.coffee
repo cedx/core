@@ -14,19 +14,19 @@ export class Pagination
 		@totalCount = Math.max 0, options.totalCount ? 0
 
 	# The data limit.
-	Object.defineProperty @prototype, "limit",
+	Object.defineProperty @::, "limit",
 		get: -> @pageSize
 
 	# The data offset.
-	Object.defineProperty @prototype, "offset",
+	Object.defineProperty @::, "offset",
 		get: -> (@page - 1) * @pageSize
 
 	# The total number of pages.
-	Object.defineProperty @prototype, "pageCount",
+	Object.defineProperty @::, "pageCount",
 		get: -> Math.ceil @totalCount / @pageSize
 
 	# The search parameters corresponding to this object.
-	Object.defineProperty @prototype, "searchParams",
+	Object.defineProperty @::, "searchParams",
 		get: -> new URLSearchParams page: @page.toString(), perPage: @pageSize.toString()
 
 	# Creates a new pagination from the HTTP headers of the specified response.
@@ -48,7 +48,7 @@ export class PaginatedList
 		@pagination = options.pagination ? new Pagination
 
 	# The number of items in this list.
-	Object.defineProperty @prototype, "length",
+	Object.defineProperty @::, "length",
 		get: -> @items.length
 
 	# Creates an empty paginated list.

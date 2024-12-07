@@ -11,7 +11,7 @@ export class ViewportScroller
 		@_viewport = viewport
 
 	# The top offset used when scrolling to an element.
-	Object.defineProperty @prototype, "scrollOffset",
+	Object.defineProperty @::, "scrollOffset",
 		get: ->
 			if @_scrollOffset < 0
 				fontSize = parseInt getComputedStyle(document.body).fontSize

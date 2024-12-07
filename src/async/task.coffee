@@ -14,14 +14,14 @@ export class Task
 		@_task = task
 
 	# The current error of the task, if it has errored.
-	Object.defineProperty @prototype, "error",
+	Object.defineProperty @::, "error",
 		get: -> if @_result instanceof Error then @_result else null
 		set: (error) ->
 			@status = TaskStatus.error
 			@_result = if error instanceof Error then error else Error "The task failed.", cause: error
 
 	# The current value of the task, if it has completed.
-	Object.defineProperty @prototype, "value",
+	Object.defineProperty @::, "value",
 		get: -> if @_result instanceof Error then undefined else @_result
 		set: (value) ->
 			@status = TaskStatus.complete

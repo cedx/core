@@ -14,19 +14,19 @@ export class Error extends globalThis.Error
 		@_validationErrors = null
 
 	# Value indicating whether the response's status code is between 400 and 499.
-	Object.defineProperty @prototype, "isClientError",
+	Object.defineProperty @::, "isClientError",
 		get: -> 400 <= @status < 500
 
 	# Value indicating whether the response's status code is between 500 and 599.
-	Object.defineProperty @prototype, "isServerError",
+	Object.defineProperty @::, "isServerError",
 		get: -> 500 <= @status < 600
 
 	# The response's status code.
-	Object.defineProperty @prototype, "status",
+	Object.defineProperty @::, "status",
 		get: -> @cause.status
 
 	# The validation errors.
-	Object.defineProperty @prototype, "validationErrors",
+	Object.defineProperty @::, "validationErrors",
 		get: -> if @_validationErrors? then Promise.resolve @_validationErrors else @_validationErrors = await @_parseValidationErrors()
 
 	# Parses the validation errors returned in the body of the specified response.
