@@ -14,20 +14,17 @@ export class InternetAddress
 		@_value = @_sanitize value.trim().toLowerCase()
 
 	# The IPv6 numeric address.
-	Object.defineProperty @::, "address",
-		get: -> if @type is InternetAddressType.IPv4 then "::ffff:#{@_value}" else @_value
+	Object.defineProperty @::, "address", get: -> if @type is InternetAddressType.IPv4 then "::ffff:#{@_value}" else @_value
 
 	# Value indicating whether this IP address is empty.
-	Object.defineProperty @::, "isEmpty",
-		get: -> not @_value.length
+	Object.defineProperty @::, "isEmpty", get: -> not @_value.length
 
 	# Value indicating whether this IP address is valid.
-	Object.defineProperty @::, "isValid",
-		get: -> if @type is InternetAddressType.IPv4 then InternetAddress.ipv4Pattern.test @_value else InternetAddress.ipv6Pattern.test @_value
+	Object.defineProperty @::, "isValid", get: ->
+		if @type is InternetAddressType.IPv4 then InternetAddress.ipv4Pattern.test @_value else InternetAddress.ipv6Pattern.test @_value
 
 	# The address family.
-	Object.defineProperty @::, "type",
-		get: -> if @_value.includes ":" then InternetAddressType.IPv6 else InternetAddressType.IPv4
+	Object.defineProperty @::, "type", get: -> if @_value.includes ":" then InternetAddressType.IPv6 else InternetAddressType.IPv4
 
 	# Returns a JSON representation of this object.
 	toJSON: -> @toString()

@@ -11,17 +11,16 @@ export class ViewportScroller
 		@_viewport = viewport
 
 	# The top offset used when scrolling to an element.
-	Object.defineProperty @::, "scrollOffset",
-		get: ->
-			if @_scrollOffset < 0
-				fontSize = parseInt getComputedStyle(document.body).fontSize
-				@_scrollOffset = if Number.isNaN fontSize then 0 else fontSize * 2
+	Object.defineProperty @::, "scrollOffset", get: ->
+		if @_scrollOffset < 0
+			fontSize = parseInt getComputedStyle(document.body).fontSize
+			@_scrollOffset = if Number.isNaN fontSize then 0 else fontSize * 2
 
-				navbarHeight = parseInt getComputedStyle(document.documentElement).getPropertyValue "--navbar-height"
-				@_scrollOffset += if Number.isNaN navbarHeight then 0 else navbarHeight
+			navbarHeight = parseInt getComputedStyle(document.documentElement).getPropertyValue "--navbar-height"
+			@_scrollOffset += if Number.isNaN navbarHeight then 0 else navbarHeight
 
-			actionBar = document.body.querySelector "action-bar"
-			@_scrollOffset + (actionBar?.offsetHeight ? 0)
+		actionBar = document.body.querySelector "action-bar"
+		@_scrollOffset + (actionBar?.offsetHeight ? 0)
 
 	# Scrolls to the specified anchor.
 	scrollToAnchor: (anchor, options = {}) ->

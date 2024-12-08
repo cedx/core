@@ -11,20 +11,16 @@ export class MailAddress
 		@_value = value.trim().toLowerCase()
 
 	# The host portion of the address.
-	Object.defineProperty @::, "host",
-		get: -> @_value.split("@").at(-1) or ""
+	Object.defineProperty @::, "host", get: -> @_value.split("@").at(-1) or ""
 
 	# Value indicating whether this mail address is empty.
-	Object.defineProperty @::, "isEmpty",
-		get: -> not @_value.length
+	Object.defineProperty @::, "isEmpty", get: -> not @_value.length
 
 	# Value indicating whether this mail address is valid.
-	Object.defineProperty @::, "isValid",
-		get: -> MailAddress.pattern.test @_value
+	Object.defineProperty @::, "isValid", get: -> MailAddress.pattern.test @_value
 
 	# The user information.
-	Object.defineProperty @::, "user",
-		get: -> @_value.split("@").at(0) or ""
+	Object.defineProperty @::, "user", get: -> @_value.split("@").at(0) or ""
 
 	# Returns a JSON representation of this object.
 	toJSON: -> @toString()

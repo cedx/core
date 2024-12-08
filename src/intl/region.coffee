@@ -8,8 +8,7 @@ export class Region
 		@code = code.toUpperCase()
 
 	# The emoji flag corresponding to this region.
-	Object.defineProperty @::, "emojiFlag",
-		get: -> String.fromCodePoint 127_397 + @code.charCodeAt(0), 127_397 + @code.charCodeAt(1)
+	Object.defineProperty @::, "emojiFlag", get: -> String.fromCodePoint 127_397 + @code.charCodeAt(0), 127_397 + @code.charCodeAt(1)
 
 	# Returns an appropriately localized display name for the specified locale.
 	displayName: (locale) -> new Intl.DisplayNames(locale, type: "region").of(@code) or @code

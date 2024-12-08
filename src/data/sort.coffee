@@ -8,8 +8,7 @@ export class Sort
 		@_attributes = attributes
 
 	# The number of attributes.
-	Object.defineProperty @::, "length",
-		get: -> @_attributes.length
+	Object.defineProperty @::, "length", get: -> @_attributes.length
 
 	# Creates a new sort from the specified attribute and order.
 	@of: (attribute, order = SortOrder.asc) -> new @ [[attribute, order]]
