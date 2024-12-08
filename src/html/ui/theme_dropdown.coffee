@@ -36,7 +36,7 @@ export class ThemeDropdown extends Component
 	# The current theme.
 	Object.defineProperty @::, "theme",
 		get: -> @_theme
-		set: (value) -> if value isnt @_theme
+		set: (value) ->
 			localStorage.setItem @storageKey, @_theme = value
 			@_applyTheme()
 
