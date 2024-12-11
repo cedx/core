@@ -81,7 +81,7 @@ export class MessageBox extends Component
 					#{_when @_caption, => html"""
 						<h1 class="modal-title fs-5">#{@_caption}</h1>
 					"""}
-					<button class="btn-close"></button>
+					<button class="btn-close" value=#{MessageBoxResult.none}></button>
 				</div>
 				<div class="modal-body d-flex">
 					#{_when @_icon, => html"""
