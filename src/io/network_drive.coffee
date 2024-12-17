@@ -48,7 +48,7 @@ export class NetworkDrive
 	mount: (options = {}) ->
 		credentials = if @_user then ["/user:#{@_user}", @_password] else []
 		flag = if options.persistent then "yes" else "no"
-		@_netUse ["#{@drive}:", @uncPath, "/persistent:#{flag}", credentials...]
+		await @_netUse ["#{@drive}:", @uncPath, "/persistent:#{flag}", credentials...]
 
 	# Resolves the specified UNC path into a local path.
 	resolve: (path) ->
@@ -57,12 +57,12 @@ export class NetworkDrive
 		if path.startsWith @uncPath then "#{@drive}:#{path[@uncPath.length..]}" else path
 
 	# Unmounts this network drive.
-	unmount: -> @_netUse ["#{@drive}:", "/delete", "/yes"]
+	unmount: -> await @_netUse ["#{@drive}:", "/delete", "/yes"]
 
 	# Runs the `net use` command.
 	_netUse: (args) ->
 		executable = if platform is "win32" then join env.windir or "C:/Windows", "System32/net.exe" else "net"
-		run executable, ["use", args...]
+		await run executable, ["use", args...]
 
 	# Normalizes the specified UNC path.
 	_normalizeUncPath: (path) -> path.replaceAll("/", "\\").replace /\\+$/, ""
