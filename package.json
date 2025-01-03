@@ -20,7 +20,7 @@
 		"@types/koa__router": "^12.0.4",
 		"@types/koa": "^2.15.0",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "^22.10.2",
+		"@types/node": "^22.10.5",
 		"@types/serve-handler": "^6.1.4",
 		"chai": "^5.1.2",
 		"coffeescript": "^2.7.0",
