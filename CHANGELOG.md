@@ -1,9 +1,7 @@
 # Changelog
 
-## Version [1.9.0](https://github.com/cedx/core/compare/v1.8.0...v1.9.0)
-- Added the `ImageFormat` enumeration.
-
 ## Version [1.8.0](https://github.com/cedx/core/compare/v1.7.0...v1.8.0)
+- Added the `ImageFormat` enumeration.
 - Added the `Task` class.
 
 ## Version [1.7.0](https://github.com/cedx/core/compare/v1.6.0...v1.7.0)
