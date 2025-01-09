@@ -6,7 +6,7 @@
 	"name": "@cedx/core",
 	"repository": "cedx/core",
 	"type": "module",
-	"version": "1.8.0",
+	"version": "1.9.0",
 	"author": {
 		"email": "cedric@belin.io",
 		"name": "Cédric Belin",
