@@ -29,9 +29,9 @@ export class Container
 	# Registers a service factory with this container.
 	register: (id, factory) ->
 		@_factories.set id, factory
-		this # coffeelint: disable-line = no_this
+		this # coffeelint: disable-line=no_this
 
 	# Registers a service instance with this container.
 	set: (id, service) ->
 		@_services.set id, service
-		this # coffeelint: disable-line = no_this
+		this # coffeelint: disable-line=no_this

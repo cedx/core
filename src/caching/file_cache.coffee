@@ -42,7 +42,7 @@ export class FileCache
 		file = @_getFilePath key
 		await writeFile file, @_serializer.serialize value
 		await utimes file, new Date, (Date.now() / Duration.second) + (if duration > 0 then duration else 365 * Duration.day)
-		this # coffeelint: disable-line = no_this
+		this # coffeelint: disable-line=no_this
 
 	# Builds a normalized cache key from the given key.
 	_buildKey: (key) -> hash "md5", "#{@_keyPrefix}#{key}"

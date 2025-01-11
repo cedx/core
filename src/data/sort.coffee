@@ -28,7 +28,7 @@ export class Sort
 	append: (attribute, order) ->
 		@delete attribute
 		@_attributes.push [attribute, order]
-		this # coffeelint: disable-line = no_this
+		this # coffeelint: disable-line=no_this
 
 	# Gets the attribute/order pair at the specified index.
 	at: (index) -> @_attributes.at(index) or null
@@ -70,7 +70,7 @@ export class Sort
 	prepend: (attribute, order) ->
 		@delete attribute
 		@_attributes.unshift [attribute, order]
-		this # coffeelint: disable-line = no_this
+		this # coffeelint: disable-line=no_this
 
 	# Returns a value indicating whether the current sort satisfies the specified conditions.
 	satisfies: (conditions) ->

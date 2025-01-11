@@ -36,7 +36,7 @@ export class Router extends LitRouter
 	# Registers a function that will be invoked whenever the `navigate` event is triggered.
 	onNavigate: (listener) ->
 		addEventListener RouterEvent.type, listener
-		this # coffeelint: disable-line = no_this
+		this # coffeelint: disable-line=no_this
 
 # An event dispatched when the current route has been changed.
 export class RouterEvent extends Event

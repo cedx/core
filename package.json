@@ -59,7 +59,10 @@
 		"koa": ">=2.15.0",
 		"lit": ">=3.2.0"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
-		"test": "cake test"
+		"test": "gulp test"
 	}
 }
