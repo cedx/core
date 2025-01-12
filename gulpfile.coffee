@@ -26,7 +26,7 @@ export publish = ->
 # Runs the test suite.
 export test = ->
 	await npx "coffee", "--compile", "--map", "--no-header", "--output", "lib", "src", "test"
-	await npx "rollup", "--config=etc/rollup.js"
+	await npx "esbuild", "--bundle", "--legal-comments=none", "--log-level=warning", "--outfile=var/tests.js", "lib/client.js"
 	await run "node", "lib/puppeteer.js"
 	await npx "mocha", "--require=source-map-support/register", "lib/server.js"
 
