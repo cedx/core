@@ -1,5 +1,5 @@
-import {Context} from "@cedx/core/data/context.js";
 import {TemplateResult} from "lit";
+import {Context} from "../../data/context.js";
 import {Component} from "../component.js";
 
 /**
