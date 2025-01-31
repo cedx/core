@@ -9,6 +9,7 @@ implemented in [CoffeeScript](https://coffeescript.org).
 
 ## Documentation
 - [User guide](https://github.com/cedx/core/wiki)
+- [API reference](https://cedx.github.io/core)
 - [Examples](https://github.com/cedx/core/tree/main/example)
 
 ## Development
