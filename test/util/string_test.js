@@ -6,14 +6,12 @@ import {assert} from "chai";
  */
 describe("String utilities", () => {
 	const {deepEqual, equal} = assert;
-
-	// TODO !!!!! suppress debug statement
-	console.log(`LOCALE: ${navigator.language}`);
+	const locale = "en-US";
 
 	describe("capitalize()", () => {
 		it("should convert in uppercase the first character of the specified string", () => {
-			equal(capitalize(""), "");
-			equal(capitalize("foo bAr baZ"), "Foo bAr baZ");
+			equal(capitalize("", locale), "");
+			equal(capitalize("foo bAr baZ", locale), "Foo bAr baZ");
 		});
 	});
 
