@@ -2,7 +2,7 @@
 ![Node.js](https://badgen.net/npm/node/@cedx/core) ![npm](https://badgen.net/npm/v/@cedx/core) ![License](https://badgen.net/npm/license/@cedx/core) ![Downloads](https://badgen.net/npm/dt/@cedx/core)
 
 Base library of [Cédric Belin](https://belin.io), full stack developer,
-implemented in [CoffeeScript](https://coffeescript.org).
+implemented in [TypeScript](https://www.typescriptlang.org).
 
 > This library is dedicated to personal/side projects.  
 > **Use at your own risk!** No support will be provided.

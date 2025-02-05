@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [2.0.0](https://github.com/cedx/core/compare/v1.8.0...v2.0.0)
+- Ported the source code to [TypeScript](https://www.typescriptlang.org).
+
 ## Version [1.8.0](https://github.com/cedx/core/compare/v1.7.0...v1.8.0)
 - Added the `ImageFormat` enumeration.
 - Added the `Task` class.
