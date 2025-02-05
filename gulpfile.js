@@ -38,7 +38,7 @@ export async function test() {
 	await npx("tsc", "--build", "src/tsconfig.json", "--sourceMap");
 	await npx("esbuild", "--bundle", "--legal-comments=none", "--log-level=warning", "--outfile=var/tests.js", "test/client.js");
 	await run("node", "test/playwright.js");
-	await npx("mocha", "--require=source-map-support/register", "test/server.js");
+	await npx("mocha", "test/server.js");
 }
 
 /** The default task. */
