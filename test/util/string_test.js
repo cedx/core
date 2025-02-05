@@ -7,6 +7,9 @@ import {assert} from "chai";
 describe("String utilities", () => {
 	const {deepEqual, equal} = assert;
 
+	// TODO !!!!! suppress debug statement
+	console.log(`LOCALE: ${navigator.language}`);
+
 	describe("capitalize()", () => {
 		it("should convert in uppercase the first character of the specified string", () => {
 			equal(capitalize(""), "");
