@@ -1,7 +1,7 @@
 /**
  * Defines the access level associated to a feature or a permission.
  */
-export const AccessLevel: Readonly<{
+export const AccessLevel = Object.freeze({
 
 	/**
 	 * The read access.
@@ -17,7 +17,7 @@ export const AccessLevel: Readonly<{
 	 * The administrator access.
 	 */
 	admin: "admin"
-}>;
+});
 
 /**
  * Defines the access level associated to a feature or a permission.
@@ -30,7 +30,11 @@ export type AccessLevel = typeof AccessLevel[keyof typeof AccessLevel];
  * @param y The second access level.
  * @returns `true` if the first access level is greater than the second, otherwise `false`.
  */
-export function greaterThan(x: AccessLevel, y: AccessLevel): boolean;
+export function greaterThan(x: AccessLevel, y: AccessLevel): boolean {
+	if (x == AccessLevel.write) return y == AccessLevel.read;
+	if (x == AccessLevel.admin) return y == AccessLevel.read || y == AccessLevel.write;
+	return false;
+}
 
 /**
  * Returns a value indicating whether the first access level is greater than or equal to the second.
@@ -38,7 +42,11 @@ export function greaterThan(x: AccessLevel, y: AccessLevel): boolean;
  * @param y The second access level.
  * @returns `true` if the first access level is greater than or equal to the second, otherwise `false`.
  */
-export function greaterThanOrEqual(x: AccessLevel, y: AccessLevel): boolean;
+export function greaterThanOrEqual(x: AccessLevel, y: AccessLevel): boolean {
+	if (x == AccessLevel.read) return y == AccessLevel.read;
+	if (x == AccessLevel.write) return y == AccessLevel.read || y == AccessLevel.write;
+	return true;
+}
 
 /**
  * Returns a value indicating whether the first access level is less than the second.
@@ -46,7 +54,9 @@ export function greaterThanOrEqual(x: AccessLevel, y: AccessLevel): boolean;
  * @param y The second access level.
  * @returns `true` if the first access level is less than the second, otherwise `false`.
  */
-export function lessThan(x: AccessLevel, y: AccessLevel): boolean;
+export function lessThan(x: AccessLevel, y: AccessLevel): boolean {
+	return !greaterThanOrEqual(x, y);
+}
 
 /**
  * Returns a value indicating whether the first access level is less than or equal to the second.
@@ -54,4 +64,6 @@ export function lessThan(x: AccessLevel, y: AccessLevel): boolean;
  * @param y The second access level.
  * @returns `true` if the first access level is less than or equal to the second, otherwise `false`.
  */
-export function lessThanOrEqual(x: AccessLevel, y: AccessLevel): boolean;
+export function lessThanOrEqual(x: AccessLevel, y: AccessLevel): boolean {
+	return !greaterThan(x, y);
+}
