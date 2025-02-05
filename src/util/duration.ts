@@ -1,7 +1,7 @@
 /**
  * Provides some common durations in milliseconds.
  */
-export const Duration: Readonly<{
+export const Duration = Object.freeze({
 
 	/**
 	 * One second.
@@ -22,7 +22,7 @@ export const Duration: Readonly<{
 	 * One day.
 	 */
 	day: 86_400_000
-}>;
+});
 
 /**
  * Provides some common durations in milliseconds.

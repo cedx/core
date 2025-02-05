@@ -8,6 +8,6 @@
 // import "./net/phone_number_test.js";
 // import "./security/access_level_test.js";
 // import "./util/date_range_test.js";
-// import "./util/date_test.js";
+import "./util/date_test.js";
 import "./util/number_test.js";
 import "./util/string_test.js";
