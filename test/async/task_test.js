@@ -21,10 +21,12 @@ describe("Task", () => {
 			await task.run();
 			assert.instanceOf(task.error, TypeError);
 			equal(task.error.message, "failure");
+			assert.isUndefined(task.error.cause);
 
 			task = new Task(() => Promise.reject(123456));
 			await task.run();
 			assert.instanceOf(task.error, Error);
+			equal(task.error.message, "The task failed.");
 			equal(task.error.cause, 123456);
 		});
 	});
