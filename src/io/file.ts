@@ -1,4 +1,5 @@
-import {PathLike} from "node:fs";
+import type {PathLike} from "node:fs";
+import {readFile} from "node:fs/promises";
 
 /**
  * Reads the file at the specified path, and converts its contents into a data URL.
@@ -6,4 +7,6 @@ import {PathLike} from "node:fs";
  * @param mediaType The media type to associate with the data URL.
  * @returns The data URL corresponding to the given file.
  */
-export function toDataUrl(path: PathLike, mediaType: string): Promise<URL>;
+export async function toDataUrl(path: PathLike, mediaType: string): Promise<URL> {
+	return new URL(`data:${mediaType};base64,${(await readFile(path)).toString("base64")}`);
+}

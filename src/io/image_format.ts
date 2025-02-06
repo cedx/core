@@ -1,7 +1,7 @@
 /**
  * Defines the format of an image.
  */
-export const ImageFormat: Readonly<{
+export const ImageFormat = Object.freeze({
 
 	/**
 	 * The image format is AV1 Image File Format (AVIF).
@@ -27,7 +27,7 @@ export const ImageFormat: Readonly<{
 	 * The image format is WebP.
 	 */
 	webp: "webp"
-}>;
+});
 
 /**
  * Defines the format of an image.
