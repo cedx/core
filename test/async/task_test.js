@@ -29,20 +29,6 @@ describe("Task", () => {
 		});
 	});
 
-	describe("value", () => {
-		it("should return `undefined` if the task has errored", async () => {
-			const task = new Task(() => failure);
-			await task.run();
-			assert.isUndefined(task.value);
-		});
-
-		it("should return the value if the task has completed", async () => {
-			const task = new Task(() => success);
-			await task.run();
-			equal(task.value, "success");
-		});
-	});
-
 	describe("status", () => {
 		it("should be `TaskStatus.initial` if the task has not been run", async () => {
 			const task = new Task(() => Promise.resolve());
@@ -59,6 +45,20 @@ describe("Task", () => {
 			const task = new Task(() => success);
 			await task.run();
 			equal(task.status, TaskStatus.complete);
+		});
+	});
+
+	describe("value", () => {
+		it("should return `undefined` if the task has errored", async () => {
+			const task = new Task(() => failure);
+			await task.run();
+			assert.isUndefined(task.value);
+		});
+
+		it("should return the value if the task has completed", async () => {
+			const task = new Task(() => success);
+			await task.run();
+			equal(task.value, "success");
 		});
 	});
 
