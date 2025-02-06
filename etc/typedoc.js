@@ -1,6 +1,7 @@
 /** @type {Partial<import("typedoc").TypeDocOptions>} */
 export default {
-	entryPoints: ["../src/index.ts"],
+	entryPoints: ["../src"],
+	entryPointStrategy: "expand",
 	excludePrivate: true,
 	gitRevision: "main",
 	hideGenerator: true,
