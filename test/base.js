@@ -1,3 +1,4 @@
+import "./async/task_test.js";
 // import "./caching/memory_cache_test.js";
 // import "./data/pagination_test.js";
 // import "./data/sort_test.js";
