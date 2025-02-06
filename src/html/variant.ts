@@ -1,7 +1,7 @@
 /**
  * Defines tone variants.
  */
-export const Variant: Readonly<{
+export const Variant = Object.freeze({
 
 	/**
 	 * A dark variant.
@@ -22,7 +22,7 @@ export const Variant: Readonly<{
 	 * A secondary variant.
 	 */
 	secondary: "secondary"
-}>;
+});
 
 /**
  * Defines tone variants.

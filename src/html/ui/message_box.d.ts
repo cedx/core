@@ -101,7 +101,7 @@ export type MessageBoxOptions = Partial<{
 /**
  * Specifies the return value of a message box.
  */
-export const MessageBoxResult: Readonly<{
+export const MessageBoxResult = Object.freeze({
 
 	/**
 	 * The message box does not return any value.
@@ -117,7 +117,7 @@ export const MessageBoxResult: Readonly<{
 	 * The return value of the message box is "Cancel".
 	 */
 	cancel: "cancel"
-}>;
+});
 
 /**
  * Specifies the return value of a message box.

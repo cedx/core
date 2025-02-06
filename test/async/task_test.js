@@ -6,18 +6,16 @@ import {assert} from "chai";
  */
 describe("Task", () => {
 	const {equal} = assert;
-	const failure = Promise.reject(TypeError("failure"));
-	const success = Promise.resolve("success");
 
 	describe("error", () => {
 		it("should return `null` if the task has completed", async () => {
-			const task = new Task(() => success);
+			const task = new Task(() => Promise.resolve());
 			await task.run();
 			assert.isNull(task.error);
 		});
 
 		it("should return an `Error` if the task has errored", async () => {
-			let task = new Task(() => failure);
+			let task = new Task(() => Promise.reject(TypeError("failure")));
 			await task.run();
 			assert.instanceOf(task.error, TypeError);
 			equal(task.error.message, "failure");
@@ -38,13 +36,13 @@ describe("Task", () => {
 		});
 
 		it("should be `TaskStatus.error` if the task has errored", async () => {
-			const task = new Task(() => failure);
+			const task = new Task(() => Promise.reject());
 			await task.run();
 			equal(task.status, TaskStatus.error);
 		});
 
 		it("should be `TaskStatus.complete` if the task has completed", async () => {
-			const task = new Task(() => success);
+			const task = new Task(() => Promise.resolve());
 			await task.run();
 			equal(task.status, TaskStatus.complete);
 		});
@@ -52,13 +50,13 @@ describe("Task", () => {
 
 	describe("value", () => {
 		it("should return `undefined` if the task has errored", async () => {
-			const task = new Task(() => failure);
+			const task = new Task(() => Promise.reject());
 			await task.run();
 			assert.isUndefined(task.value);
 		});
 
 		it("should return the value if the task has completed", async () => {
-			const task = new Task(() => success);
+			const task = new Task(() => Promise.resolve("success"));
 			await task.run();
 			equal(task.value, "success");
 		});
@@ -66,9 +64,9 @@ describe("Task", () => {
 
 	describe("run()", () => {
 		it("should return `undefined` if the task has errored", async () =>
-			assert.isUndefined(await new Task(() => failure).run()));
+			assert.isUndefined(await new Task(() => Promise.reject()).run()));
 
 		it("should return the value if the task has completed", async () =>
-			equal(await new Task(() => success).run(), "success"));
+			equal(await new Task(() => Promise.resolve("success")).run(), "success"));
 	});
 });

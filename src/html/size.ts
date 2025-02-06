@@ -1,7 +1,7 @@
 /**
  * Defines the size of a component.
  */
-export const Size: Readonly<{
+export const Size = Object.freeze({
 
 	/**
 	 * An extra small size.
@@ -32,7 +32,7 @@ export const Size: Readonly<{
 	 * An extra extra large size.
 	 */
 	extraExtraLarge: "xxl"
-}>;
+});
 
 /**
  * Defines the size of a component.
