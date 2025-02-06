@@ -72,4 +72,4 @@ export class Container {
 /**
  * A token identifying a service.
  */
-export type ContainerToken = string|symbol|(new(...args: Array<any>) => any);
+export type ContainerToken = string|symbol|(new(...args: any[]) => any);

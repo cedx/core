@@ -16,13 +16,13 @@ export class Task<T> {
 	/**
 	 * The task to perform.
 	 */
-	#task: (...args: Array<any>) => Promise<T>;
+	#task: (...args: any[]) => Promise<T>;
 
 	/**
 	 * Creates a new task.
 	 * @param task The task to perform.
 	 */
-	constructor(task: (...args: Array<any>) => Promise<T>) {
+	constructor(task: (...args: any[]) => Promise<T>) {
 		this.#task = task;
 	}
 
@@ -53,7 +53,7 @@ export class Task<T> {
 	 * @param args The task arguments.
 	 * @returns The value of the task, if it has completed.
 	 */
-	async run(...args: Array<any>): Promise<T|undefined> {
+	async run(...args: any[]): Promise<T|undefined> {
 		this.status = TaskStatus.pending;
 		try { this.value = await this.#task(...args); }
 		catch (error) { this.error = error; }

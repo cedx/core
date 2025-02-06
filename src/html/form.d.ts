@@ -8,7 +8,7 @@ export type FormControl = HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement
  * @param form The form element.
  * @returns The controls belonging to the specified form.
  */
-export function getFormControls(form: HTMLFormElement): Array<FormControl>;
+export function getFormControls(form: HTMLFormElement): FormControl[];
 
 /**
  * Returns the first invalid control from the specified form.

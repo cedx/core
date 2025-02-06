@@ -61,7 +61,7 @@ export function stripTags(value: string): string {
  * @param array The array to process.
  * @returns The input array.
  */
-export function trimArray(array: Array<unknown>): any[] {
+export function trimArray(array: unknown[]): any[] {
 	for (const [index, value] of array.entries()) if (typeof value == "string") array[index] = value.trim();
 	return array;
 }
