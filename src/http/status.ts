@@ -1,7 +1,7 @@
 /**
  * Provides common HTTP status codes.
  */
-export const Status: Readonly<{
+export const Status = Object.freeze({
 
 	/**
 	 * The `OK` status.
@@ -132,7 +132,7 @@ export const Status: Readonly<{
 	 * The `Bandwidth Limit Exceeded` status
 	 */
 	bandwidthLimitExceeded: 509
-}>;
+});
 
 /**
  * Provides common HTTP status codes.
