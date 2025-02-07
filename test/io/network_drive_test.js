@@ -6,6 +6,8 @@ import {sep} from "node:path";
  * Tests the features of the {@link NetworkDrive} class.
  */
 describe("NetworkDrive", () => {
+	const {equal} = assert;
+
 	describe("fromUri()", () => {
 		it("should parse the specified file URI", () => {
 			let networkDrive = NetworkDrive.fromUri(new URL("smb://localhost/folder"));
