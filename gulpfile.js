@@ -42,7 +42,7 @@ export async function test() {
 }
 
 /** Watches for file changes. */
-export async function watch() {
+export function watch() {
 	void npx("tsc", "--build", "src/tsconfig.json", "--preserveWatchOutput", "--sourceMap", "--watch");
 }
 

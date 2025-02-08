@@ -2,13 +2,14 @@
 import {Component} from "#html/component";
 import {Theme, themeIcon, themeLabel} from "#html/theme";
 import {html, type TemplateResult} from "lit";
-import {property, state} from "lit/decorators.js";
+import {customElement, property, state} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
 
 /**
  * A dropdown menu for switching the color mode.
  */
+@customElement("theme-dropdown")
 export class ThemeDropdown extends Component {
 
 	/**
