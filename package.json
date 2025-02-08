@@ -72,7 +72,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"postinstall": "playwright install --with-deps chromium",
 		"test": "gulp test"
 	}
 }
