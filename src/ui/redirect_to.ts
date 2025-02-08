@@ -36,16 +36,3 @@ export class RedirectTo extends Component {
 		else location.replace(this.route);
 	}
 }
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"redirect-to": RedirectTo;
-	}
-}

@@ -89,17 +89,3 @@ export class Toaster extends Component {
 	 */
 	show(notification: Notification): void;
 }
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"toaster-item": Toast;
-		"toaster-container": Toaster;
-	}
-}

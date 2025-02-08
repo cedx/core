@@ -74,16 +74,3 @@ export class PageTitle extends Component {
 		document.title = this.isStandalone ? text : [text, this.#appName].filter(item => item.length).join(` ${this.delimiter} `);
 	}
 }
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"page-title": PageTitle;
-	}
-}

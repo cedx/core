@@ -29,10 +29,9 @@ export class ActionBar extends Component {
 	 */
 	protected override async firstUpdated(): Promise<void> {
 		await this.updateComplete;
-		const {documentElement} = document;
-		const navbarHeight = parseInt(getComputedStyle(documentElement).getPropertyValue("--navbar-height"));
+		const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--navbar-height"));
 		const mainOffset = this.offsetHeight + (Number.isNaN(navbarHeight) ? 0 : navbarHeight);
-		documentElement.style.setProperty("--main-offset", `${mainOffset}px`);
+		document.documentElement.style.setProperty("--main-offset", `${mainOffset}px`);
 	}
 
 	/**
@@ -45,18 +44,5 @@ export class ActionBar extends Component {
 				<slot class="d-flex justify-content-between align-items-center"></slot>
 			</aside>
 		`;
-	}
-}
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"action-bar": ActionBar;
 	}
 }

@@ -112,16 +112,3 @@ export class ThemeDropdown extends Component {
 		document.documentElement.dataset.bsTheme = theme;
 	}
 }
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"theme-dropdown": ThemeDropdown;
-	}
-}

@@ -55,16 +55,3 @@ export class LoadingIndicator extends Component {
 		`;
 	}
 }
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"loading-indicator": LoadingIndicator;
-	}
-}

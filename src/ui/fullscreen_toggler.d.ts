@@ -44,16 +44,3 @@ export class FullScreenToggler extends Component {
 	 */
 	toggleFullScreen(): Promise<void>;
 }
-
-/**
- * Declaration merging.
- */
-declare global {
-
-	/**
-	 * The map of HTML tag names.
-	 */
-	interface HTMLElementTagNameMap {
-		"fullscreen-toggler": FullScreenToggler;
-	}
-}
