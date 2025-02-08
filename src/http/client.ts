@@ -89,16 +89,16 @@ export class Client {
 			if (!headers.has("content-type")) headers.set("content-type", "application/json");
 		}
 
-		const loader = document.body.querySelector("loading-indicator");
+		// TODO const loader = document.body.querySelector("loading-indicator");
 		try {
-			loader?.start();
+			// TODO loader?.start();
 			const request = new Request(new URL(url, this.baseUrl), {...options, method, headers, body} as RequestInit);
 			const response = await fetch(request);
 			if (!response.ok) throw new Error(response);
 			return response;
 		}
 		finally {
-			loader?.stop();
+			// TODO loader?.stop();
 		}
 	}
 }

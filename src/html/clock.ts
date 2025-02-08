@@ -1,5 +1,5 @@
+import {Duration} from "#util/duration";
 import type {ReactiveControllerHost} from "lit";
-import {Duration} from "../util/duration.js";
 
 /**
  * A controller managing a clock.

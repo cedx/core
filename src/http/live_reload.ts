@@ -1,9 +1,9 @@
+import {Duration} from "#util/duration";
 import Router, {type Middleware} from "@koa/router";
 import type {Context} from "koa";
 import EventEmitter from "node:events";
 import {Transform, type TransformCallback} from "node:stream";
 import {setInterval} from "node:timers";
-import {Duration} from "../util/duration.js";
 
 /**
  * Represents a server-sent event.

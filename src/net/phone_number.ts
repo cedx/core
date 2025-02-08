@@ -1,4 +1,4 @@
-import {reverse, split} from "../util/string.js";
+import {reverse, split} from "#util/string";
 
 /**
  * Represents a phone number.

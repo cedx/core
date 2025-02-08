@@ -1,4 +1,4 @@
-import {Duration} from "../util/duration.js";
+import {Duration} from "#util/duration";
 
 /**
  * Downloads the specified file.
