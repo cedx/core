@@ -26,7 +26,7 @@ export class PageTitle extends Component {
 	/**
 	 * The application name.
 	 */
-	#appName = document.head.querySelector<HTMLMetaElement>('meta[name="application-name"]')?.content ?? "";
+	readonly #appName = document.head.querySelector<HTMLMetaElement>('meta[name="application-name"]')?.content ?? "";
 
 	/**
 	 * Creates a new page title.
@@ -54,7 +54,7 @@ export class PageTitle extends Component {
 	/**
 	 * Handles the events.
 	 */
-	handleEvent() {
+	handleEvent(): void {
 		this.isStandalone = true;
 	}
 
@@ -70,7 +70,7 @@ export class PageTitle extends Component {
 	 * Method invoked after each rendering.
 	 */
 	protected override updated(): void {
-		const text = this.text.trim() || this.textContent?.trim() || "";
+		const text = this.text.trim() || this.textContent?.trim() || ""; // eslint-disable-line @typescript-eslint/prefer-nullish-coalescing
 		document.title = this.isStandalone ? text : [text, this.#appName].filter(item => item.length).join(` ${this.delimiter} `);
 	}
 }

@@ -2,7 +2,32 @@ import {Status} from "#http/status";
 import {Router as LitRouter, type BaseRouteConfig, type RouteConfig} from "@lit-labs/router";
 import {Tooltip} from "bootstrap";
 import {html, type ReactiveControllerHost} from "lit";
-import {ViewportScroller} from "./viewport_scroller.js";
+import type {ViewportScroller} from "./viewport_scroller.js";
+
+/**
+ * An event dispatched when the current route has been changed.
+ */
+export class RouterEvent extends Event {
+
+	/**
+	 * The event type.
+	 */
+	static readonly type = "router:navigate";
+
+	/**
+	 * The new route.
+	 */
+	readonly route: string;
+
+	/**
+	 * Creates a new router event.
+	 * @param route The new route.
+	 */
+	constructor(route: string) {
+		super(RouterEvent.type);
+		this.route = route;
+	}
+}
 
 /**
  * Performs location-based routing using a configuration of URL patterns and associated render callbacks.
@@ -48,7 +73,8 @@ export class Router extends LitRouter {
 	 * @returns Resolves when the router has navigated to the specified route.
 	 */
 	override async goto(route: string, options: {push?: boolean} = {}): Promise<void> {
-		// TODO document.body.querySelector("loading-indicator")?.stop({force: true});
+		const loadingIndicator = document.body.querySelector("loading-indicator") as {start: () => void, stop: (options?: {force?: boolean}) => void}|null;
+		loadingIndicator?.stop({force: true});
 		for (const element of document.body.querySelectorAll('[data-bs-toggle="tooltip"]')) Tooltip.getInstance(element)?.dispose();
 
 		await super.goto(route.startsWith("/") || !this.#basePath ? route : `${this.#basePath}/${route}`);
@@ -69,31 +95,6 @@ export class Router extends LitRouter {
 	onNavigate(listener: (event: RouterEvent) => void): this {
 		addEventListener(RouterEvent.type, listener as EventListener);
 		return this;
-	}
-}
-
-/**
- * An event dispatched when the current route has been changed.
- */
-export class RouterEvent extends Event {
-
-	/**
-	 * The event type.
-	 */
-	static readonly type = "router:navigate";
-
-	/**
-	 * The new route.
-	 */
-	readonly route: string;
-
-	/**
-	 * Creates a new router event.
-	 * @param route The new route.
-	 */
-	constructor(route: string) {
-		super(RouterEvent.type);
-		this.route = route;
 	}
 }
 

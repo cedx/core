@@ -12,7 +12,7 @@ export class Typeahead extends Component {
 	/**
 	 * The function invoked when the query has been changed.
 	 */
-	@property({attribute: false}) handler: (value: string) => Promise<Map<string, string>> = () => Promise.resolve(new Map);
+	@property({attribute: false}) handler: (value: string) => Promise<Map<string, string>> = () => Promise.resolve(new Map<string, string>);
 
 	/**
 	 * The data list identifier.
@@ -37,12 +37,12 @@ export class Typeahead extends Component {
 	/**
 	 * The data list items.
 	 */
-	@state() private items: Map<string, string> = new Map;
+	@state() private items = new Map<string, string>;
 
 	/**
 	 * The debounced handler used to look up the query.
 	 */
-	#debounced: (value: string) => void = () => {};
+	#debounced: (value: string) => void = () => { /* Noop */ };
 
 	/**
 	 * The previous query.
@@ -54,10 +54,8 @@ export class Typeahead extends Component {
 	 */
 	override connectedCallback(): void {
 		super.connectedCallback();
-		this.#debounced = this.#debounce(async query => {
-			try { this.items = await this.handler(query); }
-			catch { this.items = new Map; }
-		}, this.wait);
+		const handler = (query: string): void => { this.handler(query).then(items => this.items = items, () => this.items = new Map<string, string>) };
+		this.#debounced = this.#debounce(handler, this.wait);
 	}
 
 	/**

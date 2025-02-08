@@ -8,6 +8,7 @@ import {setTimeout} from "node:timers/promises";
  * Tests the features of the {@link FileCache} class.
  */
 describe("FileCache", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	const cache = new FileCache("var/cache");

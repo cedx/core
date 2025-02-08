@@ -2,6 +2,47 @@ import {atMidnight, daysInMonth, getQuarter} from "./date.js";
 import {Duration} from "./duration.js";
 
 /**
+ * Defines the type of a date range.
+ */
+export const DateRangeType = Object.freeze({
+
+	/**
+	 * A custom date range.
+	 */
+	custom: "",
+
+	/**
+	 * A whole day.
+	 */
+	day: "P1D",
+
+	/**
+	 * A whole week.
+	 */
+	week: "P1W",
+
+	/**
+	 * A whole month.
+	 */
+	month: "P1M",
+
+	/**
+	 * A whole quarter.
+	 */
+	quarter: "P3M",
+
+	/**
+	 * A whole year.
+	 */
+	year: "P1Y"
+});
+
+/**
+ * Defines the type of a date range.
+ */
+export type DateRangeType = typeof DateRangeType[keyof typeof DateRangeType];
+
+/**
  * Defines a date range.
  */
 export class DateRange {
@@ -113,44 +154,3 @@ export class DateRange {
 		return this.start.getTime() == other.start.getTime() && this.end.getTime() == other.end.getTime();
 	}
 }
-
-/**
- * Defines the type of a date range.
- */
-export const DateRangeType = Object.freeze({
-
-	/**
-	 * A custom date range.
-	 */
-	custom: "",
-
-	/**
-	 * A whole day.
-	 */
-	day: "P1D",
-
-	/**
-	 * A whole week.
-	 */
-	week: "P1W",
-
-	/**
-	 * A whole month.
-	 */
-	month: "P1M",
-
-	/**
-	 * A whole quarter.
-	 */
-	quarter: "P3M",
-
-	/**
-	 * A whole year.
-	 */
-	year: "P1Y"
-});
-
-/**
- * Defines the type of a date range.
- */
-export type DateRangeType = typeof DateRangeType[keyof typeof DateRangeType];

@@ -1,4 +1,25 @@
 /**
+ * Defines the address family of an IP address.
+ */
+export const InternetAddressType = Object.freeze({
+
+	/**
+	 * An IPv4 address.
+	 */
+	IPv4: 4,
+
+	/**
+	 * An IPv6 address.
+	 */
+	IPv6: 6
+});
+
+/**
+ * Defines the address family of an IP address.
+ */
+export type InternetAddressType = typeof InternetAddressType[keyof typeof InternetAddressType];
+
+/**
  * Represents an IP address.
  */
 export class InternetAddress {
@@ -82,24 +103,3 @@ export class InternetAddress {
 		return matches ? matches[1] : value;
 	}
 }
-
-/**
- * Defines the address family of an IP address.
- */
-export const InternetAddressType = Object.freeze({
-
-	/**
-	 * An IPv4 address.
-	 */
-	IPv4: 4,
-
-	/**
-	 * An IPv6 address.
-	 */
-	IPv6: 6
-});
-
-/**
- * Defines the address family of an IP address.
- */
-export type InternetAddressType = typeof InternetAddressType[keyof typeof InternetAddressType];

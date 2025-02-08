@@ -25,13 +25,13 @@ export class ActionBar extends Component {
 
 	/**
 	 * Method invoked after the first rendering.
-	 * @returns Resolves when this component has been updated.
 	 */
-	protected override async firstUpdated(): Promise<void> {
-		await this.updateComplete;
-		const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--navbar-height"));
-		const mainOffset = this.offsetHeight + (Number.isNaN(navbarHeight) ? 0 : navbarHeight);
-		document.documentElement.style.setProperty("--main-offset", `${mainOffset}px`);
+	protected override firstUpdated(): void {
+		void this.updateComplete.finally(() => {
+			const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--navbar-height"));
+			const mainOffset = this.offsetHeight + (Number.isNaN(navbarHeight) ? 0 : navbarHeight);
+			document.documentElement.style.setProperty("--main-offset", `${mainOffset}px`);
+		});
 	}
 
 	/**

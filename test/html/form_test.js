@@ -5,6 +5,7 @@ import {assert} from "chai";
  * Tests the features of the form utilities.
  */
 describe("Form utilities", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("isFormControl()", () => {

@@ -23,7 +23,7 @@ export async function doc() {
 /** Performs the static analysis of source code. */
 export async function lint() {
 	await npx("tsc", "--build", "tsconfig.json", "--noEmit");
-	await npx("eslint", "--config=etc/eslint.js", "gulpfile.js", "example", "src", "test");
+	await npx("eslint", "--config=etc/eslint.js", "gulpfile.js", "src", "test");
 }
 
 /** Publishes the package. */

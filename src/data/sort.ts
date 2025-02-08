@@ -1,4 +1,30 @@
 /**
+ * Represents an attribute/order pair of a sort.
+ */
+export type SortEntry = [string, SortOrder];
+
+/**
+ * Specifies the order of a sort parameter.
+ */
+export const SortOrder = Object.freeze({
+
+	/**
+	 * The sort is ascending.
+	 */
+	asc: "ASC",
+
+	/**
+	 * The sort is descending.
+	 */
+	desc: "DESC"
+});
+
+/**
+ * Specifies the order of a sort parameter.
+ */
+export type SortOrder = typeof SortOrder[keyof typeof SortOrder];
+
+/**
  * Represents information relevant to the sorting of data items.
  */
 export class Sort {
@@ -209,29 +235,3 @@ export class Sort {
 		return this.#attributes.map(([attribute, order]) => `${order == SortOrder.desc ? "-" : ""}${attribute}`).join();
 	}
 }
-
-/**
- * Represents an attribute/order pair of a sort.
- */
-export type SortEntry = [string, SortOrder];
-
-/**
- * Specifies the order of a sort parameter.
- */
-export const SortOrder = Object.freeze({
-
-	/**
-	 * The sort is ascending.
-	 */
-	asc: "ASC",
-
-	/**
-	 * The sort is descending.
-	 */
-	desc: "DESC"
-});
-
-/**
- * Specifies the order of a sort parameter.
- */
-export type SortOrder = typeof SortOrder[keyof typeof SortOrder];

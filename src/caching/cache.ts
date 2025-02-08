@@ -1,7 +1,7 @@
 /**
  * Represents a cache.
  */
-export interface Cache {
+export interface Cache { // eslint-disable-line @typescript-eslint/consistent-type-definitions
 
 	/**
 	 * Removes all entries from this cache.
@@ -69,10 +69,10 @@ export type CacheSerializer = {
 	/**
 	 * Serializes the specified value.
 	 */
-	serialize(value: unknown): string;
+	serialize: (value: unknown) => string;
 
 	/**
 	 * Unserializes the specified value.
 	 */
-	unserialize(value: string): any;
+	unserialize: (value: string) => any;
 };

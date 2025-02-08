@@ -6,6 +6,7 @@ import {assert} from "chai";
  * Tests the features of the {@link Sort} class.
  */
 describe("Sort", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {deepEqual, equal, isAbove, isBelow, isEmpty, lengthOf} = assert;
 
 	describe("length", () => {

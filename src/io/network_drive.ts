@@ -120,7 +120,7 @@ export class NetworkDrive {
 	 * @param args The command arguments.
 	 * @returns Resolves when the command has been completed.
 	 */
-	async #netUse(args: Array<string>): Promise<void> {
+	async #netUse(args: string[]): Promise<void> {
 		const executable = platform == "win32" ? join(env.windir ?? "C:/Windows", "System32/net.exe") : "net";
 		await run(executable, ["use", ...args]);
 	}

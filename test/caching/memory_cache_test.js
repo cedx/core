@@ -6,6 +6,7 @@ import {assert} from "chai";
  * Tests the features of the {@link MemoryCache} class.
  */
 describe("MemoryCache", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("clear()", () => {
@@ -85,5 +86,5 @@ describe("MemoryCache", () => {
  * @returns {Promise<void>} Resolves when the delay has elapsed.
  */
 function wait(milliseconds) {
-	return new Promise(resolve => setTimeout(resolve, milliseconds));
+	return new Promise(resolve => setTimeout(resolve, milliseconds)); // eslint-disable-line no-promise-executor-return
 }

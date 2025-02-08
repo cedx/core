@@ -5,6 +5,7 @@ import {assert} from "chai";
  * Tests the features of the file utilities.
  */
 describe("File utilities", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("toDataUrl()", () => {

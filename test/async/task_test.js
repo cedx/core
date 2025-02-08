@@ -5,6 +5,7 @@ import {assert} from "chai";
  * Tests the features of the {@link Task} class.
  */
 describe("Task", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("error", () => {
@@ -21,7 +22,7 @@ describe("Task", () => {
 			equal(task.error.message, "failure");
 			assert.isUndefined(task.error.cause);
 
-			task = new Task(() => Promise.reject(123456));
+			task = new Task(() => Promise.reject(123456)); // eslint-disable-line @typescript-eslint/prefer-promise-reject-errors
 			await task.run();
 			assert.instanceOf(task.error, Error);
 			equal(task.error.message, "The task failed.");
@@ -30,13 +31,13 @@ describe("Task", () => {
 	});
 
 	describe("status", () => {
-		it("should be `TaskStatus.initial` if the task has not been run", async () => {
+		it("should be `TaskStatus.initial` if the task has not been run", () => {
 			const task = new Task(() => Promise.resolve());
 			equal(task.status, TaskStatus.initial);
 		});
 
 		it("should be `TaskStatus.error` if the task has errored", async () => {
-			const task = new Task(() => Promise.reject());
+			const task = new Task(() => Promise.reject(Error("failure")));
 			await task.run();
 			equal(task.status, TaskStatus.error);
 		});
@@ -50,7 +51,7 @@ describe("Task", () => {
 
 	describe("value", () => {
 		it("should return `undefined` if the task has errored", async () => {
-			const task = new Task(() => Promise.reject());
+			const task = new Task(() => Promise.reject(Error("failure")));
 			await task.run();
 			assert.isUndefined(task.value);
 		});
@@ -64,7 +65,7 @@ describe("Task", () => {
 
 	describe("run()", () => {
 		it("should return `undefined` if the task has errored", async () =>
-			assert.isUndefined(await new Task(() => Promise.reject()).run()));
+			assert.isUndefined(await new Task(() => Promise.reject(Error("failure"))).run()));
 
 		it("should return the value if the task has completed", async () =>
 			equal(await new Task(() => Promise.resolve("success")).run(), "success"));

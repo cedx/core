@@ -5,6 +5,7 @@ import {assert} from "chai";
  * Tests the features of the number utilities.
  */
 describe("Number utilities", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("round()", () => {

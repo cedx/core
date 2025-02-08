@@ -17,7 +17,7 @@ declare global {
 	/**
 	 * The map of HTML tag names.
 	 */
-	interface HTMLElementTagNameMap {
+	interface HTMLElementTagNameMap { // eslint-disable-line @typescript-eslint/consistent-type-definitions
 		"action-bar": ActionBar;
 		"fullscreen-toggler": FullScreenToggler;
 		"loading-indicator": LoadingIndicator;

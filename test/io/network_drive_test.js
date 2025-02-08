@@ -6,6 +6,7 @@ import {sep} from "node:path";
  * Tests the features of the {@link NetworkDrive} class.
  */
 describe("NetworkDrive", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("fromUri()", () => {

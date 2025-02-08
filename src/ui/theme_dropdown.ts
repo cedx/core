@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import {Component} from "#html/component";
 import {Theme, themeIcon, themeLabel} from "#html/theme";
 import {html, type TemplateResult} from "lit";
@@ -52,7 +53,7 @@ export class ThemeDropdown extends Component {
 	}
 	set theme(value: Theme) {
 		localStorage.setItem(this.storageKey, this._theme = value);
-		this.#applyTheme;
+		this.#applyTheme();
 	}
 
 	/**

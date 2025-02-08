@@ -75,8 +75,8 @@ class SseStream extends Transform {
  */
 export function liveReload(options: LiveReloadOptions = {}): Middleware {
 	const emitter = new EventEmitter().setMaxListeners(0);
-	const keepAlive = options.keepAlive || 30;
-	if (keepAlive > 0) setInterval(() => emitter.emit("message", "keepalive"), keepAlive * Duration.second);
+	const keepAlive = options.keepAlive ?? 30;
+	if (keepAlive && keepAlive > 0) setInterval(() => emitter.emit("message", "keepalive"), keepAlive * Duration.second);
 
 	/**
 	 * Listens for server-sent events.
@@ -84,7 +84,7 @@ export function liveReload(options: LiveReloadOptions = {}): Middleware {
 	 */
 	function listen(ctx: Context): void {
 		const stream = new SseStream(ctx);
-		const listener = (message: string|SseEvent) => {
+		const listener = (message: string|SseEvent): void => {
 			if (typeof message == "object" && message.event == "reload") stream.end(message);
 			else stream.write(message);
 		};

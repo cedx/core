@@ -5,6 +5,7 @@ import {assert} from "chai";
  * Tests the features of the {@link MailAddress} class.
  */
 describe("MailAddress", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("host", () => {

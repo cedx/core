@@ -6,6 +6,7 @@ import {assert} from "chai";
  * Tests the features of the string utilities.
  */
 describe("Date utilities", () => {
+	// eslint-disable-next-line @typescript-eslint/unbound-method
 	const {equal} = assert;
 
 	describe("atMidnight()", () => {
