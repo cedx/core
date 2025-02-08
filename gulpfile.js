@@ -41,6 +41,11 @@ export async function test() {
 	await npx("mocha", "test/server.js");
 }
 
+/** Watches for file changes. */
+export async function watch() {
+	void npx("tsc", "--build", "src/tsconfig.json", "--preserveWatchOutput", "--sourceMap", "--watch");
+}
+
 /** The default task. */
 export default gulp.series(clean, build);
 
