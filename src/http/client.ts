@@ -89,7 +89,7 @@ export class Client {
 			if (!headers.has("content-type")) headers.set("content-type", "application/json");
 		}
 
-		const loader = document.body.querySelector<HTMLElement & {start: () => void, stop: () => void}>("loading-indicator");
+		const loader = document.body.querySelector("loading-indicator");
 		try {
 			loader?.start();
 			const request = new Request(new URL(url, this.baseUrl), {...options, method, headers, body} as RequestInit);
