@@ -6,9 +6,9 @@
  * @returns The newly created event source.
  */
 export function liveReload(url: string|URL, options: EventSourceInit = {}): EventSource {
-	const source = new EventSource(url, options);
-	source.addEventListener("error", () => console.error("Failed to connect to the event source."));
-	source.addEventListener("open", () => console.info("Listening for server-sent events..."));
-	source.addEventListener("reload", () => { source.close(); location.reload(); });
-	return source;
+	const eventSource = new EventSource(url, options);
+	eventSource.addEventListener("error", () => console.error("Failed to connect to the event source."));
+	eventSource.addEventListener("open", () => console.info("Listening for server-sent events..."));
+	eventSource.addEventListener("reload", () => { eventSource.close(); location.reload(); });
+	return eventSource;
 }
