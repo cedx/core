@@ -1,4 +1,4 @@
-import {Component} from "../component.js"
+import {Component} from "#html/component"
 
 # Navigates to a new location.
 export class RedirectTo extends Component

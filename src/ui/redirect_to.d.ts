@@ -1,5 +1,5 @@
-import {Component} from "../component.js";
-import {Router} from "../router.js";
+import {Component} from "#html/component";
+import {Router} from "#html/router";
 
 /**
  * Navigates to a new location.

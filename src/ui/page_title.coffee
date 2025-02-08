@@ -1,5 +1,5 @@
 import {html} from "lit"
-import {Component} from "../component.js"
+import {Component} from "#html/component"
 
 # A component setting the document title.
 export class PageTitle extends Component

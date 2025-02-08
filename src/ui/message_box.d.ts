@@ -1,7 +1,7 @@
+import {Context} from "#data/context";
+import {Component} from "#html/component";
+import {Variant} from "#html/variant";
 import {TemplateResult} from "lit";
-import {Context} from "../../data/context.js";
-import {Component} from "../component.js";
-import {Variant} from "../variant.js";
 
 /**
  * Displays a message window, also known as dialog box, which presents a message to the user.

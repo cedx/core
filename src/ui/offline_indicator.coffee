@@ -1,6 +1,6 @@
 import {html} from "lit"
 import {when as _when} from "lit/directives/when.js"
-import {Component} from "../component.js"
+import {Component} from "#html/component"
 
 # A component that shows up when the network is unavailable, and hides when connectivity is restored.
 export class OfflineIndicator extends Component

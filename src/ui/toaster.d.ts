@@ -1,6 +1,6 @@
+import {Context} from "#data/context";
+import {Component} from "#html/component";
 import {TemplateResult} from "lit";
-import {Context} from "../../data/context.js";
-import {Component} from "../component.js";
 
 /**
  * Represents a notification message.

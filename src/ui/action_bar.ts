@@ -1,9 +1,11 @@
+import {Component} from "#html/component";
 import {html, type TemplateResult} from "lit";
-import {Component} from "../component.js";
+import {customElement} from "lit/decorators.js";
 
 /**
  * An action bar located under the navigation bar.
  */
+@customElement("action-bar")
 export class ActionBar extends Component {
 
 	/**
@@ -11,13 +13,6 @@ export class ActionBar extends Component {
 	 */
 	constructor() {
 		super({shadowRoot: true});
-	}
-
-	/**
-	 * Registers the component.
-	 */
-	static {
-		customElements.define("action-bar", this);
 	}
 
 	/**

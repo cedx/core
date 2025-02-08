@@ -1,9 +1,11 @@
+import {Component} from "#html/component";
 import {html, type TemplateResult} from "lit";
-import {Component} from "../component.js";
+import {customElement} from "lit/decorators.js";
 
 /**
  * A component that shows up when an HTTP request starts, and hides when all concurrent HTTP requests are completed.
  */
+@customElement("loading-indicator")
 export class LoadingIndicator extends Component {
 
 	/**
@@ -17,13 +19,6 @@ export class LoadingIndicator extends Component {
 	constructor() {
 		super({shadowRoot: true});
 		this.hidden = true;
-	}
-
-	/**
-	 * Registers the component.
-	 */
-	static {
-		customElements.define("loading-indicator", this);
 	}
 
 	/**

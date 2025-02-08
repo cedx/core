@@ -1,7 +1,7 @@
-import {Context} from "../../data/context.js";
-import {Component} from "../component.js";
-import {Size} from "../size.js";
-import {Variant} from "../variant.js";
+import {Context} from "#data/context";
+import {Component} from "#html/component";
+import {Size} from "#html/size";
+import {Variant} from "#html/variant";
 
 /**
  * A button for switching an element to full screen.

@@ -1,5 +1,5 @@
-import {Component} from "../component.js"
-import {Theme} from "../theme.js";
+import {Component} from "#html/component";
+import {Theme} from "#html/theme";
 
 /**
  * A dropdown menu for switching the color mode.

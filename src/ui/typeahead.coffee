@@ -1,6 +1,6 @@
 import {html} from "lit"
 import {map} from "lit/directives/map.js"
-import {Component} from "../component.js"
+import {Component} from "#html/component"
 
 # A data list providing autocomplete suggestions.
 export class Typeahead extends Component

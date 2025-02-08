@@ -3,9 +3,9 @@ import {html} from "lit"
 import {classMap} from "lit/directives/class-map.js"
 import {repeat} from "lit/directives/repeat.js"
 import {when as _when} from "lit/directives/when.js"
-import {Context, contextIcon} from "../../data/context.js"
+import {Context, contextIcon} from "#data/context"
 import {Duration} from "../../util/duration.js"
-import {Component} from "../component.js"
+import {Component} from "#html/component"
 
 # Displays a notification message.
 export class Toast extends Component

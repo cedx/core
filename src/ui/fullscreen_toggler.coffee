@@ -1,9 +1,9 @@
 import {html} from "lit"
 import {classMap} from "lit/directives/class-map.js"
 import {when as _when} from "lit/directives/when.js"
-import {Component} from "../component.js"
-import {Size} from "../size.js"
-import {Variant} from "../variant.js"
+import {Component} from "#html/component"
+import {Size} from "#html/size"
+import {Variant} from "#html/variant"
 
 # A button for switching an element to full screen.
 export class FullScreenToggler extends Component

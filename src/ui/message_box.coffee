@@ -1,9 +1,9 @@
 import {html} from "lit"
 import {classMap} from "lit/directives/class-map.js"
 import {when as _when} from "lit/directives/when.js"
-import {Context, contextIcon} from "../../data/context.js"
-import {Component} from "../component.js"
-import {Variant} from "../variant.js"
+import {Context, contextIcon} from "#data/context"
+import {Component} from "#html/component"
+import {Variant} from "#html/variant"
 
 # Displays a message window, also known as dialog box, which presents a message to the user.
 export class MessageBox extends Component

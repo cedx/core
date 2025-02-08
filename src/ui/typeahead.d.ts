@@ -1,4 +1,4 @@
-import {Component} from "../component.js";
+import {Component} from "#html/component";
 
 /**
  * A data list providing autocomplete suggestions.
