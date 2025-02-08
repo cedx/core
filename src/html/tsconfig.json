@@ -12,7 +12,6 @@
 		"tsBuildInfoFile": "../../var/html.tsbuildinfo"
 	},
 	"references": [
-		{"path": "../http/tsconfig.json"},
 		{"path": "../util/tsconfig.json"}
 	]
 }

@@ -1,5 +1,5 @@
 import type {Context} from "#data/context";
-import {Component} from "#html/component";
+import {Component} from "./component.js";
 import {Size} from "#html/size";
 import {Variant} from "#html/variant";
 import {html, type TemplateResult} from "lit";

@@ -1,5 +1,5 @@
 import {Context, contextIcon} from "#data/context";
-import {Component} from "#html/component";
+import {Component} from "./component.js";
 import {Duration} from "#util/duration";
 import {Toast as BootstrapToast} from "bootstrap";
 import {html, type TemplateResult} from "lit";

@@ -1,4 +1,4 @@
-import {Component} from "#html/component";
+import {Component} from "./component.js";
 import {html, type TemplateResult} from "lit";
 import {customElement} from "lit/decorators.js";
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import {Component} from "#html/component";
+import {Component} from "./component.js";
 import {Theme, themeIcon, themeLabel} from "#html/theme";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, state} from "lit/decorators.js";

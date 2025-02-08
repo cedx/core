@@ -1,5 +1,5 @@
-import {Component} from "#html/component";
-import type {Router} from "#html/router";
+import {Component} from "./component.js";
+import type {Router} from "./router.js";
 import {customElement, property} from "lit/decorators.js";
 
 /**

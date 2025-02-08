@@ -1,5 +1,5 @@
 import {Context, contextIcon} from "#data/context";
-import {Component} from "#html/component";
+import {Component} from "./component.js";
 import {Variant} from "#html/variant";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, state} from "lit/decorators.js";

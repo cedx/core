@@ -1,8 +1,8 @@
+import type {ViewportScroller} from "#html/viewport_scroller";
 import {Status} from "#http/status";
 import {Router as LitRouter, type BaseRouteConfig, type RouteConfig} from "@lit-labs/router";
 import {Tooltip} from "bootstrap";
 import {html, type ReactiveControllerHost} from "lit";
-import type {ViewportScroller} from "./viewport_scroller.js";
 
 /**
  * An event dispatched when the current route has been changed.
@@ -73,8 +73,7 @@ export class Router extends LitRouter {
 	 * @returns Resolves when the router has navigated to the specified route.
 	 */
 	override async goto(route: string, options: {push?: boolean} = {}): Promise<void> {
-		const loadingIndicator = document.body.querySelector("loading-indicator") as {start: () => void, stop: (options?: {force?: boolean}) => void}|null;
-		loadingIndicator?.stop({force: true});
+		document.body.querySelector("loading-indicator")?.stop({force: true});
 		for (const element of document.body.querySelectorAll('[data-bs-toggle="tooltip"]')) Tooltip.getInstance(element)?.dispose();
 
 		await super.goto(route.startsWith("/") || !this.#basePath ? route : `${this.#basePath}/${route}`);
