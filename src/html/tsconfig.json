@@ -1,0 +1,18 @@
+{
+	"extends": "../../tsconfig.json",
+	"exclude": ["ui/*.ts"],
+	"include": ["**/*.ts"],
+	"compilerOptions": {
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"noEmit": false,
+		"outDir": "../../lib/html",
+		"rootDir": ".",
+		"tsBuildInfoFile": "../../var/html.tsbuildinfo"
+	},
+	"references": [
+		{"path": "../http/tsconfig.json"},
+		{"path": "../util/tsconfig.json"}
+	]
+}

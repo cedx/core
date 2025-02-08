@@ -1,11 +1,17 @@
 {
-	"extends": "../tsconfig.json",
-	"include": ["**/*.ts"],
-	"compilerOptions": {
-		"declaration": true,
-		"declarationMap": true,
-		"noEmit": false,
-		"outDir": "../lib",
-		"rootDir": "."
-	}
+	"files": [],
+	"references": [
+		{"path": "async/tsconfig.json"},
+		{"path": "caching/tsconfig.json"},
+		{"path": "data/tsconfig.json"},
+		{"path": "di/tsconfig.json"},
+		{"path": "html/tsconfig.json"},
+		{"path": "http/tsconfig.json"},
+		{"path": "intl/tsconfig.json"},
+		{"path": "io/tsconfig.json"},
+		{"path": "net/tsconfig.json"},
+		{"path": "security/tsconfig.json"},
+		{"path": "ui/tsconfig.json"},
+		{"path": "util/tsconfig.json"}
+	]
 }
