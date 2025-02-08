@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version [2.0.0](https://github.com/cedx/core/compare/v1.8.0...v2.0.0)
+- Breaking change: renamed the `html/ui` module to `ui`.
 - Ported the source code to [TypeScript](https://www.typescriptlang.org).
 
 ## Version [1.8.0](https://github.com/cedx/core/compare/v1.7.0...v1.8.0)
