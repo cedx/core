@@ -83,7 +83,7 @@ export class FullScreenToggler extends Component {
 				else void this.#releaseWakeLock();
 				break;
 			case "visibilitychange":
-				if (document.fullscreenElement && document.visibilityState == "visible") void this.#acquireWakeLock();
+				if (document.fullscreenElement && !document.hidden) void this.#acquireWakeLock();
 				break;
 		}
 	}
