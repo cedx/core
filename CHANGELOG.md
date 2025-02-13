@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [2.0.2](https://github.com/cedx/core/compare/v2.0.1...v2.0.2)
+- Fixed the `Toaster` component.
+
 ## Version [2.0.1](https://github.com/cedx/core/compare/v2.0.0...v2.0.1)
 - Removed the `postinstall` script.
 
