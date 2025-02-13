@@ -125,7 +125,7 @@ export class Toast extends Component {
 		return html`
 			<div class="toast" @hidden.bs.toast=${() => this.toaster.close(this.notification)}>
 				<div class="toast-header ${classMap({[`toast-header-${context}`]: context})}">
-					${when(this.notification, () => html`<i class="icon icon-fill me-2 ${classMap({[`text-${context}`]: context})}">${this.notification}</i>`)}
+					${when(this.notification.icon, () => html`<i class="icon icon-fill me-2 ${classMap({[`text-${context}`]: context})}">${this.notification.icon}</i>`)}
 					<b class="me-auto">${this.notification.caption}</b>
 					<small class="text-secondary">${this.elapsedTime}</small>
 					<button class="btn-close" data-bs-dismiss="toast"></button>
