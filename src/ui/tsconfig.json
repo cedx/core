@@ -8,6 +8,9 @@
 		"importHelpers": true,
 		"noEmit": false,
 		"outDir": "../../lib/ui",
+		"plugins": [
+			{"name": "ts-lit-plugin"}
+		],
 		"rootDir": ".",
 		"tsBuildInfoFile": "../../var/ui.tsbuildinfo",
 		"useDefineForClassFields": false
