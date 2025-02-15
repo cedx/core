@@ -1,5 +1,5 @@
-import type {ViewportScroller} from "#html/viewport_scroller";
-import {Status} from "#http/status";
+import type {ViewportScroller} from "#html/viewport_scroller.js";
+import {Status} from "#http/status.js";
 import {Router as LitRouter, type BaseRouteConfig, type RouteConfig} from "@lit-labs/router";
 import {Tooltip} from "bootstrap";
 import {html, type ReactiveControllerHost} from "lit";

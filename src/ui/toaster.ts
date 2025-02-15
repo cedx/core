@@ -1,12 +1,12 @@
-import {Context, contextIcon} from "#data/context";
-import {Component} from "./component.js";
-import {Duration} from "#util/duration";
+import {Context, contextIcon} from "#data/context.js";
+import {Duration} from "#util/duration.js";
 import {Toast as BootstrapToast} from "bootstrap";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {repeat} from "lit/directives/repeat.js";
 import {when} from "lit/directives/when.js";
+import {Component} from "./component.js";
 
 /**
  * Represents a notification message.

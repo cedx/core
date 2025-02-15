@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-import {Component} from "./component.js";
-import {Theme, themeIcon, themeLabel} from "#html/theme";
+import {Theme, themeIcon, themeLabel} from "#html/theme.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
+import {Component} from "./component.js";
 
 /**
  * A dropdown menu for switching the color mode.

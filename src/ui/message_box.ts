@@ -1,10 +1,10 @@
-import {Context, contextIcon} from "#data/context";
-import {Component} from "./component.js";
-import {Variant} from "#html/variant";
+import {Context, contextIcon} from "#data/context.js";
+import {Variant} from "#html/variant.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
+import {Component} from "./component.js";
 
 /**
  * Specifies the return value of a message box.
@@ -99,7 +99,7 @@ export class MessageBox extends Component {
 	 * Closes the message box.
 	 * @param result The message box result.
 	 */
-	close(result: MessageBoxResult = MessageBoxResult.none): void{
+	close(result: MessageBoxResult = MessageBoxResult.none): void {
 		this.#root.close(result);
 	}
 

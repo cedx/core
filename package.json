@@ -47,10 +47,10 @@
 		"src/"
 	],
 	"imports": {
-		"#data/*": "./lib/data/*.js",
-		"#html/*": "./lib/html/*.js",
-		"#http/*": "./lib/http/*.js",
-		"#util/*": "./lib/util/*.js"
+		"#data/*.js": "./lib/data/*.js",
+		"#html/*.js": "./lib/html/*.js",
+		"#http/*.js": "./lib/http/*.js",
+		"#util/*.js": "./lib/util/*.js"
 	},
 	"keywords": [
 		"belin",

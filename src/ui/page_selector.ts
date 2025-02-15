@@ -1,4 +1,4 @@
-import {Pagination} from "#data/pagination";
+import {Pagination} from "#data/pagination.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";

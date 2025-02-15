@@ -1,11 +1,11 @@
-import type {Context} from "#data/context";
-import {Component} from "./component.js";
-import {Size} from "#html/size";
-import {Variant} from "#html/variant";
+import type {Context} from "#data/context.js";
+import {Size} from "#html/size.js";
+import {Variant} from "#html/variant.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
+import {Component} from "./component.js";
 
 /**
  * A button for switching an element to full screen.
