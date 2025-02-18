@@ -6,10 +6,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Remove="core.slnx" />
 		<None Remove="docs\**" />
 		<None Remove="lib\**" />
 		<None Remove="var\**" />
-		<None Remove="core.slnx" />
 		<TypeScriptConfiguration Remove="docs\**" />
 		<TypeScriptConfiguration Remove="lib\**" />
 		<TypeScriptConfiguration Remove="var\**" />
