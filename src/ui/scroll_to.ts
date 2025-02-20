@@ -51,15 +51,19 @@ export class ScrollTo extends Component {
 	protected override render(): TemplateResult {
 		return html`
 			<slot @click=${this.#scrollToTarget}>
-				<button class="btn btn-secondary"><i class="icon">vertical_align_top</i></button>
+				<button class="btn btn-primary">
+					<i class="icon transform-scale-120">vertical_align_top</i>
+				</button>
 			</slot>
 		`;
 	}
 
 	/**
 	 * Scrolls to the target element.
+	 * @param event The dispatched event.
 	 */
-	#scrollToTarget(): void {
+	#scrollToTarget(event: Event): void {
+		event.preventDefault();
 		if (this.scroller) this.scroller.scrollToElement(this.#element);
 		else {
 			const {left, top} = this.#element.getBoundingClientRect();
