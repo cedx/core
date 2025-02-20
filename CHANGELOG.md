@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [2.1.0](https://github.com/cedx/core/compare/v2.0.2...v2.1.0)
+- Added the `ScrollTo` component.
+
 ## Version [2.0.2](https://github.com/cedx/core/compare/v2.0.1...v2.0.2)
 - Fixed the `Toaster` component.
 
