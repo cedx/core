@@ -33,3 +33,8 @@ export const ImageFormat = Object.freeze({
  * Defines the format of an image.
  */
 export type ImageFormat = typeof ImageFormat[keyof typeof ImageFormat];
+
+/**
+ * The media types corresponding to the image formats.
+ */
+export const imageTypes = new Set<string>(Object.values(ImageFormat).map(type => `image/${type}`));
