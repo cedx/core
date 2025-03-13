@@ -1,7 +1,7 @@
 import {Context, contextIcon} from "#data/context.js";
 import {Variant} from "#html/variant.js";
 import {html, type TemplateResult} from "lit";
-import {customElement, property, state} from "lit/decorators.js";
+import {customElement, property, query, state} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
 import {Component} from "./component.js";
@@ -69,14 +69,14 @@ export class MessageBox extends Component {
 	@state() private icon = "";
 
 	/**
+	 * The root element.
+	 */
+	@query("dialog", true) private readonly root!: HTMLDialogElement;
+
+	/**
 	 * The function invoked to return the dialog box result.
 	 */
 	#resolve: (value: string) => void = () => { /* Noop */ };
-
-	/**
-	 * The root element.
-	 */
-	#root!: HTMLDialogElement;
 
 	/**
 	 * Opens an alert dialog with the specified message and an "OK" button.
@@ -100,7 +100,7 @@ export class MessageBox extends Component {
 	 * @param result The message box result.
 	 */
 	close(result: MessageBoxResult = MessageBoxResult.none): void {
-		this.#root.close(result);
+		this.root.close(result);
 	}
 
 	/**
@@ -136,20 +136,13 @@ export class MessageBox extends Component {
 		this.context = options.context ?? null;
 		this.icon = options.icon ?? "";
 
-		this.#root.returnValue = MessageBoxResult.none;
-		this.#root.showModal();
-		this.#root.querySelector<HTMLButtonElement>(".btn-close")?.blur();
+		this.root.returnValue = MessageBoxResult.none;
+		this.root.showModal();
+		this.root.querySelector<HTMLButtonElement>(".btn-close")?.blur();
 
 		const {promise, resolve} = Promise.withResolvers<string>();
 		this.#resolve = resolve;
 		return promise;
-	}
-
-	/**
-	 * Method invoked after the first rendering.
-	 */
-	protected override firstUpdated(): void {
-		this.#root = this.renderRoot.querySelector("dialog")!;
 	}
 
 	/**
@@ -191,14 +184,14 @@ export class MessageBox extends Component {
 	 * @param event The dispatched event.
 	 */
 	#onDialogClick(event: Event): void {
-		if (event.target == this.#root) this.close();
+		if (event.target == this.root) this.close();
 	}
 
 	/**
 	 * Handles the `close` event.
 	 */
 	#onDialogClose(): void {
-		this.#resolve(this.#root.returnValue);
+		this.#resolve(this.root.returnValue);
 	}
 }
 
