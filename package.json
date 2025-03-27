@@ -19,7 +19,7 @@
 		"@types/koa__router": "^12.0.4",
 		"@types/koa": "^2.15.0",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "^22.13.13",
+		"@types/node": "^22.13.14",
 		"@types/serve-handler": "^6.1.4",
 		"chai": "^5.2.0",
 		"esbuild": "^0.25.1",
