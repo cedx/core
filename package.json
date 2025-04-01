@@ -19,10 +19,10 @@
 		"@types/koa__router": "^12.0.4",
 		"@types/koa": "^2.15.0",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "^22.13.14",
+		"@types/node": "^22.13.17",
 		"@types/serve-handler": "^6.1.4",
 		"chai": "^5.2.0",
-		"esbuild": "^0.25.1",
+		"esbuild": "^0.25.2",
 		"globals": "^16.0.0",
 		"gulp": "^5.0.0",
 		"mocha": "^11.1.0",
@@ -30,7 +30,7 @@
 		"serve-handler": "^6.1.6",
 		"typedoc": "^0.28.1",
 		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.28.0"
+		"typescript-eslint": "^8.29.0"
 	},
 	"engines": {
 		"node": ">=22.0.0"
