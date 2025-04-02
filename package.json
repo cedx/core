@@ -1,7 +1,7 @@
 {
-	"bugs": "https://github.com/cedx/core/issues",
+	"bugs": "https://github.com/cedx/core.js/issues",
 	"description": "Base library of Cédric Belin, full stack developer.",
-	"homepage": "https://github.com/cedx/core",
+	"homepage": "https://github.com/cedx/core.js",
 	"license": "MIT",
 	"name": "@cedx/core",
 	"repository": "cedx/core",

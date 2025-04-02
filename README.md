@@ -8,13 +8,13 @@ implemented in [TypeScript](https://www.typescriptlang.org).
 > **Use at your own risk!** No support will be provided.
 
 ## Documentation
-- [User guide](https://github.com/cedx/core/wiki)
-- [API reference](https://cedx.github.io/core)
-- [Examples](https://github.com/cedx/core/tree/main/example)
+- [User guide](https://github.com/cedx/core.js/wiki)
+- [API reference](https://cedx.github.io/core.js)
+- [Examples](https://github.com/cedx/core.js/tree/main/example)
 
 ## Development
-- [Git repository](https://github.com/cedx/core)
-- [Submit an issue](https://github.com/cedx/core/issues)
+- [Git repository](https://github.com/cedx/core.js)
+- [Submit an issue](https://github.com/cedx/core.js/issues)
 
 ## License
-[Belin.io Core](https://github.com/cedx/core) is distributed under the MIT License.
+[Belin.io Core](https://github.com/cedx/core.js) is distributed under the MIT License.
