@@ -37,7 +37,7 @@ export async function publish() {
 export async function test() {
 	await run("npx", "tsc", "--build", "src/tsconfig.json", "--sourceMap");
 	await run("npx", "esbuild", "--bundle", "--legal-comments=none", "--log-level=warning", "--outfile=var/tests.js", "test/client.js");
-	await run("node", "test/playwright.js");
+	await run("node", "test/Playwright.js");
 	await run("npx", "mocha", "test/server.js");
 }
 
