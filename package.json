@@ -36,10 +36,6 @@
 		"node": ">=22.0.0"
 	},
 	"exports": {
-		"./*.js": {
-			"types": "./lib/*.d.ts",
-			"default": "./lib/*.js"
-		},
 		"./async": {
 			"types": "./lib/Async/index.d.ts",
 			"default": "./lib/Async/index.js"
@@ -47,6 +43,14 @@
 		"./caching": {
 			"types": "./lib/Caching/index.d.ts",
 			"default": "./lib/Caching/index.js"
+		},
+		"./data": {
+			"types": "./lib/Data/index.d.ts",
+			"default": "./lib/Data/index.js"
+		},
+		"./di": {
+			"types": "./lib/DI/index.d.ts",
+			"default": "./lib/DI/index.js"
 		}
 	},
 	"files": [
