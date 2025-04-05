@@ -2,7 +2,7 @@ import {Duration} from "#util/duration.js";
 import {hash} from "node:crypto";
 import {readdir, readFile, stat, unlink, utimes, writeFile} from "node:fs/promises";
 import {join} from "node:path";
-import type {Cache, CacheOptions, CacheSerializer} from "./cache.js";
+import type {Cache, CacheOptions, CacheSerializer} from "./Cache.js";
 
 /**
  * Implements a cache using files.

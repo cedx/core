@@ -1,5 +1,5 @@
 import {Duration} from "#util/duration.js";
-import type {Cache, CacheOptions, CacheSerializer} from "./cache.js";
+import type {Cache, CacheOptions, CacheSerializer} from "./Cache.js";
 
 /**
  * Implements an in-memory cache.
