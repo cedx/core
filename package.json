@@ -39,6 +39,10 @@
 		"./*.js": {
 			"types": "./lib/*.d.ts",
 			"default": "./lib/*.js"
+		},
+		"./async": {
+			"types": "./lib/Async/index.d.ts",
+			"default": "./lib/Async/index.js"
 		}
 	},
 	"files": [
