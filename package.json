@@ -43,6 +43,10 @@
 		"./async": {
 			"types": "./lib/Async/index.d.ts",
 			"default": "./lib/Async/index.js"
+		},
+		"./caching": {
+			"types": "./lib/Caching/index.d.ts",
+			"default": "./lib/Caching/index.js"
 		}
 	},
 	"files": [
