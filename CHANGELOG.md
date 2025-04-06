@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [3.0.0](https://github.com/cedx/core.js/compare/v2.1.1...v3.0.0)
+- Breaking change: use Pascal case as file naming convention.
+
 ## Version [2.1.1](https://github.com/cedx/core.js/compare/v2.1.0...v2.1.1)
 - Updated the project URL.
 
