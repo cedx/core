@@ -1,5 +1,5 @@
 import type {Context} from "#Data/Context.js";
-import {Size} from "#Html/size.js";
+import {Size} from "#Html/Size.js";
 import {Variant} from "#Html/Variant.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property} from "lit/decorators.js";

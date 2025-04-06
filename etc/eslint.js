@@ -203,7 +203,7 @@ export default ts.config(
 		}
 	},
 	{
-		files: ["src/ui/*.ts"],
+		files: ["src/UI/*.ts"],
 		rules: {
 			"@typescript-eslint/unbound-method": "off"
 		}
