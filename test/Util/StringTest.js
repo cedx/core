@@ -1,4 +1,4 @@
-import {capitalize, newLineToBr, reverse, split, stripTags, trimArray, trimObject, truncate, xmlEscape} from "@cedx/core/util/string.js";
+import {capitalize, newLineToBr, reverse, split, stripTags, trimArray, trimObject, truncate, xmlEscape} from "@cedx/core/Util/String.js";
 import {assert} from "chai";
 
 /**

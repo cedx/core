@@ -6,8 +6,8 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/security",
+		"outDir": "../../lib/Security",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/security.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Security.tsbuildinfo"
 	}
 }

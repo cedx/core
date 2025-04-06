@@ -1,4 +1,4 @@
-import {toDataUrl} from "@cedx/core/html/file.js";
+import {toDataUrl} from "@cedx/core/Html/File.js";
 import {assert} from "chai";
 
 /**

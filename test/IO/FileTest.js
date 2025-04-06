@@ -1,4 +1,4 @@
-import {toDataUrl} from "@cedx/core/io/file.js";
+import {toDataUrl} from "@cedx/core/IO/File.js";
 import {assert} from "chai";
 import {platform} from "node:process";
 

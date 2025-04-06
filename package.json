@@ -36,21 +36,9 @@
 		"node": ">=22.0.0"
 	},
 	"exports": {
-		"./async": {
-			"types": "./lib/Async/index.d.ts",
-			"default": "./lib/Async/index.js"
-		},
-		"./caching": {
-			"types": "./lib/Caching/index.d.ts",
-			"default": "./lib/Caching/index.js"
-		},
-		"./data": {
-			"types": "./lib/Data/index.d.ts",
-			"default": "./lib/Data/index.js"
-		},
-		"./di": {
-			"types": "./lib/DI/index.d.ts",
-			"default": "./lib/DI/index.js"
+		"./*.js": {
+			"types": "./lib/*.d.ts",
+			"default": "./lib/*.js"
 		}
 	},
 	"files": [
@@ -58,10 +46,10 @@
 		"src/"
 	],
 	"imports": {
-		"#data/*.js": "./lib/data/*.js",
-		"#html/*.js": "./lib/html/*.js",
-		"#http/*.js": "./lib/http/*.js",
-		"#util/*.js": "./lib/util/*.js"
+		"#Data/*.js": "./lib/Data/*.js",
+		"#Html/*.js": "./lib/Html/*.js",
+		"#Http/*.js": "./lib/Http/*.js",
+		"#Util/*.js": "./lib/Util/*.js"
 	},
 	"keywords": [
 		"belin",

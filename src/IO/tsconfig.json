@@ -6,8 +6,8 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/io",
+		"outDir": "../../lib/IO",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/io.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/IO.tsbuildinfo"
 	}
 }

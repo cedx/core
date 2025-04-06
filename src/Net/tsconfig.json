@@ -6,11 +6,11 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/net",
+		"outDir": "../../lib/Net",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/net.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Net.tsbuildinfo"
 	},
 	"references": [
-		{"path": "../util/tsconfig.json"}
+		{"path": "../Util/tsconfig.json"}
 	]
 }

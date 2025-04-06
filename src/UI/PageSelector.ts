@@ -1,9 +1,9 @@
-import {Pagination} from "#data/pagination.js";
+import {Pagination} from "#Data/Pagination.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
-import {Component} from "./component.js";
+import {Component} from "./Component.js";
 
 /**
  * An event dispatched when a navigation has been requested.

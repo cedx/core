@@ -1,4 +1,4 @@
-import {MailAddress} from "@cedx/core/net/mail_address.js";
+import {MailAddress} from "@cedx/core/Net/MailAddress.js";
 import {assert} from "chai";
 
 /**

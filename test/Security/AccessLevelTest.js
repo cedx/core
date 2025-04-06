@@ -1,4 +1,4 @@
-import {AccessLevel, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual} from "@cedx/core/security/access_level.js";
+import {AccessLevel, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual} from "@cedx/core/Security/AccessLevel.js";
 import {assert} from "chai";
 
 /**

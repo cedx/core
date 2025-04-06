@@ -1,4 +1,4 @@
-import {PhoneNumber} from "@cedx/core/net/phone_number.js";
+import {PhoneNumber} from "@cedx/core/Net/PhoneNumber.js";
 import {assert} from "chai";
 
 /**

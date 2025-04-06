@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import {atMidnight, daysInMonth, getEaster, getWeekOfYear, inLeapYear, isHoliday, isWorkingDay, toIsoWeek, toYmdHms} from "@cedx/core/util/date.js";
+import {atMidnight, daysInMonth, getEaster, getWeekOfYear, inLeapYear, isHoliday, isWorkingDay, toIsoWeek, toYmdHms} from "@cedx/core/Util/Date.js";
 import {assert} from "chai";
 
 /**

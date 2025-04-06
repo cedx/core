@@ -1,4 +1,4 @@
-import {Region} from "@cedx/core/intl/region.js";
+import {Region} from "@cedx/core/Intl/Region.js";
 import {assert} from "chai";
 
 /**

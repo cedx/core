@@ -7,15 +7,15 @@
 		"declarationMap": true,
 		"importHelpers": true,
 		"noEmit": false,
-		"outDir": "../../lib/ui",
+		"outDir": "../../lib/UI",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/ui.tsbuildinfo",
+		"tsBuildInfoFile": "../../var/UI.tsbuildinfo",
 		"useDefineForClassFields": false
 	},
 	"references": [
-		{"path": "../data/tsconfig.json"},
-		{"path": "../html/tsconfig.json"},
-		{"path": "../http/tsconfig.json"},
-		{"path": "../util/tsconfig.json"}
+		{"path": "../Data/tsconfig.json"},
+		{"path": "../Html/tsconfig.json"},
+		{"path": "../Http/tsconfig.json"},
+		{"path": "../Util/tsconfig.json"}
 	]
 }

@@ -1,4 +1,4 @@
-import {Duration} from "#util/duration.js";
+import {Duration} from "#Util/Duration.js";
 import {hash} from "node:crypto";
 import {readdir, readFile, stat, unlink, utimes, writeFile} from "node:fs/promises";
 import {join} from "node:path";

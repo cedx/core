@@ -1,17 +1,17 @@
 {
 	"files": [],
 	"references": [
-		{"path": "async/tsconfig.json"},
-		{"path": "caching/tsconfig.json"},
-		{"path": "data/tsconfig.json"},
-		{"path": "di/tsconfig.json"},
-		{"path": "html/tsconfig.json"},
-		{"path": "http/tsconfig.json"},
-		{"path": "intl/tsconfig.json"},
-		{"path": "io/tsconfig.json"},
-		{"path": "net/tsconfig.json"},
-		{"path": "security/tsconfig.json"},
-		{"path": "ui/tsconfig.json"},
-		{"path": "util/tsconfig.json"}
+		{"path": "Async/tsconfig.json"},
+		{"path": "Caching/tsconfig.json"},
+		{"path": "Data/tsconfig.json"},
+		{"path": "DI/tsconfig.json"},
+		{"path": "Html/tsconfig.json"},
+		{"path": "Http/tsconfig.json"},
+		{"path": "Intl/tsconfig.json"},
+		{"path": "IO/tsconfig.json"},
+		{"path": "Net/tsconfig.json"},
+		{"path": "Security/tsconfig.json"},
+		{"path": "UI/tsconfig.json"},
+		{"path": "Util/tsconfig.json"}
 	]
 }

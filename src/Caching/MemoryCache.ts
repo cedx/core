@@ -1,4 +1,4 @@
-import {Duration} from "#util/duration.js";
+import {Duration} from "#Util/Duration.js";
 import type {Cache, CacheOptions, CacheSerializer} from "./Cache.js";
 
 /**

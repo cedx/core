@@ -1,6 +1,6 @@
-import {Component} from "./component.js";
 import {html, type TemplateResult} from "lit";
 import {customElement} from "lit/decorators.js";
+import {Component} from "./Component.js";
 
 /**
  * A component that shows up when an HTTP request starts, and hides when all concurrent HTTP requests are completed.

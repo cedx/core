@@ -6,11 +6,11 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/http",
+		"outDir": "../../lib/Http",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/http.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Http.tsbuildinfo"
 	},
 	"references": [
-		{"path": "../util/tsconfig.json"}
+		{"path": "../Util/tsconfig.json"}
 	]
 }

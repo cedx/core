@@ -1,4 +1,4 @@
-import {Error} from "./error.js"
+import {Error} from "./Error.js"
 
 /**
  * Performs HTTP requests.

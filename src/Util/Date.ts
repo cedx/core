@@ -1,4 +1,4 @@
-import {Duration} from "./duration.js";
+import {Duration} from "./Duration.js";
 
 /**
  * Returns the date at midnight corresponding to the specified date.

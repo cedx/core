@@ -1,4 +1,4 @@
-import {NetworkDrive} from "@cedx/core/io/network_drive.js";
+import {NetworkDrive} from "@cedx/core/IO/NetworkDrive.js";
 import {assert} from "chai";
 import {sep} from "node:path";
 

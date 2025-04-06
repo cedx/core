@@ -6,8 +6,8 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/util",
+		"outDir": "../../lib/Util",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/util.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Util.tsbuildinfo"
 	}
 }

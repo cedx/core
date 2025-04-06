@@ -1,13 +1,14 @@
-import type {ActionBar} from "./action_bar.js";
-import type {FullScreenToggler} from "./fullscreen_toggler.js";
-import type {LoadingIndicator} from "./loading_indicator.js";
-import type {MessageBox} from "./message_box.js";
-import type {OfflineIndicator} from "./offline_indicator.js";
-import type {PageTitle} from "./page_title.js";
-import type {RedirectTo} from "./redirect_to.js";
-import type {ThemeDropdown} from "./theme_dropdown.js";
-import type {Toast, Toaster} from "./toaster.js";
-import type {Typeahead} from "./typeahead.js";
+import type {ActionBar} from "./ActionBar.js";
+import type {FullScreenToggler} from "./FullScreenToggler.js";
+import type {LoadingIndicator} from "./LoadingIndicator.js";
+import type {MessageBox} from "./MessageBox.js";
+import type {OfflineIndicator} from "./OfflineIndicator.js";
+import type {PageSelector} from "./PageSelector.js";
+import type {PageTitle} from "./PageTitle.js";
+import type {RedirectTo} from "./RedirectTo.js";
+import type {ThemeDropdown} from "./ThemeDropdown.js";
+import type {Toast, Toaster} from "./Toaster.js";
+import type {Typeahead} from "./Typeahead.js";
 
 /**
  * Declaration merging.
@@ -23,6 +24,7 @@ declare global {
 		"loading-indicator": LoadingIndicator;
 		"message-box": MessageBox;
 		"offline-indicator": OfflineIndicator;
+		"page-selector": PageSelector;
 		"page-title": PageTitle;
 		"redirect-to": RedirectTo;
 		"theme-dropdown": ThemeDropdown;

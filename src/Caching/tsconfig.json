@@ -6,11 +6,11 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/caching",
+		"outDir": "../../lib/Caching",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/caching.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Caching.tsbuildinfo"
 	},
 	"references": [
-		{"path": "../util/tsconfig.json"}
+		{"path": "../Util/tsconfig.json"}
 	]
 }

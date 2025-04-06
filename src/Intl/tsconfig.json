@@ -6,8 +6,8 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/intl",
+		"outDir": "../../lib/Intl",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/intl.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Intl.tsbuildinfo"
 	}
 }

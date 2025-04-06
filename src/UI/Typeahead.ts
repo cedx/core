@@ -1,7 +1,7 @@
-import {Component} from "./component.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {map} from "lit/directives/map.js";
+import {Component} from "./Component.js";
 
 /**
  * A data list providing autocomplete suggestions.

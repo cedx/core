@@ -1,4 +1,4 @@
-import {Status} from "./status.js";
+import {Status} from "./Status.js";
 
 /**
  * An object thrown when an HTTP error occurs.

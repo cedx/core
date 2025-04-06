@@ -1,4 +1,4 @@
-import {Container} from "@cedx/core/di/container.js";
+import {Container} from "@cedx/core/DI/Container.js";
 import {assert} from "chai";
 
 /**

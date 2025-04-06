@@ -1,5 +1,5 @@
-import {atMidnight, daysInMonth, getQuarter} from "./date.js";
-import {Duration} from "./duration.js";
+import {atMidnight, daysInMonth, getQuarter} from "./Date.js";
+import {Duration} from "./Duration.js";
 
 /**
  * Defines the type of a date range.

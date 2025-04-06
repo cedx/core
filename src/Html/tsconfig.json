@@ -7,11 +7,11 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/html",
+		"outDir": "../../lib/Html",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/html.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/Html.tsbuildinfo"
 	},
 	"references": [
-		{"path": "../util/tsconfig.json"}
+		{"path": "../Util/tsconfig.json"}
 	]
 }

@@ -1,4 +1,4 @@
-import {Pagination} from "@cedx/core/data/pagination.js";
+import {Pagination} from "@cedx/core/Data/Pagination.js";
 import {assert} from "chai";
 
 /**

@@ -1,4 +1,4 @@
-import {removeChildren} from "@cedx/core/html/element.js";
+import {removeChildren} from "@cedx/core/Html/Element.js";
 import {assert} from "chai";
 
 /**

@@ -6,8 +6,8 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/di",
+		"outDir": "../../lib/DI",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/di.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/DI.tsbuildinfo"
 	}
 }

@@ -1,4 +1,4 @@
-import {DateRange, DateRangeType} from "@cedx/core/util/date_range.js";
+import {DateRange, DateRangeType} from "@cedx/core/Util/DateRange.js";
 import {assert} from "chai";
 
 /**

@@ -1,5 +1,5 @@
-import {MemoryCache} from "@cedx/core/caching/memory_cache.js";
-import {Duration} from "@cedx/core/util/duration.js";
+import {MemoryCache} from "@cedx/core/Caching/MemoryCache.js";
+import {Duration} from "@cedx/core/Util/Duration.js";
 import {assert} from "chai";
 
 /**

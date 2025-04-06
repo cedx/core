@@ -1,10 +1,10 @@
-import {Context, contextIcon} from "#data/context.js";
-import {Variant} from "#html/variant.js";
+import {Context, contextIcon} from "#Data/Context.js";
+import {Variant} from "#Html/Variant.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property, query, state} from "lit/decorators.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
-import {Component} from "./component.js";
+import {Component} from "./Component.js";
 
 /**
  * Specifies the return value of a message box.

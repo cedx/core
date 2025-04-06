@@ -1,7 +1,7 @@
-import type {ViewportScroller} from "#html/viewport_scroller.js";
+import type {ViewportScroller} from "#Html/ViewportScroller.js";
 import {html, type TemplateResult} from "lit";
 import {customElement, property} from "lit/decorators.js";
-import {Component} from "./component.js";
+import {Component} from "./Component.js";
 
 /**
  * Scrolls to the specified element.

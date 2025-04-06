@@ -1,4 +1,4 @@
-import {InternetAddress, InternetAddressType} from "@cedx/core/net/internet_address.js";
+import {InternetAddress, InternetAddressType} from "@cedx/core/Net/InternetAddress.js";
 import {assert} from "chai";
 
 /**
