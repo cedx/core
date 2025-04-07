@@ -1,6 +1,5 @@
 {
 	"extends": "../../tsconfig.json",
-	"exclude": ["ui/*.ts"],
 	"include": ["**/*.ts"],
 	"compilerOptions": {
 		"composite": true,
