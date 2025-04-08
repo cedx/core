@@ -4,11 +4,6 @@
 export class MailAddress {
 
 	/**
-	 * The regular expression used to validate a mail address.
-	 */
-	static readonly pattern = /^[a-z\d!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z\d!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z\d](?:[a-z\d-]*[a-z\d])?\.)+[a-z\d](?:[a-z\d-]*[a-z\d])?$/i;
-
-	/**
 	 * The normalized address.
 	 */
 	readonly #value: string;
@@ -39,7 +34,8 @@ export class MailAddress {
 	 * Value indicating whether this mail address is valid.
 	 */
 	get isValid(): boolean {
-		return MailAddress.pattern.test(this.#value);
+		const index = this.#value.indexOf("@");
+		return index > 0 && index < this.#value.length - 1 && index == this.#value.lastIndexOf("@");
 	}
 
 	/**
