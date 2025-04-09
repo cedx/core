@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [3.1.0](https://github.com/cedx/core.js/compare/v3.0.0...v3.1.0)
+- Use Pascal case for enumerated values.
+
 ## Version [3.0.0](https://github.com/cedx/core.js/compare/v2.1.1...v3.0.0)
 - Breaking change: use Pascal case as file naming convention.
 
