@@ -26,7 +26,7 @@ export class FullScreenToggler extends Component {
 	/**
 	 * The button size.
 	 */
-	@property() size: Size = Size.medium;
+	@property() size: Size = Size.Medium;
 
 	/**
 	 * The CSS selector used to target the element.
@@ -36,7 +36,7 @@ export class FullScreenToggler extends Component {
 	/**
 	 * A tone variant.
 	 */
-	@property() variant: Context|Variant = Variant.primary;
+	@property() variant: Context|Variant = Variant.Primary;
 
 	/**
 	 * Value indicating whether to prevent the device screen from dimming or locking when in full screen mode.

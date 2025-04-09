@@ -93,7 +93,7 @@ export class FileCache implements Cache {
 		if (duration < 0) duration = this.#defaultDuration;
 		const file = this.#getFilePath(key);
 		await writeFile(file, this.#serializer.serialize(value));
-		await utimes(file, new Date, (Date.now() / Duration.second) + (duration > 0 ? duration : 365 * Duration.day));
+		await utimes(file, new Date, (Date.now() / Duration.Second) + (duration > 0 ? duration : 365 * Duration.Day));
 		return this;
 	}
 

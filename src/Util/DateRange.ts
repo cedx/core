@@ -9,32 +9,32 @@ export const DateRangeType = Object.freeze({
 	/**
 	 * A custom date range.
 	 */
-	custom: "",
+	Custom: "",
 
 	/**
 	 * A whole day.
 	 */
-	day: "P1D",
+	Day: "P1D",
 
 	/**
 	 * A whole week.
 	 */
-	week: "P1W",
+	Week: "P1W",
 
 	/**
 	 * A whole month.
 	 */
-	month: "P1M",
+	Month: "P1M",
 
 	/**
 	 * A whole quarter.
 	 */
-	quarter: "P3M",
+	Quarter: "P3M",
 
 	/**
 	 * A whole year.
 	 */
-	year: "P1Y"
+	Year: "P1Y"
 });
 
 /**
@@ -68,7 +68,7 @@ export class DateRange {
 	 * @param end The end date.
 	 * @param type The range type.
 	 */
-	constructor(start: Date, end: Date, type: DateRangeType = DateRangeType.custom) {
+	constructor(start: Date, end: Date, type: DateRangeType = DateRangeType.Custom) {
 		this.start = start;
 		this.end = end;
 		this.type = type;
@@ -83,7 +83,7 @@ export class DateRange {
 		return new this(
 			new Date(typeof json.start == "string" ? json.start : Date.now()),
 			new Date(typeof json.end == "string" ? json.end : Date.now()),
-			Object.values(DateRangeType).includes(json.type as DateRangeType) ? json.type as DateRangeType : DateRangeType.custom
+			Object.values(DateRangeType).includes(json.type as DateRangeType) ? json.type as DateRangeType : DateRangeType.Custom
 		);
 	}
 
@@ -93,7 +93,7 @@ export class DateRange {
 	 * @returns The date range corresponding to the day including the specified date.
 	 */
 	static day(date: Date): DateRange {
-		return new this(atMidnight(date), new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59), DateRangeType.day);
+		return new this(atMidnight(date), new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59), DateRangeType.Day);
 	}
 
 	/**
@@ -105,7 +105,7 @@ export class DateRange {
 		return new this(
 			new Date(date.getFullYear(), date.getMonth(), 1),
 			new Date(date.getFullYear(), date.getMonth(), daysInMonth(date), 23, 59, 59),
-			DateRangeType.month
+			DateRangeType.Month
 		);
 	}
 
@@ -120,7 +120,7 @@ export class DateRange {
 		return new this(
 			new Date(date.getFullYear(), firstMonth, 1),
 			new Date(date.getFullYear(), lastMonth, daysInMonth(new Date(date.getFullYear(), lastMonth, 1)), 23, 59, 59),
-			DateRangeType.quarter
+			DateRangeType.Quarter
 		);
 	}
 
@@ -131,9 +131,9 @@ export class DateRange {
 	 */
 	static week(date: Date): DateRange {
 		const delta = -((date.getDay() + 6) % 7);
-		const sunday = new Date(date.getTime() + ((delta + 6) * Duration.day));
+		const sunday = new Date(date.getTime() + ((delta + 6) * Duration.Day));
 		sunday.setHours(23, 59, 59);
-		return new this(atMidnight(new Date(date.getTime() + (delta * Duration.day))), sunday, DateRangeType.week);
+		return new this(atMidnight(new Date(date.getTime() + (delta * Duration.Day))), sunday, DateRangeType.Week);
 	}
 
 	/**
@@ -142,7 +142,7 @@ export class DateRange {
 	 * @returns The date range corresponding to the year including the specified date.
 	 */
 	static year(date: Date): DateRange {
-		return new this(new Date(date.getFullYear(), 0, 1), new Date(date.getFullYear(), 11, 31, 23, 59, 59), DateRangeType.year);
+		return new this(new Date(date.getFullYear(), 0, 1), new Date(date.getFullYear(), 11, 31, 23, 59, 59), DateRangeType.Year);
 	}
 
 	/**

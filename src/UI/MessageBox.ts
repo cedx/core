@@ -14,17 +14,17 @@ export const MessageBoxResult = Object.freeze({
 	/**
 	 * The message box does not return any value.
 	 */
-	none: "",
+	None: "",
 
 	/**
 	 * The return value of the message box is "OK".
 	 */
-	ok: "ok",
+	OK: "ok",
 
 	/**
 	 * The return value of the message box is "Cancel".
 	 */
-	cancel: "cancel"
+	Cancel: "cancel"
 });
 
 /**
@@ -86,9 +86,9 @@ export class MessageBox extends Component {
 	 * @returns Resolves with the value of the clicked button.
 	 */
 	alert(caption: string, message: TemplateResult, options: MessageBoxOptions = {}): Promise<string> {
-		const context = options.context ?? Context.warning;
+		const context = options.context ?? Context.Warning;
 		return this.show(message, {
-			buttons: options.buttons ?? [{label: "OK", value: MessageBoxResult.ok}],
+			buttons: options.buttons ?? [{label: "OK", value: MessageBoxResult.OK}],
 			caption,
 			context,
 			icon: options.icon ?? contextIcon(context)
@@ -99,7 +99,7 @@ export class MessageBox extends Component {
 	 * Closes the message box.
 	 * @param result The message box result.
 	 */
-	close(result: MessageBoxResult = MessageBoxResult.none): void {
+	close(result: MessageBoxResult = MessageBoxResult.None): void {
 		this.root.close(result);
 	}
 
@@ -111,14 +111,14 @@ export class MessageBox extends Component {
 	 * @returns Resolves with the value of the clicked button.
 	 */
 	confirm(caption: string, message: TemplateResult, options: MessageBoxOptions = {}): Promise<string> {
-		const context = options.context ?? Context.warning;
+		const context = options.context ?? Context.Warning;
 		return this.show(message, {
 			caption,
 			context,
 			icon: options.icon ?? contextIcon(context),
 			buttons: options.buttons ?? [
-				{label: "OK", value: MessageBoxResult.ok},
-				{label: "Annuler", value: MessageBoxResult.cancel, variant: Variant.secondary}
+				{label: "OK", value: MessageBoxResult.OK},
+				{label: "Annuler", value: MessageBoxResult.Cancel, variant: Variant.Secondary}
 			]
 		});
 	}
@@ -136,7 +136,7 @@ export class MessageBox extends Component {
 		this.context = options.context ?? null;
 		this.icon = options.icon ?? "";
 
-		this.root.returnValue = MessageBoxResult.none;
+		this.root.returnValue = MessageBoxResult.None;
 		this.root.showModal();
 		this.root.querySelector<HTMLButtonElement>(".btn-close")?.blur();
 
@@ -167,7 +167,7 @@ export class MessageBox extends Component {
 					${when(this.buttons.length, () => html`
 						<div class="modal-footer user-select-none">
 							${this.buttons.map(button => html`
-								<button class="btn btn-${button.variant ?? Variant.primary}" value=${button.value ?? MessageBoxResult.none}>
+								<button class="btn btn-${button.variant ?? Variant.Primary}" value=${button.value ?? MessageBoxResult.None}>
 									${when(button.icon, () => html`<i class="icon icon-fill ${classMap({"me-1": button.label ?? ""})}">${button.icon}</i>`)}
 									${button.label}
 								</button>

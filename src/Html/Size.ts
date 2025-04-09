@@ -6,32 +6,32 @@ export const Size = Object.freeze({
 	/**
 	 * An extra small size.
 	 */
-	extraSmall: "xs",
+	ExtraSmall: "xs",
 
 	/**
 	 * A small size.
 	 */
-	small: "sm",
+	Small: "sm",
 
 	/**
 	 * A medium size.
 	 */
-	medium: "md",
+	Medium: "md",
 
 	/**
 	 * A large size.
 	 */
-	large: "lg",
+	Large: "lg",
 
 	/**
 	 * An extra large size.
 	 */
-	extraLarge: "xl",
+	ExtraLarge: "xl",
 
 	/**
 	 * An extra extra large size.
 	 */
-	extraExtraLarge: "xxl"
+	ExtraExtraLarge: "xxl"
 });
 
 /**

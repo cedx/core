@@ -6,17 +6,17 @@ export const AccessLevel = Object.freeze({
 	/**
 	 * The read access.
 	 */
-	read: "read",
+	Read: "read",
 
 	/**
 	 * The write access.
 	 */
-	write: "write",
+	Write: "write",
 
 	/**
 	 * The administrator access.
 	 */
-	admin: "admin"
+	Admin: "admin"
 });
 
 /**
@@ -31,8 +31,8 @@ export type AccessLevel = typeof AccessLevel[keyof typeof AccessLevel];
  * @returns `true` if the first access level is greater than the second, otherwise `false`.
  */
 export function greaterThan(x: AccessLevel, y: AccessLevel): boolean {
-	if (x == AccessLevel.write) return y == AccessLevel.read;
-	if (x == AccessLevel.admin) return y == AccessLevel.read || y == AccessLevel.write;
+	if (x == AccessLevel.Write) return y == AccessLevel.Read;
+	if (x == AccessLevel.Admin) return y == AccessLevel.Read || y == AccessLevel.Write;
 	return false;
 }
 
@@ -43,8 +43,8 @@ export function greaterThan(x: AccessLevel, y: AccessLevel): boolean {
  * @returns `true` if the first access level is greater than or equal to the second, otherwise `false`.
  */
 export function greaterThanOrEqual(x: AccessLevel, y: AccessLevel): boolean {
-	if (x == AccessLevel.read) return y == AccessLevel.read;
-	if (x == AccessLevel.write) return y == AccessLevel.read || y == AccessLevel.write;
+	if (x == AccessLevel.Read) return y == AccessLevel.Read;
+	if (x == AccessLevel.Write) return y == AccessLevel.Read || y == AccessLevel.Write;
 	return true;
 }
 

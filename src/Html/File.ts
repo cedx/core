@@ -48,7 +48,7 @@ export function openFile(file: File, options: {newTab?: boolean} = {}): void {
 		if (!handle.closed) return;
 		clearInterval(timer);
 		URL.revokeObjectURL(url);
-	}, 5 * Duration.second);
+	}, 5 * Duration.Second);
 }
 
 /**

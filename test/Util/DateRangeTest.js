@@ -35,12 +35,12 @@ describe("DateRange", () => {
 	describe("type", () => {
 		it("should return the type of a date range", () => {
 			const date = new Date("1974-05-03 08:45:12");
-			equal(new DateRange(date, new Date("2023-11-30 17:30:47")).type, DateRangeType.custom);
-			equal(DateRange.day(date).type, DateRangeType.day);
-			equal(DateRange.week(date).type, DateRangeType.week);
-			equal(DateRange.month(date).type, DateRangeType.month);
-			equal(DateRange.quarter(date).type, DateRangeType.quarter);
-			equal(DateRange.year(date).type, DateRangeType.year);
+			equal(new DateRange(date, new Date("2023-11-30 17:30:47")).type, DateRangeType.Custom);
+			equal(DateRange.day(date).type, DateRangeType.Day);
+			equal(DateRange.week(date).type, DateRangeType.Week);
+			equal(DateRange.month(date).type, DateRangeType.Month);
+			equal(DateRange.quarter(date).type, DateRangeType.Quarter);
+			equal(DateRange.year(date).type, DateRangeType.Year);
 		});
 	});
 

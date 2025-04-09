@@ -6,132 +6,132 @@ export const Status = Object.freeze({
 	/**
 	 * The `OK` status.
 	 */
-	ok: 200,
+	OK: 200,
 
 	/**
 	 * The `Created` status.
 	 */
-	created: 201,
+	Created: 201,
 
 	/**
 	 * The `No Content` status.
 	 */
-	noContent: 204,
+	NoContent: 204,
 
 	/**
 	 * The `Moved Permanently` status.
 	 */
-	movedPermanently: 301,
+	MovedPermanently: 301,
 
 	/**
 	 * The `Found` status.
 	 */
-	found: 302,
+	Found: 302,
 
 	/**
 	 * The `Not Modified` status.
 	 */
-	notModified: 304,
+	NotModified: 304,
 
 	/**
 	 * The `Bad Request` status.
 	 */
-	badRequest: 400,
+	BadRequest: 400,
 
 	/**
 	 * The `Unauthorized` status.
 	 */
-	unauthorized: 401,
+	Unauthorized: 401,
 
 	/**
 	 * The `Payment Required` status.
 	 */
-	paymentRequired: 402,
+	PaymentRequired: 402,
 
 	/**
 	 * The `Forbidden` status.
 	 */
-	forbidden: 403,
+	Forbidden: 403,
 
 	/**
 	 * The `Not Found` status.
 	 */
-	notFound: 404,
+	NotFound: 404,
 
 	/**
 	 * The `Method Not Allowed` status.
 	 */
-	methodNotAllowed: 405,
+	MethodNotAllowed: 405,
 
 	/**
 	 * The `Not Acceptable` status.
 	 */
-	notAcceptable: 406,
+	NotAcceptable: 406,
 
 	/**
 	 * The `Request Timeout` status.
 	 */
-	requestTimeout: 408,
+	RequestTimeout: 408,
 
 	/**
 	 * The `Conflict` status.
 	 */
-	conflict: 409,
+	Conflict: 409,
 
 	/**
 	 * The `Payload Too Large` status.
 	 */
-	payloadTooLarge: 413,
+	PayloadTooLarge: 413,
 
 	/**
 	 * The `Unsupported Media Type` status.
 	 */
-	unsupportedMediaType: 415,
+	UnsupportedMediaType: 415,
 
 	/**
 	 * The `Page Expired` status.
 	 */
-	pageExpired: 419,
+	PageExpired: 419,
 
 	/**
 	 * The `Unprocessable Content` status.
 	 */
-	unprocessableContent: 422,
+	UnprocessableContent: 422,
 
 	/**
 	 * The `Too Many Requests` status.
 	 */
-	tooManyRequests: 429,
+	TooManyRequests: 429,
 
 	/**
 	 * The `Internal Server Error` status.
 	 */
-	internalServerError: 500,
+	InternalServerError: 500,
 
 	/**
 	 * The `Not Implemented` status.
 	 */
-	notImplemented: 501,
+	NotImplemented: 501,
 
 	/**
 	 * The `Bad Gateway` status.
 	 */
-	badGateway: 502,
+	BadGateway: 502,
 
 	/**
 	 * The `Service Unavailable` status.
 	 */
-	serviceUnavailable: 503,
+	ServiceUnavailable: 503,
 
 	/**
 	 * The `Gateway Timeout` status.
 	 */
-	gatewayTimeout: 504,
+	GatewayTimeout: 504,
 
 	/**
 	 * The `Bandwidth Limit Exceeded` status
 	 */
-	bandwidthLimitExceeded: 509
+	BandwidthLimitExceeded: 509
 });
 
 /**

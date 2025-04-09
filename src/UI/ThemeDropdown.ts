@@ -43,7 +43,7 @@ export class ThemeDropdown extends Component {
 	constructor() {
 		super();
 		const theme = localStorage.getItem(this.storageKey) as Theme;
-		this._theme = Object.values(Theme).includes(theme) ? theme : Theme.auto;
+		this._theme = Object.values(Theme).includes(theme) ? theme : Theme.Auto;
 	}
 
 	/**
@@ -110,7 +110,7 @@ export class ThemeDropdown extends Component {
 	 * Applies the theme to the document.
 	 */
 	#applyTheme(): void {
-		const theme = this._theme == Theme.auto ? (this.#mediaQuery.matches ? Theme.dark : Theme.light) : this._theme;
+		const theme = this._theme == Theme.Auto ? (this.#mediaQuery.matches ? Theme.Dark : Theme.Light) : this._theme;
 		document.documentElement.dataset.bsTheme = theme;
 	}
 }

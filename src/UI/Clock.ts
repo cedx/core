@@ -33,7 +33,7 @@ export class Clock {
 	 */
 	constructor(host: ReactiveControllerHost, timeout = 1) {
 		(this.#host = host).addController(this);
-		this.#timeout = timeout * Duration.second;
+		this.#timeout = timeout * Duration.Second;
 	}
 
 	/**

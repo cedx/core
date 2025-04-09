@@ -51,7 +51,7 @@ export class Router extends LitRouter {
 	 * @param options The router options.
 	 */
 	constructor(host: HTMLElement & ReactiveControllerHost, routes: RouteConfig[], options: RouterOptions = {}) {
-		super(host, routes, {fallback: options.fallback ?? {render: () => html`<error-handler status=${Status.notFound}></error-handler>`}});
+		super(host, routes, {fallback: options.fallback ?? {render: () => html`<error-handler status=${Status.NotFound}></error-handler>`}});
 		const basePath = options.basePath ?? document.head.querySelector("base")?.getAttribute("href") ?? "";
 		this.#basePath = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath;
 		this.#scroller = options.scroller ?? null;

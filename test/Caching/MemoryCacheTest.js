@@ -43,9 +43,9 @@ describe("MemoryCache", () => {
 		});
 
 		it("should return `null` if the specified key has expired", async function() {
-			this.timeout(3 * Duration.second);
+			this.timeout(3 * Duration.Second);
 			await cache.set("foo", "bar", 1);
-			await wait(1.5 * Duration.second);
+			await wait(1.5 * Duration.Second);
 			equal(await cache.get("foo"), null);
 		});
 	});
@@ -62,9 +62,9 @@ describe("MemoryCache", () => {
 		});
 
 		it("should return `false` if the specified key has expired", async function() {
-			this.timeout(3 * Duration.second);
+			this.timeout(3 * Duration.Second);
 			await cache.set("foo", "bar", 1);
-			await wait(1.5 * Duration.second);
+			await wait(1.5 * Duration.Second);
 			assert.isFalse(await cache.has("foo"));
 		});
 	});
@@ -86,5 +86,5 @@ describe("MemoryCache", () => {
  * @returns {Promise<void>} Resolves when the delay has elapsed.
  */
 function wait(milliseconds) {
-	return new Promise(resolve => setTimeout(resolve, milliseconds)); // eslint-disable-line no-promise-executor-return
+	return new Promise(resolve => setTimeout(resolve, milliseconds));
 }

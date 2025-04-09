@@ -97,7 +97,7 @@ export class Toast extends Component {
 		super.connectedCallback();
 		const timestamp = Date.now();
 		this.#formatter = new Intl.RelativeTimeFormat(this.toaster.locale, {style: "long"});
-		this.#timer = window.setInterval(() => this.elapsedTime = this.#formatTime((Date.now() - timestamp) / Duration.second), Duration.second);
+		this.#timer = window.setInterval(() => this.elapsedTime = this.#formatTime((Date.now() - timestamp) / Duration.Second), Duration.Second);
 	}
 
 	/**
@@ -121,7 +121,7 @@ export class Toast extends Component {
 	 * Renders this component.
 	 */
 	protected override render(): TemplateResult {
-		const {context = Context.info} = this.notification;
+		const {context = Context.Info} = this.notification;
 		return html`
 			<div class="toast" @hidden.bs.toast=${() => this.toaster.close(this.notification)}>
 				<div class="toast-header ${classMap({[`toast-header-${context}`]: context})}">
@@ -182,7 +182,7 @@ export class Toaster extends Component {
 	 * @param options The notification options.
 	 */
 	notify(caption: string, message: TemplateResult, options: Notification = {}): void {
-		const context = options.context ?? Context.info;
+		const context = options.context ?? Context.Info;
 		this.show({animation: false, context, icon: contextIcon(context), ...options, caption, content: message});
 	}
 

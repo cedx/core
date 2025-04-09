@@ -6,27 +6,27 @@ export const ImageFormat = Object.freeze({
 	/**
 	 * The image format is AV1 Image File Format (AVIF).
 	 */
-	avif: "avif",
+	Avif: "avif",
 
 	/**
 	 * The image format is Graphics Interchange Format (GIF).
 	 */
-	gif: "gif",
+	Gif: "gif",
 
 	/**
 	 * The image format is Joint Photographic Experts Group (JPEG).
 	 */
-	jpeg: "jpeg",
+	Jpeg: "jpeg",
 
 	/**
 	 * The image format is Portable Network Graphics (PNG).
 	 */
-	png: "png",
+	Png: "png",
 
 	/**
 	 * The image format is WebP.
 	 */
-	webp: "webp"
+	WebP: "webp"
 });
 
 /**

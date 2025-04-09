@@ -7,69 +7,69 @@ import {assert} from "chai";
 describe("AccessLevel", () => {
 	describe("greaterThan()", () => {
 		it("should return `false` if the first access level is less than or equal to the second", () => {
-			assert.isFalse(greaterThan(AccessLevel.read, AccessLevel.read));
-			assert.isFalse(greaterThan(AccessLevel.read, AccessLevel.write));
-			assert.isFalse(greaterThan(AccessLevel.read, AccessLevel.admin));
-			assert.isFalse(greaterThan(AccessLevel.write, AccessLevel.write));
-			assert.isFalse(greaterThan(AccessLevel.write, AccessLevel.admin));
-			assert.isFalse(greaterThan(AccessLevel.admin, AccessLevel.admin));
+			assert.isFalse(greaterThan(AccessLevel.Read, AccessLevel.Read));
+			assert.isFalse(greaterThan(AccessLevel.Read, AccessLevel.Write));
+			assert.isFalse(greaterThan(AccessLevel.Read, AccessLevel.Admin));
+			assert.isFalse(greaterThan(AccessLevel.Write, AccessLevel.Write));
+			assert.isFalse(greaterThan(AccessLevel.Write, AccessLevel.Admin));
+			assert.isFalse(greaterThan(AccessLevel.Admin, AccessLevel.Admin));
 		});
 
 		it("should return `true` if the first access level is greater than the second", () => {
-			assert.isTrue(greaterThan(AccessLevel.write, AccessLevel.read));
-			assert.isTrue(greaterThan(AccessLevel.admin, AccessLevel.read));
-			assert.isTrue(greaterThan(AccessLevel.admin, AccessLevel.write));
+			assert.isTrue(greaterThan(AccessLevel.Write, AccessLevel.Read));
+			assert.isTrue(greaterThan(AccessLevel.Admin, AccessLevel.Read));
+			assert.isTrue(greaterThan(AccessLevel.Admin, AccessLevel.Write));
 		});
 	});
 
 	describe("greaterThanOrEqual()", () => {
 		it("should return `false` if the first access level is less than the second", () => {
-			assert.isFalse(greaterThanOrEqual(AccessLevel.read, AccessLevel.write));
-			assert.isFalse(greaterThanOrEqual(AccessLevel.read, AccessLevel.admin));
-			assert.isFalse(greaterThanOrEqual(AccessLevel.write, AccessLevel.admin));
+			assert.isFalse(greaterThanOrEqual(AccessLevel.Read, AccessLevel.Write));
+			assert.isFalse(greaterThanOrEqual(AccessLevel.Read, AccessLevel.Admin));
+			assert.isFalse(greaterThanOrEqual(AccessLevel.Write, AccessLevel.Admin));
 		});
 
 		it("should return `true` if the first access level is greater than or equal to the second", () => {
-			assert.isTrue(greaterThanOrEqual(AccessLevel.read, AccessLevel.read));
-			assert.isTrue(greaterThanOrEqual(AccessLevel.write, AccessLevel.read));
-			assert.isTrue(greaterThanOrEqual(AccessLevel.write, AccessLevel.write));
-			assert.isTrue(greaterThanOrEqual(AccessLevel.admin, AccessLevel.read));
-			assert.isTrue(greaterThanOrEqual(AccessLevel.admin, AccessLevel.write));
-			assert.isTrue(greaterThanOrEqual(AccessLevel.admin, AccessLevel.admin));
+			assert.isTrue(greaterThanOrEqual(AccessLevel.Read, AccessLevel.Read));
+			assert.isTrue(greaterThanOrEqual(AccessLevel.Write, AccessLevel.Read));
+			assert.isTrue(greaterThanOrEqual(AccessLevel.Write, AccessLevel.Write));
+			assert.isTrue(greaterThanOrEqual(AccessLevel.Admin, AccessLevel.Read));
+			assert.isTrue(greaterThanOrEqual(AccessLevel.Admin, AccessLevel.Write));
+			assert.isTrue(greaterThanOrEqual(AccessLevel.Admin, AccessLevel.Admin));
 		});
 	});
 
 	describe("lessThan()", () => {
 		it("should return `false` if the first access level is greater than or equal to the second", () => {
-			assert.isFalse(lessThan(AccessLevel.read, AccessLevel.read));
-			assert.isFalse(lessThan(AccessLevel.write, AccessLevel.read));
-			assert.isFalse(lessThan(AccessLevel.write, AccessLevel.write));
-			assert.isFalse(lessThan(AccessLevel.admin, AccessLevel.read));
-			assert.isFalse(lessThan(AccessLevel.admin, AccessLevel.write));
-			assert.isFalse(lessThan(AccessLevel.admin, AccessLevel.admin));
+			assert.isFalse(lessThan(AccessLevel.Read, AccessLevel.Read));
+			assert.isFalse(lessThan(AccessLevel.Write, AccessLevel.Read));
+			assert.isFalse(lessThan(AccessLevel.Write, AccessLevel.Write));
+			assert.isFalse(lessThan(AccessLevel.Admin, AccessLevel.Read));
+			assert.isFalse(lessThan(AccessLevel.Admin, AccessLevel.Write));
+			assert.isFalse(lessThan(AccessLevel.Admin, AccessLevel.Admin));
 		});
 
 		it("should return `true` if the first access level is less than the second", () => {
-			assert.isTrue(lessThan(AccessLevel.read, AccessLevel.write));
-			assert.isTrue(lessThan(AccessLevel.read, AccessLevel.admin));
-			assert.isTrue(lessThan(AccessLevel.write, AccessLevel.admin));
+			assert.isTrue(lessThan(AccessLevel.Read, AccessLevel.Write));
+			assert.isTrue(lessThan(AccessLevel.Read, AccessLevel.Admin));
+			assert.isTrue(lessThan(AccessLevel.Write, AccessLevel.Admin));
 		});
 	});
 
 	describe("lessThanOrEqual()", () => {
 		it("should return `false` if the first access level is greater than the second", () => {
-			assert.isFalse(lessThanOrEqual(AccessLevel.write, AccessLevel.read));
-			assert.isFalse(lessThanOrEqual(AccessLevel.admin, AccessLevel.read));
-			assert.isFalse(lessThanOrEqual(AccessLevel.admin, AccessLevel.write));
+			assert.isFalse(lessThanOrEqual(AccessLevel.Write, AccessLevel.Read));
+			assert.isFalse(lessThanOrEqual(AccessLevel.Admin, AccessLevel.Read));
+			assert.isFalse(lessThanOrEqual(AccessLevel.Admin, AccessLevel.Write));
 		});
 
 		it("should return `true` if the first access level is less than or equal to the second", () => {
-			assert.isTrue(lessThanOrEqual(AccessLevel.read, AccessLevel.read));
-			assert.isTrue(lessThanOrEqual(AccessLevel.read, AccessLevel.write));
-			assert.isTrue(lessThanOrEqual(AccessLevel.read, AccessLevel.admin));
-			assert.isTrue(lessThanOrEqual(AccessLevel.write, AccessLevel.write));
-			assert.isTrue(lessThanOrEqual(AccessLevel.write, AccessLevel.admin));
-			assert.isTrue(lessThanOrEqual(AccessLevel.admin, AccessLevel.admin));
+			assert.isTrue(lessThanOrEqual(AccessLevel.Read, AccessLevel.Read));
+			assert.isTrue(lessThanOrEqual(AccessLevel.Read, AccessLevel.Write));
+			assert.isTrue(lessThanOrEqual(AccessLevel.Read, AccessLevel.Admin));
+			assert.isTrue(lessThanOrEqual(AccessLevel.Write, AccessLevel.Write));
+			assert.isTrue(lessThanOrEqual(AccessLevel.Write, AccessLevel.Admin));
+			assert.isTrue(lessThanOrEqual(AccessLevel.Admin, AccessLevel.Admin));
 		});
 	});
 });

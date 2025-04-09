@@ -83,7 +83,7 @@ export class MemoryCache implements Cache {
 	set(key: string, value: unknown, duration = -1): Promise<this> {
 		if (duration < 0) duration = this.#defaultDuration;
 		this.#cache.set(this.#buildKey(key), {
-			expires: duration > 0 ? new Date(Date.now() + (duration * Duration.second)) : null,
+			expires: duration > 0 ? new Date(Date.now() + (duration * Duration.Second)) : null,
 			value: this.#serializer.serialize(value)
 		});
 

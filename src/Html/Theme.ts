@@ -6,17 +6,17 @@ export const Theme = Object.freeze({
 	/**
 	 * The theme is light.
 	 */
-	light: "light",
+	Light: "light",
 
 	/**
 	 * The theme is dark.
 	 */
-	dark: "dark",
+	Dark: "dark",
 
 	/**
 	 * The color mode is automatic.
 	 */
-	auto: "auto"
+	Auto: "auto"
 });
 
 /**
@@ -31,8 +31,8 @@ export type Theme = typeof Theme[keyof typeof Theme];
  */
 export function themeIcon(theme: Theme): string {
 	switch (theme) {
-		case Theme.dark: return "dark_mode";
-		case Theme.light: return "light_mode";
+		case Theme.Dark: return "dark_mode";
+		case Theme.Light: return "light_mode";
 		default: return "tonality";
 	}
 }
@@ -44,8 +44,8 @@ export function themeIcon(theme: Theme): string {
  */
 export function themeLabel(theme: Theme): string {
 	switch (theme) {
-		case Theme.dark: return "Sombre";
-		case Theme.light: return "Clair";
+		case Theme.Dark: return "Sombre";
+		case Theme.Light: return "Clair";
 		default: return "Auto";
 	}
 }

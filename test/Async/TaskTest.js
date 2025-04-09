@@ -33,19 +33,19 @@ describe("Task", () => {
 	describe("status", () => {
 		it("should be `TaskStatus.initial` if the task has not been run", () => {
 			const task = new Task(() => Promise.resolve());
-			equal(task.status, TaskStatus.initial);
+			equal(task.status, TaskStatus.Initial);
 		});
 
 		it("should be `TaskStatus.error` if the task has errored", async () => {
 			const task = new Task(() => Promise.reject(Error("failure")));
 			await task.run();
-			equal(task.status, TaskStatus.error);
+			equal(task.status, TaskStatus.Error);
 		});
 
 		it("should be `TaskStatus.complete` if the task has completed", async () => {
 			const task = new Task(() => Promise.resolve());
 			await task.run();
-			equal(task.status, TaskStatus.complete);
+			equal(task.status, TaskStatus.Complete);
 		});
 	});
 

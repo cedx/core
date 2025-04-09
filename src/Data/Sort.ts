@@ -11,12 +11,12 @@ export const SortOrder = Object.freeze({
 	/**
 	 * The sort is ascending.
 	 */
-	asc: "ASC",
+	Ascending: "ASC",
 
 	/**
 	 * The sort is descending.
 	 */
-	desc: "DESC"
+	Descending: "DESC"
 });
 
 /**
@@ -55,7 +55,7 @@ export class Sort {
 	 * @param order THe sort order.
 	 * @returns The sort corresponding to the attribute and order.
 	 */
-	static of(attribute: string, order: SortOrder = SortOrder.asc): Sort {
+	static of(attribute: string, order: SortOrder = SortOrder.Ascending): Sort {
 		return new this([[attribute, order]]);
 	}
 
@@ -66,8 +66,8 @@ export class Sort {
 	 */
 	static parse(value: string): Sort {
 		return new this((value ? value.split(",") : []).map(item => {
-			const order = item.startsWith("-") ? SortOrder.desc : SortOrder.asc;
-			return [order == SortOrder.asc ? item : item.slice(1), order];
+			const order = item.startsWith("-") ? SortOrder.Descending : SortOrder.Ascending;
+			return [order == SortOrder.Ascending ? item : item.slice(1), order];
 		}));
 	}
 
@@ -111,7 +111,7 @@ export class Sort {
 			const xAttr = Reflect.get(x, attribute); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
 			const yAttr = Reflect.get(y, attribute); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
 			const value = xAttr > yAttr ? 1 : (xAttr < yAttr ? -1 : 0);
-			if (value) return order == SortOrder.asc ? value : -value;
+			if (value) return order == SortOrder.Ascending ? value : -value;
 		}
 
 		return 0;
@@ -142,8 +142,8 @@ export class Sort {
 	 */
 	getIcon(attribute: string): string {
 		switch (this.get(attribute)) {
-			case SortOrder.asc: return "arrow_upward";
-			case SortOrder.desc: return "arrow_downward";
+			case SortOrder.Ascending: return "arrow_upward";
+			case SortOrder.Descending: return "arrow_downward";
 			default: return "swap_vert";
 		}
 	}
@@ -232,6 +232,6 @@ export class Sort {
 	 * @returns The string representation of this object.
 	 */
 	toString(): string {
-		return this.#attributes.map(([attribute, order]) => `${order == SortOrder.desc ? "-" : ""}${attribute}`).join();
+		return this.#attributes.map(([attribute, order]) => `${order == SortOrder.Descending ? "-" : ""}${attribute}`).join();
 	}
 }

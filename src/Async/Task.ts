@@ -6,22 +6,22 @@ export const TaskStatus = Object.freeze({
 	/**
 	 * The task has not been run.
 	 */
-	initial: 0,
+	Initial: 0,
 
 	/**
 	 * The task is running and awaiting a new value.
 	 */
-	pending: 1,
+	Pending: 1,
 
 	/**
 	 * The task completed successfully.
 	 */
-	complete: 2,
+	Complete: 2,
 
 	/**
 	 * The task errored.
 	 */
-	error: 3
+	Error: 3
 });
 
 /**
@@ -37,7 +37,7 @@ export class Task<T> {
 	/**
 	 * The task status.
 	 */
-	status: TaskStatus = TaskStatus.initial;
+	status: TaskStatus = TaskStatus.Initial;
 
 	/**
 	 * The task result.
@@ -64,7 +64,7 @@ export class Task<T> {
 		return this.#result instanceof Error ? this.#result : null;
 	}
 	set error(error: unknown) {
-		this.status = TaskStatus.error;
+		this.status = TaskStatus.Error;
 		this.#result = error instanceof Error ? error : Error("The task failed.", {cause: error});
 	}
 
@@ -75,7 +75,7 @@ export class Task<T> {
 		return this.#result instanceof Error ? undefined : this.#result; // eslint-disable-line no-undefined
 	}
 	set value(value: T|undefined) {
-		this.status = TaskStatus.complete;
+		this.status = TaskStatus.Complete;
 		this.#result = value;
 	}
 
@@ -85,7 +85,7 @@ export class Task<T> {
 	 * @returns The value of the task, if it has completed.
 	 */
 	async run(...args: any[]): Promise<T|undefined> {
-		this.status = TaskStatus.pending;
+		this.status = TaskStatus.Pending;
 		try { this.value = await this.#task(...args); } // eslint-disable-line @typescript-eslint/no-unsafe-argument
 		catch (error) { this.error = error; }
 		return this.value;

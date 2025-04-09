@@ -45,9 +45,9 @@ describe("FileCache", () => {
 		});
 
 		it("should return `null` if the specified key has expired", async function() {
-			this.timeout(3 * Duration.second);
+			this.timeout(3 * Duration.Second);
 			await cache.set("foo", "bar", 1);
-			await setTimeout(1.5 * Duration.second);
+			await setTimeout(1.5 * Duration.Second);
 			equal(await cache.get("foo"), null);
 		});
 	});
@@ -62,9 +62,9 @@ describe("FileCache", () => {
 		});
 
 		it("should return `false` if the specified key has expired", async function() {
-			this.timeout(3 * Duration.second);
+			this.timeout(3 * Duration.Second);
 			await cache.set("foo", "bar", 1);
-			await setTimeout(1.5 * Duration.second);
+			await setTimeout(1.5 * Duration.Second);
 			assert.isFalse(await cache.has("foo"));
 		});
 	});

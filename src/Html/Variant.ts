@@ -6,22 +6,22 @@ export const Variant = Object.freeze({
 	/**
 	 * A dark variant.
 	 */
-	dark: "dark",
+	Dark: "dark",
 
 	/**
 	 * A light variant.
 	 */
-	light: "light",
+	Light: "light",
 
 	/**
 	 * A primary variant.
 	 */
-	primary: "primary",
+	Primary: "primary",
 
 	/**
 	 * A secondary variant.
 	 */
-	secondary: "secondary"
+	Secondary: "secondary"
 });
 
 /**

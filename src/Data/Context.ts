@@ -6,22 +6,22 @@ export const Context = Object.freeze({
 	/**
 	 * A danger.
 	 */
-	danger: "danger",
+	Danger: "danger",
 
 	/**
 	 * An information.
 	 */
-	info: "info",
+	Info: "info",
 
 	/**
 	 * A success.
 	 */
-	success: "success",
+	Success: "success",
 
 	/**
 	 * A warning.
 	 */
-	warning: "warning"
+	Warning: "warning"
 });
 
 /**
@@ -36,9 +36,9 @@ export type Context = typeof Context[keyof typeof Context];
  */
 export function contextIcon(context: Context): string {
 	switch (context) {
-		case Context.danger: return "error";
-		case Context.success: return "check_circle";
-		case Context.warning: return "warning";
+		case Context.Danger: return "error";
+		case Context.Success: return "check_circle";
+		case Context.Warning: return "warning";
 		default: return "info";
 	}
 }

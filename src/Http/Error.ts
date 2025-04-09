@@ -64,7 +64,7 @@ export class Error extends globalThis.Error {
 	 */
 	async #parseValidationErrors(): Promise<Map<string, string>> {
 		try {
-			const statuses = new Set<Status>([Status.badRequest, Status.unprocessableContent]);
+			const statuses = new Set<Status>([Status.BadRequest, Status.UnprocessableContent]);
 			const ignoreBody = this.cause.bodyUsed || !statuses.has(this.status);
 			return new Map(ignoreBody ? [] : Object.entries(await this.cause.json() as Record<string, string>));
 		}

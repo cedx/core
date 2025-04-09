@@ -57,9 +57,9 @@ export function getHolidays(year = new Date().getFullYear()): Date[] {
 
 	// Holidays depending on Easter.
 	const easter = getEaster(year);
-	holidays.push(new Date(easter.getTime() + Duration.day)); // Easter monday.
-	holidays.push(new Date(easter.getTime() + (39 * Duration.day))); // Ascension thursday.
-	holidays.push(new Date(easter.getTime() + (50 * Duration.day))); // Pentecost monday.
+	holidays.push(new Date(easter.getTime() + Duration.Day)); // Easter monday.
+	holidays.push(new Date(easter.getTime() + (39 * Duration.Day))); // Ascension thursday.
+	holidays.push(new Date(easter.getTime() + (50 * Duration.Day))); // Pentecost monday.
 
 	return holidays;
 }
@@ -81,7 +81,7 @@ export function getQuarter(date: Date): number {
 export function getWeekOfYear(date: Date): number {
 	const thursday = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3 - ((date.getDay() + 6) % 7));
 	const firstWeek = new Date(thursday.getFullYear(), 0, 4);
-	return 1 + Math.round((((thursday.getTime() - firstWeek.getTime()) / Duration.day) - 3 + ((firstWeek.getDay() + 6) % 7)) / 7);
+	return 1 + Math.round((((thursday.getTime() - firstWeek.getTime()) / Duration.Day) - 3 + ((firstWeek.getDay() + 6) % 7)) / 7);
 }
 
 /**
