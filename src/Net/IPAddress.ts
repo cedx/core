@@ -1,7 +1,7 @@
 /**
  * Defines the address family of an IP address.
  */
-export const InternetAddressType = Object.freeze({
+export const IPAddressType = Object.freeze({
 
 	/**
 	 * An IPv4 address.
@@ -17,12 +17,12 @@ export const InternetAddressType = Object.freeze({
 /**
  * Defines the address family of an IP address.
  */
-export type InternetAddressType = typeof InternetAddressType[keyof typeof InternetAddressType];
+export type IPAddressType = typeof IPAddressType[keyof typeof IPAddressType];
 
 /**
  * Represents an IP address.
  */
-export class InternetAddress {
+export class IPAddress {
 
 	/**
 	 * The regular expression used to validate an IPv4 address.
@@ -51,7 +51,7 @@ export class InternetAddress {
 	 * The IPv6 numeric address.
 	 */
 	get address(): string {
-		return this.type == InternetAddressType.IPv4 ? `::ffff:${this.#value}` : this.#value;
+		return this.type == IPAddressType.IPv4 ? `::ffff:${this.#value}` : this.#value;
 	}
 
 	/**
@@ -65,14 +65,14 @@ export class InternetAddress {
 	 * Value indicating whether this IP address is valid.
 	 */
 	get isValid(): boolean {
-		return this.type == InternetAddressType.IPv4 ? InternetAddress.ipv4Pattern.test(this.#value) : InternetAddress.ipv6Pattern.test(this.#value);
+		return this.type == IPAddressType.IPv4 ? IPAddress.ipv4Pattern.test(this.#value) : IPAddress.ipv6Pattern.test(this.#value);
 	}
 
 	/**
 	 * The address family.
 	 */
-	get type(): InternetAddressType {
-		return this.#value.includes(":") ? InternetAddressType.IPv6 : InternetAddressType.IPv4;
+	get type(): IPAddressType {
+		return this.#value.includes(":") ? IPAddressType.IPv6 : IPAddressType.IPv4;
 	}
 
 	/**
