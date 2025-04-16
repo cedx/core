@@ -1,5 +1,10 @@
 # Changelog
 
+## Version [3.2.0](https://github.com/cedx/core.js/compare/v3.1.0...v3.2.0)
+- Renamed the `DI` module to `DependencyInjection`.
+- Renamed the `Intl` module to `Globalization`.
+- Renamed the `InternetAddress` class to `IPAddress`.
+
 ## Version [3.1.0](https://github.com/cedx/core.js/compare/v3.0.0...v3.1.0)
 - Use Pascal case for enumerated values.
 
