@@ -2,7 +2,7 @@ import "./Async/TaskTest.js";
 import "./Caching/MemoryCacheTest.js";
 import "./Data/PaginationTest.js";
 import "./Data/SortTest.js";
-import "./DI/ContainerTest.js";
+import "./DependencyInjection/ContainerTest.js";
 import "./Globalization/RegionTest.js";
 import "./Net/IPAddressTest.js";
 import "./Net/MailAddressTest.js";

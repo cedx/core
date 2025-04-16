@@ -6,8 +6,8 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noEmit": false,
-		"outDir": "../../lib/DI",
+		"outDir": "../../lib/DependencyInjection",
 		"rootDir": ".",
-		"tsBuildInfoFile": "../../var/DI.tsbuildinfo"
+		"tsBuildInfoFile": "../../var/DependencyInjection.tsbuildinfo"
 	}
 }

@@ -4,7 +4,7 @@
 		{"path": "Async/tsconfig.json"},
 		{"path": "Caching/tsconfig.json"},
 		{"path": "Data/tsconfig.json"},
-		{"path": "DI/tsconfig.json"},
+		{"path": "DependencyInjection/tsconfig.json"},
 		{"path": "Globalization/tsconfig.json"},
 		{"path": "Html/tsconfig.json"},
 		{"path": "Http/tsconfig.json"},
