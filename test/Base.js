@@ -3,7 +3,7 @@ import "./Caching/MemoryCacheTest.js";
 import "./Data/PaginationTest.js";
 import "./Data/SortTest.js";
 import "./DI/ContainerTest.js";
-import "./Intl/RegionTest.js";
+import "./Globalization/RegionTest.js";
 import "./Net/IPAddressTest.js";
 import "./Net/MailAddressTest.js";
 import "./Net/PhoneNumberTest.js";
